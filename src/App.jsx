@@ -8,6 +8,7 @@ import { NavLink } from 'react-router-dom'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Services from './pages/Services'
+import Home from './pages/Home'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,8 +17,8 @@ function App() {
 
   return (
     <div>
-      <div className='bg-red-300  border-2'> 
-           aman
+      <div className='bg-red-300 '> 
+          
       </div>
       <Routes  > 
        
