@@ -9,7 +9,10 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Services from './pages/Services'
 import Home from './pages/Home'
-
+ 
+import Navbar from './components/common/Navbar'
+import Footer from './components/common/Footer'
+ 
 function App() {
   const [count, setCount] = useState(0)
 
@@ -17,18 +20,18 @@ function App() {
 
   return (
     <div>
-      <div className='bg-red-300 '> 
-          
-      </div>
-      <Routes  > 
+ 
+        <Navbar />
+       <Routes  > 
        
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Services />} />
 
       </Routes>
 
-
+       <Footer />
     </div>
   )
 }
