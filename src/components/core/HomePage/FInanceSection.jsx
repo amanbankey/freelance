@@ -197,9 +197,9 @@ export default function FinanceSection() {
     <div className="bg-white min-h-screen font-sans">
 
       {/* HERO — before scroll */}
-      <div className="h-screen flex flex-col items-center justify-center">
+      {/* <div className="h-screen flex flex-col items-center justify-center">
         <p className="mt-6 text-gray-300 text-sm tracking-widest">↓ SCROLL</p>
-      </div>
+      </div> */}
 
       {/* STICKY SECTION */}
       <div ref={sectionRef} style={{ height: "400vh" }} className="relative">
@@ -233,7 +233,7 @@ export default function FinanceSection() {
               {/* Green Exchange Card — top-left of cluster */}
               <div
                 style={getStyle(CARD_DEFS[0], { top: 0, left: 0, zIndex: 13 })}
-                className="w-44 rounded-3xl p-4 bg-[#2ed283] shadow-2xl"
+                className="w-48 h-44 rounded-3xl p-4 bg-[#2ed283] shadow-2xl"
               >
                 <p className="text-xs text-white/70 mb-2 flex items-center gap-1">
                   <span>⇄</span> Exchange
@@ -265,8 +265,8 @@ export default function FinanceSection() {
 
               {/* Pink Jane Thomas — center-front, most prominent */}
               <div
-                style={getStyle(CARD_DEFS[2], { bottom: 0, left: 30, zIndex: 15 })}
-                className="w-44 rounded-3xl p-4 bg-[#ffe6f4] shadow-2xl text-center"
+                style={getStyle(CARD_DEFS[2], { top: 10, left: 30, zIndex: 15 })}
+                className="w-44 h-44 rounded-3xl p-4 bg-[#ffe6f4] shadow-2xl text-center"
               >
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-rose-500 mx-auto mb-2 flex items-center justify-center text-white font-black text-sm">
                   JT
@@ -280,8 +280,8 @@ export default function FinanceSection() {
 
               {/* Photo / Coffee card — top-right behind blue */}
               <div
-                style={getStyle(CARD_DEFS[3], { top: -10, right: -5, zIndex: 9 })}
-                className="w-36 h-28 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br from-amber-400 to-orange-500 flex flex-col items-center justify-center"
+                style={getStyle(CARD_DEFS[3], { top: -5, right: -5, zIndex: 9 })}
+                className="w-48 h-40 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br from-amber-400 to-orange-500 flex flex-col items-center justify-center"
               >
                 <span className="text-3xl">☕</span>
                 <p className="text-white text-xs font-semibold mt-1 text-center">Coffee time!</p>
@@ -294,14 +294,14 @@ export default function FinanceSection() {
       </div>
 
       {/* AFTER SECTION */}
-      <div className="h-screen flex items-center justify-center bg-gray-50">
+      {/* <div className="h-screen flex items-center justify-center bg-gray-50">
         <div className="flex items-center gap-5">
           <div className="w-16 h-16 bg-[#3dd68c] rounded-2xl flex items-center justify-center shadow-lg">
             <span className="text-white text-4xl font-light leading-none">+</span>
           </div>
           <span className="text-7xl font-black text-[#3dd68c]">Add</span>
         </div>
-      </div>
+      </div> */}
 
     </div>
   );
