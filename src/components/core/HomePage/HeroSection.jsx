@@ -72,8 +72,6 @@ const HeroSection = () => {
   return (
     <div className=''>
          
- 
-
       <div>
       <section className="transparent relative z-50 left-0">
         {/* Background container */}
