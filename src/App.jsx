@@ -12,6 +12,7 @@ import Home from './pages/Home'
  
 import Navbar from './components/common/Navbar'
 import Footer from './components/common/Footer'
+import Products from './pages/Products'
  
 function App() {
   const [count, setCount] = useState(0)
@@ -28,6 +29,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/products" element={<Products />} />
 
       </Routes>
 

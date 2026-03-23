@@ -41,6 +41,48 @@ const NAV_ITEMS = [
       },
     },
     { label: "Contact Us", to: "/contact" },
+    { label: "Products", to: "/products",  products: [
+    {
+      id: 1,
+      carName: "BMW",
+      modelName: "X5",
+      year: 2024,
+      price: "₹95 Lakh",
+      image: "https://images.unsplash.com/photo-1555215695-3004980ad54e",
+      fuelType: "Petrol",
+      transmission: "Automatic"
+    },
+    {
+      id: 2,
+      carName: "Audi",
+      modelName: "A6",
+      year: 2023,
+      price: "₹70 Lakh",
+      image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6",
+      fuelType: "Diesel",
+      transmission: "Automatic"
+    },
+    {
+      id: 3,
+      carName: "Mercedes",
+      modelName: "C-Class",
+      year: 2024,
+      price: "₹65 Lakh",
+      image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8",
+      fuelType: "Petrol",
+      transmission: "Automatic"
+    },
+    {
+      id: 4,
+      carName: "Toyota",
+      modelName: "Fortuner",
+      year: 2024,
+      price: "₹52 Lakh",
+      image: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8",
+      fuelType: "Diesel",
+      transmission: "Manual"
+    }
+  ] },
   ];
    
   // ─── DUMMY ICON BLOCKS ────────────────────────────────────────────────────────
@@ -221,11 +263,12 @@ const Navbar = () => {
       "absolute left-0 right-0 bg-white border-t border-gray-100 shadow-xl overflow-hidden z-40 mx-40",
       "transition-all duration-500 ease-in-out",
       activeMenu === item.label
-        ? "max-h-[500px] opacity-100 translate-y-0"
+        ? "max-h-[500px] opacity-100 translate-y-0 group"
         : "max-h-0 opacity-0 -translate-y-2 pointer-events-none",
     ].join(" ")}
   >
-    <div className="max-w-screen-2xl mx-auto flex">
+
+    <div className="max-w-screen-2xl mx-auto flex group-hover:text-gray-900">
 
       {/* Grid columns */}
       <div className="flex-1 px-8 py-8 grid grid-cols-4 gap-6">
@@ -272,6 +315,7 @@ const Navbar = () => {
         </ul>
       </div>
     </div>
+     
   </div>
 ))}
 
@@ -283,6 +327,8 @@ const Navbar = () => {
   ].join(" ")}
   onClick={() => setActiveMenu(null)}
 />
+
+   
 </header>
 
   );

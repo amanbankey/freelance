@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 const CARDS = [
@@ -30,9 +30,18 @@ export default function CardSection() {
 
   const visibleRange = 3;
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      next();
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
-      <h1 className="text-2xl font-semibold text-gray-800 mb-8">Card Carousel</h1>
+        <span> TRUSTED PARTNERS</span>
+      <h1 className="text-2xl font-semibold text-gray-800 mb-8"> Our Big Partners </h1>
 
       {/* Carousel Row */}
       <div className="flex items-center justify-center gap-4 w-full">
@@ -76,7 +85,7 @@ export default function CardSection() {
                 }}
               >
                 {/* <span className={`${isActive ? "text-5xl" : "text-3xl"} mb-3 transition-all duration-400`}> */}
-                  {/* {card.emoji} */}
+                
                    <img src={card.emoji} />
                 {/* </span> */}
                 <p className={`font-medium text-center ${isActive ? "text-lg" : "text-sm"} transition-all duration-400`}>
@@ -85,15 +94,12 @@ export default function CardSection() {
                 {isActive && (
                   <p className="text-xs text-white/70 text-center mt-1 px-2">{card.desc}</p>
                 )}
-                {/* <span className="mt-3 text-xs bg-white/20 rounded-full px-3 py-0.5">
-                  Card {card.id}
-                </span> */}
+          
               </div>
             );
           })}
         </div>
 
-        {/* Right Arrow */}
         <button
           onClick={next}
           className="w-11 h-11 rounded-full bg-white border border-gray-300 text-gray-700 text-xl flex items-center justify-center shadow hover:bg-gray-50 active:scale-95 transition-all"
@@ -102,7 +108,6 @@ export default function CardSection() {
         </button>
       </div>
 
-      {/* Dot Indicators */}
       <div className="flex items-center gap-1.5 mt-6">
         {CARDS.map((_, i) => (
           <button

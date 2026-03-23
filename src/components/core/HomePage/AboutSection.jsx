@@ -18,7 +18,7 @@ const SLIDES = [
       ),
       des: 'Empowering industry leaders with precision, innovation, and reliability—B B Engineers is your trusted “one roof solution” for advanced stamping, embossing, tooling assembly, fixture development, and integration. Based in Chakan, Pune, our team delivers expertise across automotive and non-automotive sectors, streamlining your processes and driving sustainable growth.',
       list: ['Commercial', 'Domestic', 'Industrial'],
-      button: 'View More Details',
+      button: 'More About',
     },
    
   ]
@@ -89,7 +89,8 @@ const AboutSection = () => {
             <div className="max-w-3xl">
  
               {/* Heading */}
-              <div className="mb-4 md:mb-6 text-white text-7xl font-semibold">
+              <span className='text-white'> {slide.title}</span>
+              <div className="mb-4 md:mb-6 text-white text-5xl font-semibold">
                 {slide.heading}
               </div>
   
@@ -122,7 +123,7 @@ const AboutSection = () => {
  
           {/* Slide indicator dots */}
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-            {SLIDES.map((_, i) => (
+            {/* {SLIDES.map((_, i) => (
               <button
                 key={i}
                 onClick={() => {
@@ -139,7 +140,7 @@ const AboutSection = () => {
                     : 'bg-white/50 hover:bg-white/80',
                 ].join(' ')}
               />
-            ))}
+            ))} */}
           </div>
  
         </div>
