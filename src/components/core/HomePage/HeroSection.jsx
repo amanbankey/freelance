@@ -70,12 +70,12 @@ const HeroSection = () => {
     const slide = SLIDES[current]
 
   return (
-    <div>
+    <div className=''>
          
  
 
       <div>
-      <section className="transparent relative -z-50 left-0">
+      <section className="transparent relative z-50 left-0">
         {/* Background container */}
         <div className="relative h-80vh max-w-screen overflow-hidden">
  
