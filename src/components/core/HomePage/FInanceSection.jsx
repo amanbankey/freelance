@@ -63,7 +63,7 @@ export default function FinanceSection() {
   return (
     <div className="bg-white min-h-screen font-sans">
 
-         <video
+         {/* <video
             ref={videoRef}
             className="absolute top-0 left-0 w-full object-cover"
             src={unified}
@@ -71,7 +71,7 @@ export default function FinanceSection() {
             loop
             muted
             playsInline
-          />
+          /> */}
    
       <div ref={sectionRef} style={{ height: "400vh" }} className="relative">
         <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">

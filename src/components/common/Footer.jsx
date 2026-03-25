@@ -51,19 +51,21 @@ const Footer = () => {
               <MdLocationOn className='sm:text-xl text-sm'/>
             </div>
             <div className="flex flex-col w-fit h-fit text-[0.6rem] sm:text-sm">
-              <span>4319 Wakefield Street.</span>
-              <span>Philadelphia. PA 19126</span>
+              <span>Plot No. PAGG635, MIDC Kurli,
+
+Chakan Industrial Estate,.</span> 
+              <span>Taluka Khed, District Pune 401 501, Maharashtra, India</span>
             </div>
           </div>
         </div>
         <div className="w-fit">
-          <h2 className="text-left sm:text-lg text-sm">Customer help</h2>
+          <h2 className="text-left sm:text-lg text-sm">Quick Support</h2>
           <div className="flex flex-row gap-2 w-fit">
             <div className="flex items-center justify-center sm:h-10 sm:w-10 h-5 w-5 rounded-full text-[#002209] bg-gray-500">
               <IoCall className='sm:text-xl text-sm' /></div>
             <div className="flex flex-col text-[0.6rem] sm:text-sm">
-              <span>(256) 289-9707</span>
-              <span>(301) 580-7410</span>
+              <span>+91-8956575693</span>
+              {/* <span>(301) 580-7410</span> */}
             </div>
           </div>
         </div>
@@ -77,7 +79,7 @@ const Footer = () => {
   
     {/* Footer Bottom */}
     <div className="max-w-7xl mx-auto font-semibold flex flex-row justify-between items-center text-sm px-1 gap-2 sm:gap-0">
-      <p className="text-[0.6rem] sm:text-xs md:text-sm">© 2025 BBE Engineers. All Rights Reserved.</p>
+      <p className="text-[0.6rem] sm:text-xs md:text-sm">© 2026 BBE Engineers. All Rights Reserved.</p>
       <div className="flex sm:gap-3 gap-0.5 items-center text-[0.5rem] sm:text-xs">
         <h2 className='text-[0.6rem] sm:text-xs md:text-sm'>Follow Us :</h2>
         <ul className="flex gap-2 text-[0.6rem] sm:text-xs md:text-sm text-orange-500">

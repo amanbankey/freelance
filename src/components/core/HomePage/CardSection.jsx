@@ -48,7 +48,7 @@ export default function CardSection() {
         {/* Left Arrow */}
         <button
           onClick={prev}
-          className="w-11 h-11 rounded-full bg-white border border-gray-300 text-gray-700 text-xl flex items-center justify-center shadow hover:bg-gray-50 active:scale-95 transition-all"
+          className="w-11 h-11 rounded-full bg-white  text-gray-700 text-xl flex items-center justify-center shadow hover:bg-gray-50 active:scale-95 transition-all"
         >
           ‹
         </button>
@@ -73,9 +73,9 @@ export default function CardSection() {
               <div
                 key={card.id}
                 onClick={() => !isActive && setActive(i)}
-                className={`absolute flex flex-col items-center justify-center rounded-2xl text-white transition-all duration-400 ease-out
-                  ${card.bg}
-                  ${isActive ? "w-48 h-72 cursor-default ring-4 ring-white/40" : "w-40 h-56 cursor-pointer"}
+                className={`absolute flex flex-col items-center justify-center  text-white transition-all duration-400 ease-out
+                 
+                  ${isActive ? "w-48 h-72 cursor-default " : "w-40 h-56 cursor-pointer"}
                 `}
                 style={{
                   transform: `translateX(${translateX}px) scale(${scale})`,
@@ -88,11 +88,13 @@ export default function CardSection() {
                 
                    <img src={card.emoji} />
                 {/* </span> */}
-                <p className={`font-medium text-center ${isActive ? "text-lg" : "text-sm"} transition-all duration-400`}>
-                  {card.title}
+                <p className={`font-medium text-blue-400 text-center ${isActive ? "text-lg" : "text-sm"} transition-all duration-400`}>
+                  {/* {card.title} */}
                 </p>
                 {isActive && (
-                  <p className="text-xs text-white/70 text-center mt-1 px-2">{card.desc}</p>
+                  <p className="text-xs text-black text-center mt-1 px-2">
+                    {/* {card.desc} */}
+                    </p>
                 )}
           
               </div>

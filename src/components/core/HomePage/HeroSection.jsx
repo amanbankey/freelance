@@ -70,14 +70,14 @@ const HeroSection = () => {
     const slide = SLIDES[current]
 
   return (
-    <div className=''>
+    <div className='relative  z-10 top-0  bg-transparent'>
          
-      <div>
+      <div className=''>
       <section className="transparent relative z-50 left-0">
-        {/* Background container */}
-        <div className="relative h-80vh max-w-screen overflow-hidden">
- 
-          {/* Video — single element, src swaps */}
+       
+        <div className="relative  max-w-screen  ">
+        <div className='sticky top-10 h-screen overflow-hidden'>
+         
           <video
             ref={videoRef}
             className="absolute top-0 left-0 w-full object-cover"
@@ -155,7 +155,7 @@ const HeroSection = () => {
               />
             ))}
           </div>
- 
+          </div>
         </div>
       </section>
     </div>
