@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 import header from '../../../assets/videos/header.mp4'
 import header2 from '../../../assets/videos/header2.mp4'
-
+import { HiMenuAlt3 } from "react-icons/hi";
 const SLIDES = [
     {
       video: header,
@@ -70,13 +70,13 @@ const HeroSection = () => {
     const slide = SLIDES[current]
 
   return (
-    <div className='relative  z-10 top-0  bg-transparent'>
+    <div className='relative  z-10 top-0  bg-transparent '>
          
-      <div className=''>
-      <section className="transparent relative z-50 left-0">
+      <div className=' '>
+      <section className="transparent relative z-50 left-0 ">
        
         <div className="relative  max-w-screen  ">
-        <div className='sticky top-10 h-screen overflow-hidden'>
+        <div className='sticky top-10 h-screen overflow-hidden  '>
          
           <video
             ref={videoRef}
@@ -89,20 +89,22 @@ const HeroSection = () => {
           />
  
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-b    max-w-7xl mx-auto " />
  
           {/* Foreground content — fades in/out */}
           <div
             className={[
-              'relative z-10 flex flex-col justify-center min-h-screen px-4 md:px-8 lg:px-16',
+              'relative z-10 flex flex-col justify-center items-center min-h-screen w-full   mx-auto',
               'transition-all duration-300 ease-in-out',
               textVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-3',
             ].join(' ')}
           >
-            <div className="max-w-3xl">
- 
+            <div className='  max-w-7xl  w-full  '>
+            <div className="max-w-3xl flex  justify-end  ">
+              
+              <div className=' '> 
               {/* Heading */}
               <div className="mb-4 md:mb-6 text-white text-7xl font-semibold">
                 {slide.heading}
@@ -123,8 +125,11 @@ const HeroSection = () => {
                   {slide.button}
                 </button>
               </div>
- 
+  
             </div>
+            </div>
+
+             </div>
           </div>
  
           {/* Bottom section — untouched */}

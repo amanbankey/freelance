@@ -32,7 +32,7 @@ const InvestorSection = () => {
   return (
     <div>
          <section >
-              <div className="bg-white px-4 py-8 flex justify-center">
+         <div className="bg-white px-4 py-8 flex justify-center">
       <div
         className="relative w-full max-w-5xl rounded-2xl overflow-hidden px-8 py-10"
         style={{ background: "linear-gradient(135deg, #0a1f44 60%, #0e3a5c 100%)" }}

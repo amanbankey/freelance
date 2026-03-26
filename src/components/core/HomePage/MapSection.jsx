@@ -6,6 +6,8 @@ import india from "../../../assets/Images/india.jpg";
 import plant1 from "../../../assets/Images/plant1.jpg";
 import plant2 from "../../../assets/Images/plant2.jpg";
 
+import { NavLink } from "react-router-dom";
+
 const address =
   "PL-1 PAG/G-63/5 MIDC Kurli, Chakan Industrial Area Ph-3, Taluka Khed, Pune - 410501, MH, India";
 
@@ -37,9 +39,10 @@ const MapSection = () => {
             <div className="flex justify-center max-w-5xl "> 
                
                <div  className="flex items-center flex-col">
-                    <div onClick={openLocation} className="cursor-pointer "> 
-                      <img src={plant1}  />
-                    </div>
+                {/* apne bola tha ki me batauga or  */}
+                    <NavLink to='/location/pune/india' className="cursor-pointer "> 
+                      <img src={india}  />
+                    </NavLink>
 
                     <div  className="hover:cursor-pointer w-80 "> 
                        <span> PL-1 PAG/G-63/5 MIDC Kurli, Chakan Industrial Area Ph-3, Taluka Khed, Pune - 410501, MH, India </span>
@@ -48,9 +51,9 @@ const MapSection = () => {
 
                <div className="flex items-center flex-col"> 
 
-                    <div onClick={openLoc} className="cursor-pointer "> 
+                    <NavLink to='/location/pune/india' className="cursor-pointer "> 
                        <img src={india}  />
-                    </div>
+                    </NavLink>
 
                     <div className="w-80 "> 
                        <span className="hover:cursor-pointer"> 

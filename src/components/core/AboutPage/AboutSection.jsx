@@ -15,10 +15,8 @@ const AboutSection = () => {
 
         <div className="flex justify-center text-center mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32">
           <p className="max-w-[780px] text-[#4a4a4a] font-light leading-[1.55] text-[22px]  ">
-            JSW, born from a visionary dream, is a global force driving industry
-            transformation. We empower communities and shape India’s future with trust,
-            excellence, and a relentless focus on sustainable growth, making a lasting impact
-            across every sector we touch.
+          To be a trusted partner delivering precision-engineered solutions for mobility, infrastructure and innovation — with a commitment to quality, reliability, and sustainable growth.
+
           </p>
         </div>
 

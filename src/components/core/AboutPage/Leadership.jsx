@@ -16,17 +16,22 @@ const Leadership = () => {
  
           {/* Description */}
           <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-8 max-w-md">
-            JSW is more than a business; it's a brand defined by innovation, excellence, and
-            sustainability. From a regional player to a global powerhouse, we've grown while staying
-            true to our core values in every step we take.
+          BB  Engineers is a Press Component , Assy. & Roiling  Solution Provider Organization for Automotive and Non Automotive Industries. Location :- Chakan Pune.
+          </p>
+
+          <p className='text-gray-600 text-sm sm:text-base leading-relaxed mb-8 max-w-md'>Our team delivers end-to-end expertise in stamping assembly fixture design, manufacturing, and integration, streamlining your production processes and minimizing vendor complexity
+          </p>
+
+          <p className='text-gray-600 text-sm sm:text-base leading-relaxed mb-8 max-w-md'>Two Plant with in-house capabilities of Press Shop, Laser Cutting Machine pipe bending robotic welding etc.
           </p>
  
           {/* Person Name & Title */}
           <div className="mb-6">
             <p className="font-bold text-gray-900 text-sm tracking-wide uppercase">
-              Sajjan Jindal
+            Mr. Saroj Ranajn Parida 
+
             </p>
-            <p className="text-gray-500 text-sm">Chairman</p>
+            <p className="text-gray-500 text-sm">CEO</p>
           </div>
  
           {/* Button */}

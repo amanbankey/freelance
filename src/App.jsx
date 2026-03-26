@@ -15,7 +15,9 @@ import Footer from './components/common/Footer'
 import Products from './pages/Products'
 import ProductsItem from './pages/ProductsItem'
  import ServicesItem from './pages/ServicesItem'
- 
+
+ import Location from './pages/Location'
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -35,6 +37,8 @@ function App() {
         <Route path="/products/:id" element={<ProductsItem />} />
         
         <Route path="/services/:id" element={<ServicesItem />} />
+
+        <Route path="/location/:id/:id" element={<Location />} />
 
       </Routes>
 

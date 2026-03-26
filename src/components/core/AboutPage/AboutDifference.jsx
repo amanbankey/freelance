@@ -19,7 +19,7 @@ const AboutDifference = () => {
  
     {/* Top Description Text */}
     <p className="text-center text-gray-500 text-sm sm:text-xl max-w-2xl mb-10 leading-relaxed">
-      At JSW, we believe in creating long-term value and believe what's good for the
+      At BB Engineers, we believe in creating long-term value and believe what's good for the
       planet is good for the business.
     </p>
 

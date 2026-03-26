@@ -40,7 +40,8 @@ const Ourteam = () => {
   }
 
   return (
-    <section className="w-full overflow-hidden">
+    <div className='bg-gray-100'>  
+       <section className="w-full overflow-hidden max-w-7xl mx-auto ">
 
       {/* ── Dark top header ── */}
       <div className="bg-[#1a2640] w-full pt-16 pb-52 px-4 text-center z-20">
@@ -52,7 +53,7 @@ const Ourteam = () => {
         </h2>
         <div className="w-12 h-1 bg-[#1D75BC] rounded-full mx-auto mb-6" />
         <p className="text-gray-400 text-base max-w-xl mx-auto leading-relaxed">
-          B B Engineers has 10+ years of experience with providing wide area of specialty services
+          BB Engineers has 10+ years of experience with providing wide area of specialty services
           works listed below.
         </p>
       </div>
@@ -93,7 +94,8 @@ const Ourteam = () => {
         </div>
       </div>
 
-    </section>
+    </section></div>
+  
   )
 }
 

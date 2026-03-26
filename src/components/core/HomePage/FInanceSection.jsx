@@ -7,21 +7,21 @@ import printer from '../../../assets/Images/printer.png'
 import unified from '../../../assets/videos/unified.mp4'
 import press from '../../../assets/Images/press.png'
 import single from '../../../assets/Images/single.png'
+import construct from '../../../assets/Images/construct.jpg'
+
+
 
 const CARD_DEFS = [
   { id: "cg",  fx: -340, fy: -250, fr: -22, fs: 0.65 }, // top-left
   { id: "cb",  fx:  340, fy: -250, fr:  22, fs: 0.65 }, // top-right
 
 
-
   { id: "cp",  fx: -310, fy:  270, fr: -16, fs: 0.65 }, // bottom-left
   { id: "cph", fx:  310, fy:  270, fr:  16, fs: 0.65 }, // bottom-right
 
 
-  // press  — seedha LEFT se aata hai, center mein upar land karta hai
   { id: "afd", fx: -700, fy: 0, fr: 0, fs: 0.65 },
  
-  // single — seedha RIGHT se aata hai, center mein niche land karta hai
   { id: "fdf", fx:  700, fy: 0, fr: 0, fs: 0.65 },
 
 ];
@@ -48,7 +48,7 @@ export default function FinanceSection() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const t = easeInOut(Math.max(0, Math.min(1, (progress - 0.05) / 0.38)));
+  const t = easeInOut(Math.max(0, Math.min(1, (progress - 0.05) / 0.38))); //0.38
 
   const getStyle = (def, extraStyle = {}) => ({
     position: "absolute",
@@ -71,9 +71,10 @@ export default function FinanceSection() {
             loop
             muted
             playsInline
-          /> */}
-   
+          />
+   {/* 400vh */}
       <div ref={sectionRef} style={{ height: "400vh" }} className="relative">
+
         <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
 
           <h2
@@ -96,47 +97,47 @@ export default function FinanceSection() {
 
               <div
                 style={getStyle(CARD_DEFS[0], { top: 0, left: 0, zIndex: 13 })}
-                className="w-48 h-44 rounded-3xl p-4 bg-[#2ed283] shadow-2xl"
+                className="w-48 h-52 rounded-3xl p-4 shadow-2xl"
               >
-               <img src={printer} className="h-36"/>
+               <img src={printer} className="h-44 "/>
               </div>
 
               <div
                 style={getStyle(CARD_DEFS[1], { top: 10, right: 0, zIndex: 11 })}
-                className="w-48 h-44 rounded-3xl p-4 bg-white border-[3px] border-[#5aacff] shadow-2xl"
+                className="w-48 h-44 rounded-3xl   border-[3px] border-[#5aacff] shadow-2xl"
               >
-                <img src={fixture} className="h-36" />
+                <img src={construct} className="h-44 rounded-3xl" />
               
               </div>
 
               <div
                 style={getStyle(CARD_DEFS[2], { top: 10, left: 30, zIndex: 15 })}
-                className="w-48 h-44 rounded-3xl p-4 bg-[#ffe6f4] shadow-2xl text-center"
+                className="w-48 h-52 rounded-3xl p-4  shadow-2xl text-center"
               >
-                 <img src={pipe} />
+                 <img src={pipe} className="h-44 rounded-3xl" />
                
               </div>
 
               <div
                 style={getStyle(CARD_DEFS[3], { top: -5, right: -5, zIndex: 9 })}
-                className="w-48 h-44 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br from-amber-400 to-orange-500 flex flex-col items-center justify-center"
+                className="w-48 h-52 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br  flex flex-col items-center justify-center"
               >
-                 <img src={sheet} />
+                 <img src={sheet} className="h-44 rounded-3xl"/>
               </div>
 
                 
               <div
                 style={getStyle(CARD_DEFS[4], { top: -10, left: 10, zIndex: 9 })}
-                className="w-52 h-44 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br from-amber-400 to-orange-500 flex flex-col items-center justify-center"
+                className="w-52 h-52 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br  flex flex-col items-center justify-center"
               >
-                 <img src={press} />
+                 <img src={press} className="h-44 w-44 rounded-3xl"/>
               </div>
 
               <div
                 style={getStyle(CARD_DEFS[5], { top: -10, right: 5, zIndex: 9 })}
-                className="w-52 h-44 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br from-amber-400 to-orange-500 flex flex-col items-center justify-center"
+                className="w-52 h-52 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br  flex flex-col items-center justify-center"
               >
-                 <img src={single} />
+                 <img src={single} className="h-full w-full rounded-3xl"/>
               </div>
 
             </div>

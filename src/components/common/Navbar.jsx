@@ -339,7 +339,8 @@
 
 import { useState, useRef, useCallback } from "react";
 import { NavLink } from "react-router-dom";
-
+import { HiMenuAlt3 } from "react-icons/hi";
+import img from '../../assets/Images/fixture.png'
 
 // ── Tesla Logo SVG ────────────────────────────────────────────────────────────
 const TeslaLogo = () => (
@@ -450,46 +451,15 @@ const FSDIllustration = () => (
 );
 
 const NAV_DATA = {
-  // Home: {
-  //   grid: [
-  //     { name: "Model S",    sub: ["Learn","Order"], el: <CarIllustration color="#b0b0b0" /> },
-  //     { name: "Model 3",    sub: ["Learn","Order"], el: <CarIllustration color="#b22222" /> },
-  //     { name: "Model Y",    sub: ["Learn","Order"], el: <CarIllustration color="#666"    /> },
-  //     { name: "Model X",    sub: ["Learn","Order"], el: <CarIllustration color="#4682b4" /> },
-  //     { name: "Cybertruck", sub: ["Learn","Order"], el: <CybertruckIllustration /> },
-  //     { name: "Inventory",  sub: ["New","Pre-Owned"],
-  //       el: (
-  //         <svg viewBox="0 0 200 120" className="w-full h-full">
-  //           <rect x="10" y="15" width="82" height="50" rx="5" fill="#ddd" />
-  //           <rect x="108" y="15" width="82" height="50" rx="5" fill="#ccc" />
-  //           <rect x="10" y="72" width="82" height="38" rx="5" fill="#e0e0e0" />
-  //           <rect x="108" y="72" width="82" height="38" rx="5" fill="#d5d5d5" />
-  //           <text x="51" y="46" textAnchor="middle" fontSize="10" fill="#666">New</text>
-  //           <text x="149" y="46" textAnchor="middle" fontSize="10" fill="#666">Pre-Owned</text>
-  //         </svg>
-  //       ),
-  //     },
-  //     { name: "Full Self-Driving (Supervised)", sub: ["Learn","Experience"], el: <FSDIllustration /> },
-  //   ],
-  //   sidebar: ["Current Offers","Demo Drive","Trade-In","Vehicle Safety Report","Pre-Owned","Trip Planner","Features","Help Me Choose","Compare","Safety","Fleet","Semi","Roadster","Robotaxi"],
-  // },
-  // About: {
-  //   grid: [
-  //     { name: "Solar Panels", sub: ["Learn","Order"],   el: <EnergyIllustration type="solar" />     },
-  //     { name: "Solar Roof",   sub: ["Learn","Order"],   el: <EnergyIllustration type="roof" />      },
-  //     { name: "Powerwall",    sub: ["Learn","Order"],   el: <EnergyIllustration type="powerwall" /> },
-  //     { name: "Megapack",     sub: ["Learn"],           el: <EnergyIllustration type="mega" />      },
-  //   ],
-  //   sidebar: ["Solar Incentives","Why Solar","Certified Installer","Schedule Consultation","Partner with Tesla"],
-  // },
+
   Products: {
     title: "Products",
     grid: [
-      { name: "Charging",                    sub: ["Learn"],          el: <ChargingIllustration type="plug" />          },
-      { name: "Home Charging",               sub: ["Learn","Shop"],   el: <ChargingIllustration type="home" />          },
-      { name: "Supercharging",               sub: ["Learn","Find"],   el: <ChargingIllustration type="supercharger" />  },
-      { name: "Wall Connector for Business", sub: ["Learn","Order"],  el: <ChargingIllustration type="wall" />          },
-      { name: "Supercharger for Business",   sub: ["Learn","Order"],  el: <ChargingIllustration type="supercharger" />  },
+      { name: "Sheet Metal Components",    img: ''   ,           sub: ["Learn"],          el: <ChargingIllustration type="plug" />          },
+      { name: "Pipe Bending Components",   img: ''   ,         sub: ["Learn","Shop"],   el: <ChargingIllustration type="home" />          },
+      { name: "Tooling And Fixture",       img: '',         sub: ["Learn","Find"],   el: <ChargingIllustration type="supercharger" />  },
+      { name: "Welding And Joining", img: '', sub: ["Learn","Order"],  el: <ChargingIllustration type="wall" />          },
+      { name: "Special Purpose Machines SPA", img: '',    sub: ["Learn","Order"],  el: <ChargingIllustration type="supercharger" />  },
     ],
     sidebar: ["Help Me Charge","Charging Calculator","Charging With NACS","Supercharger Voting","Host a Supercharger"],
     links: [{title: "Sheet Metal Components"}, {title: "Pipe Bending Components"} , {title: "Tooling And Fixture"}, {title: "Welding And Joining"} , {title: "Special Purpose Machines SPA"}]
@@ -497,23 +467,15 @@ const NAV_DATA = {
   Services: {
     title: "Services",
     grid: [
-      { name: "About Tesla",  sub: ["Learn"],       el: <svg viewBox="0 0 200 120" className="w-full h-full"><circle cx="100" cy="60" r="45" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="67" textAnchor="middle" fontSize="28">🚀</text></svg> },
-      { name: "Careers",      sub: ["View Jobs"],   el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="40" y="40" width="120" height="60" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="78" textAnchor="middle" fontSize="28">💼</text></svg> },
-      { name: "News",         sub: ["Read"],        el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="30" y="20" width="140" height="90" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="75" textAnchor="middle" fontSize="28">📰</text></svg> },
-      { name: "Events",       sub: ["See Events"],  el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="30" y="15" width="140" height="100" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="76" textAnchor="middle" fontSize="28">📅</text></svg> },
+      { name: "Design & Development",  sub: ["Learn"],       el: <svg viewBox="0 0 200 120" className="w-full h-full"><circle cx="100" cy="60" r="45" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="67" textAnchor="middle" fontSize="28">🚀</text></svg> },
+      { name: "Manufacturing",      sub: ["View Jobs"],   el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="40" y="40" width="120" height="60" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="78" textAnchor="middle" fontSize="28">💼</text></svg> },
+      { name: "Assemble and Integration",         sub: ["Read"],        el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="30" y="20" width="140" height="90" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="75" textAnchor="middle" fontSize="28">📰</text></svg> },
+      { name: "Quality Assurance",       sub: ["See Events"],  el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="30" y="15" width="140" height="100" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="76" textAnchor="middle" fontSize="28">📅</text></svg> },
     ],
     sidebar: ["Customer Stories","Blog","Investor Relations","Press","Contact"],
-    links: [{title: "Design & Development"}, {title: "Manufacturing"} , {title: "Assemble and Integration"} , {title: "Quality Assurance"}]
+    links: [{title: ""}, {title: ""} , {title: ""} , {title: ""}]
   },
-  // Contact: {
-  //   grid: [
-  //     { name: "Accessories",          sub: ["Shop"], el: <svg viewBox="0 0 200 120" className="w-full h-full"><text x="100" y="72" textAnchor="middle" fontSize="52">🛒</text></svg> },
-  //     { name: "Charging Accessories", sub: ["Shop"], el: <svg viewBox="0 0 200 120" className="w-full h-full"><text x="100" y="72" textAnchor="middle" fontSize="52">🔌</text></svg> },
-  //     { name: "Apparel",              sub: ["Shop"], el: <svg viewBox="0 0 200 120" className="w-full h-full"><text x="100" y="72" textAnchor="middle" fontSize="52">👕</text></svg> },
-  //     { name: "Lifestyle",            sub: ["Shop"], el: <svg viewBox="0 0 200 120" className="w-full h-full"><text x="100" y="72" textAnchor="middle" fontSize="52">✨</text></svg> },
-  //   ],
-  //   sidebar: ["Gift Cards","Tesla Account","Refer and Earn"],
-  // },
+
 };
 
 
@@ -553,32 +515,39 @@ export default function Navbar() {
 
   const data = activeMenu ? NAV_DATA[activeMenu] : null;
   console.log("data", data,  )
+  
   return (
-    <div className="  fixed top-0 bg-transparent  left-0 w-full z-[1000] ">
-
+    <div className=""> 
+    <div className=" fixed  top-4  left-0 w-full z-[1000]  "> 
+    
       <nav
-        className="sticky top-0  z-50 bg-white/95 backdrop-blur-sm shadow-[0_1px_0_rgba(0,0,0,0.08)] rounded-lg "
+        className=" max-w-7xl  z-50 bg-white/50 = backdrop-blur-lg   rounded-2xl mx-auto"
         onMouseLeave={closeMenu}
       >
         <div className="flex items-center justify-between px-6 h-[65px] max-w-screen-2xl mx-auto">
 
-      
-          <NavLink to='/' className="flex-shrink-0 text-black hover:opacity-75 transition-opacity duration-200">
+          <NavLink to='/' className="flex-shrink-0 text-black  duration-200">
           <img
                 src="https://bbengineers.co.in/image/new_logo.png"
                 alt="BB Engineers logo"
                 className="h-10 w-auto object-contain"
               />
           </NavLink>
+          
+          <div className=" flex items-center gap-3  ">
+             <span className="  py-1 transition">
+                <NavLink to='/' className="font-medium text-gray-800  hover:rounded-2xl hover:text-black">
+                  Home
+                </NavLink>
+              </span>
+            <span className="  py-1 transition"> 
+              <NavLink to='/about'  className=' font-medium text-gray-800 hover:text-black'> About </NavLink>
+            </span>
+            
 
-         
-          <div className="flex items-center gap-3">
-            <NavLink to='/' className=' font-medium text-gray-800 hover:text-black'> Home </NavLink>
-            <NavLink to='/about'  className=' font-medium text-gray-800 hover:text-black'> About </NavLink>
-            <NavLink to='/contact' className=' font-medium text-gray-800 hover:text-black'>  Contact  </NavLink>
             {Object.keys(NAV_DATA).map((key, i) => {
               const isActive = activeMenu === key;
-              console.log("dd", key, data )
+              // console.log("d-------------", key,  )
               return (
                 <button
                   key={key}
@@ -602,12 +571,18 @@ export default function Navbar() {
                 </button>
               );
             })}
+            <span className="  py-1 transition hover:bg-gray-100 px-2 rounded-lg"> 
+              <NavLink to='/contact' className=' font-medium text-gray-800 hover:text-black'>
+                 Contact 
+                 </NavLink>
+            </span>
+
           </div>
 
           {/* Right side */}
           <div className="flex items-center gap-1">
             {/* Search */}
-            <div className="flex items-center">
+            <div className="flex items-center ">
               <div
                 className={[
                   "overflow-hidden transition-all duration-400 ease-in-out",
@@ -619,10 +594,11 @@ export default function Navbar() {
                   type="text"
                   value={searchVal}
                   onChange={e => setSearchVal(e.target.value)}
-                  placeholder="Search Tesla..."
-                  className="w-44 border-b border-gray-400 outline-none text-[13px] px-1 py-0.5 bg-transparent text-gray-800 placeholder-gray-400"
+                  placeholder="Search ..."
+                  className="w-44 border-b placeholder-black  border-black outline-none text-[13px] px-1 py-0.5 bg-transparent text-gray-800 "
                 />
               </div>
+              <div className="gap-3 flex items-center"> 
               <button
                 onClick={() => { setSearchOpen(s => !s); setActiveMenu(null); if (searchOpen) setSearchVal(""); }}
                 className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-150"
@@ -632,6 +608,13 @@ export default function Navbar() {
                   : <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path strokeLinecap="round" d="M21 21l-4.35-4.35"/></svg>
                 }
               </button>
+              <NavLink to="/contact#contact-form" >
+                 <button className="uppercase border-2 border-black px-2 py-2 rounded-lg text-xs">
+                Request quote 
+              </button>
+              </NavLink>
+             
+              </div>
             </div>
           </div>
         </div>
@@ -640,7 +623,7 @@ export default function Navbar() {
           onMouseEnter={cancelClose}
           onMouseLeave={closeMenu}
           className={[
-            "absolute left-0 right-0 bg-white border-t border-gray-100 shadow-xl overflow-hidden z-40",
+            "absolute left-0 right-0 bg-white border-t border-gray-100 shadow-xl overflow-hidden z-40 ",
             "transition-all duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)]",
             activeMenu && menuVisible
               ? "max-h-[520px] opacity-100 translate-y-0"
@@ -658,36 +641,8 @@ export default function Navbar() {
                     data.grid.length <= 4 ? "grid-cols-4" : "grid-cols-4",
                   ].join(" ")}
                 >
-                   {data.title === "Products" && data.links.map((item,i) => (
-                    <div key={i}> 
-                      <div className="border border-gray-400 rounded-md">
-                          <div>
-                             <span> <NavLink to={`/products/${encodeURIComponent(item.title)}`} state={item}
-                              className='block text-gray-700 hover:text-blue-600 text-center  hover:bg-gray-100  py-2 rounded-md 
-                             transition'>
-                               {item.title}</NavLink>
-                              </span>
-                          </div>
-                      </div>
-                    
-                      </div>
-                   ))}
-
-                 {data.title === "Services" && data.links.map((item,i) => (
-                    <div key={i}> 
-                      <div className="border border-gray-400 rounded-md">
-                          <div>
-                             <span> <NavLink to={`/services/${encodeURIComponent(item.title)}`} state={item}
-                              className='block text-gray-700 hover:text-blue-600 text-center  hover:bg-gray-100  py-2 rounded-md 
-                             transition'>
-                               {item.title}</NavLink>
-                              </span>
-                          </div>
-                      </div>
-                    
-                      </div>
-                   ))}
-                  {/* {data.grid.map((item, i) => (
+                  
+                  {data.grid.map((item, i) => (
                     <div
                       key={item.name}
                       className="group cursor-pointer"
@@ -697,9 +652,22 @@ export default function Navbar() {
                         transform: menuVisible ? "translateY(0)" : "translateY(10px)",
                       }}
                     >
-                      <div className="w-full h-28 bg-gray-50 rounded-md overflow-hidden flex items-center justify-center border border-gray-100 mb-2 transition-all duration-250 group-hover:border-gray-300 group-hover:shadow-sm">
+                      <div className="w-full h-28 bg-gray-50 rounded-md overflow-hidden flex items-center justify-center  mb-2 transition-all duration-250 group-hover:border-gray-300 group-hover:shadow-sm">
+                        
+                      <NavLink to={`/${data?.title?.toLowerCase().replace(/\s+/g, '-')}/${encodeURIComponent(item.name)}`} state={{
+                                                                                                                                name: item.name,
+                                                                                                                                img: item.img
+                                                                                                                              }}
+                              className='block text-gray-700  text-center  hover:bg-gray-100  py-2 rounded-md 
+                             transition'>
+                          {/* <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Grid-Current-Offers.jpg"/> */}
+                          <img src={img} />
+                      </NavLink>  
+                     
                       </div>
                       <p className="text-[13px] font-semibold text-gray-900 text-center leading-tight mb-1 transition-colors duration-150 group-hover:text-black">
+                       {item.name}
+                      
                       </p>
                       <div className="flex items-center justify-center gap-3">
                         {item.sub.map((lnk, j) => (
@@ -712,7 +680,7 @@ export default function Navbar() {
                         ))}
                       </div>
                     </div>
-                  ))} */}
+                  ))}
                   
                 </div>
               </div>
@@ -737,7 +705,6 @@ export default function Navbar() {
                   ))}
                 </ul>
               </div>
-
             </div>
           )}
         </div>
@@ -747,7 +714,7 @@ export default function Navbar() {
       <div
         onClick={() => { setMenuVisible(false); setTimeout(() => setActiveMenu(null), 350); }}
         className={[
-          "fixed inset-0 top-[52px] bg-black/15 z-30 transition-opacity duration-350",
+          "fixed  top-[52px] bg-black/15 z-30 transition-opacity duration-350",
           activeMenu && menuVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
         ].join(" ")}
       />
@@ -759,5 +726,7 @@ export default function Navbar() {
       
       {/* </div> */}
     </div>
+
+    </div> 
   );
 }

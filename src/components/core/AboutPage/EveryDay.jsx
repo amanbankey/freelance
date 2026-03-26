@@ -45,10 +45,8 @@ const EveryDay = () => {
               #BETTER EVERYDAY
             </h1>
             <p className="max-w-2xl text-base sm:text-lg text-gray-700 leading-relaxed">
-              Every stride toward growth creates ripples of progress. From empowering our
-              people and supporting athletes to embracing sustainability, we are committed to
-              shaping a stronger India. Our promise to better ourselves means a better future
-              for employees, communities, and industries everywhere.
+            To provide precision-engineered solutions in sheet metal, pipe bending, and tooling by upholding the highest standards of quality, fostering innovation, delivering on time and building lasting value for our customers and stakeholders.
+
             </p>
           </div>
         </div>
