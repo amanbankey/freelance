@@ -13,7 +13,12 @@ import Home from './pages/Home'
 import Navbar from './components/common/Navbar'
 import Footer from './components/common/Footer'
 import Products from './pages/Products'
- 
+import ProductsItem from './pages/ProductsItem'
+ import ServicesItem from './pages/ServicesItem'
+
+ import Location from './pages/Location'
+import Leadership from './pages/Leadership'
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -28,8 +33,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/leadership" element={<Leadership />} />
         <Route path="/services" element={<Services />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/products/:id" element={<ProductsItem />} />
+        
+        <Route path="/services/:id" element={<ServicesItem />} />
+       
+        <Route path="/location/:id/:id" element={<Location />} />
 
       </Routes>
 

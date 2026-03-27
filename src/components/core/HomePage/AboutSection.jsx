@@ -1,6 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react'
 
 import about from '../../../assets/videos/about.mp4'
+import { NavLink } from 'react-router-dom'
 
 const INTERVAL = 5000
 
@@ -58,7 +59,7 @@ const AboutSection = () => {
     <div>
        
        <div>
-      <section className="transparent relative z-50 left-0">
+      <section className="transparent relative z-50 left-0 ">
         {/* Background container */}
         <div className="relative h-80vh max-w-screen overflow-hidden">
  
@@ -73,20 +74,20 @@ const AboutSection = () => {
             playsInline
           />
  
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/40" />
+      
+          <div className="absolute inset-0 bg-gradient-to-b   max-w-7xl mx-auto " />
  
-          {/* Foreground content — fades in/out */}
           <div
             className={[
-              'relative z-10 flex flex-col justify-center min-h-screen px-4 md:px-8 lg:px-16',
+              'relative z-10 flex flex-col justify-center min-h-screen  max-w-7xl mx-auto',
               'transition-all duration-300 ease-in-out',
               textVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-3',
             ].join(' ')}
           >
-            <div className="max-w-3xl">
+            <div className='max-w-7xl w-full mx-auto  '> 
+               <div className="max-w-3xl   ">
  
               {/* Heading */}
               <span className='text-white'> {slide.title}</span>
@@ -106,12 +107,17 @@ const AboutSection = () => {
  
               {/* Button */}
               <div className="mb-16 md:mb-20 lg:mb-24">
-                <button className="text-white px-5 py-2 bg-[#1D75BC] rounded-lg">
+                <NavLink to='/about'> 
+                 <button className="text-white px-5 py-2 bg-[#1D75BC] rounded-lg">
                   {slide.button}
                 </button>
+                </NavLink>
+               
               </div>
  
-            </div>
+             </div>
+           </div>
+          
           </div>
  
           {/* Bottom section — untouched */}

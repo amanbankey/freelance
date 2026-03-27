@@ -7,6 +7,9 @@ import printer from '../../../assets/Images/printer.png'
 import unified from '../../../assets/videos/unified.mp4'
 import press from '../../../assets/Images/press.png'
 import single from '../../../assets/Images/single.png'
+import construct from '../../../assets/Images/construct.jpg'
+import corousal from '../../../assets/Images/corousal.jpg'
+
 
 const CARD_DEFS = [
   { id: "cg",  fx: -340, fy: -250, fr: -22, fs: 0.65 }, // top-left
@@ -17,12 +20,19 @@ const CARD_DEFS = [
   { id: "cph", fx:  310, fy:  270, fr:  16, fs: 0.65 }, // bottom-right
 
 
-  // press  — seedha LEFT se aata hai, center mein upar land karta hai
   { id: "afd", fx: -700, fy: 0, fr: 0, fs: 0.65 },
  
-  // single — seedha RIGHT se aata hai, center mein niche land karta hai
   { id: "fdf", fx:  700, fy: 0, fr: 0, fs: 0.65 },
 
+];
+
+const PRODUCTS = [
+  { img: printer, label: "3D Printers",    bg: "#2ed283" },
+  { img: construct, label: "Construction", bg: "#5aacff" },
+  { img: pipe,    label: "Pipe Systems",   bg: "#ffe6f4" },
+  { img: sheet,   label: "Sheet Metal",    bg: "#fbbf24" },
+  { img: press,   label: "Press Machines", bg: "#f97316" },
+  { img: single,  label: "Single Units",   bg: "#a78bfa" },
 ];
 
 function lerp(a, b, t) { return a + (b - a) * t; }
@@ -47,7 +57,7 @@ export default function FinanceSection() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const t = easeInOut(Math.max(0, Math.min(1, (progress - 0.05) / 0.38)));
+  const t = easeInOut(Math.max(0, Math.min(1, (progress - 0.05) / 0.38))); //0.38
 
   const getStyle = (def, extraStyle = {}) => ({
     position: "absolute",
@@ -60,9 +70,9 @@ export default function FinanceSection() {
   const textOpacity = Math.max(0, 1 - t * 1.4);
 
   return (
-    <div className="bg-white min-h-screen font-sans">
+    <div className="bg-white min-h-screen font-sans bg" style={{backgroundImage: `url(${corousal})`}} >
 
-         <video
+         {/* <video
             ref={videoRef}
             className="absolute top-0 left-0 w-full object-cover"
             src={unified}
@@ -71,15 +81,18 @@ export default function FinanceSection() {
             muted
             playsInline
           />
-   
-      <div ref={sectionRef} style={{ height: "400vh" }} className="relative">
+   {/* 400vh */}
+
+
+      <div ref={sectionRef} style={{ height: "150vh" }} className="relative">
+
         <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
 
           <h2
             className="absolute text-7xl md:text-8xl font-black text-blue-600 text-center leading-tight pointer-events-none select-none"
             style={{
               opacity: textOpacity,
-              transition: "opacity 0.4s ease",
+              transition: "opacity 0.7s ease",
               zIndex: 1,
             }}
           >
@@ -95,47 +108,65 @@ export default function FinanceSection() {
 
               <div
                 style={getStyle(CARD_DEFS[0], { top: 0, left: 0, zIndex: 13 })}
-                className="w-52 h-44 rounded-3xl   shadow-2xl"
+//                 className="w-52 h-44 rounded-3xl   shadow-2xl"
+//               >
+//                <img src={printer} className="w-52 h-44"/>
+                className="w-48 h-52 rounded-3xl p-4 shadow-2xl"
               >
-               <img src={printer} className="w-52 h-44"/>
+               <img src={printer} className="h-44 "/>
               </div>
 
               <div
                 style={getStyle(CARD_DEFS[1], { top: 10, right: 0, zIndex: 11 })}
-                className="w-52 h-44 rounded-3xl   shadow-2xl"
+              //   className="w-52 h-44 rounded-3xl   shadow-2xl"
+              // >
+              //   <img src={fixture} className="w-52 h-44" />
+                className="w-48 h-44 rounded-3xl   border-[3px] border-[#5aacff] shadow-2xl"
               >
-                <img src={fixture} className="w-52 h-44" />
+                <img src={construct} className="h-44 rounded-3xl" />
               
               </div>
 
               <div
                 style={getStyle(CARD_DEFS[2], { top: 10, left: 30, zIndex: 15 })}
-                className="w-52 h-44 rounded-3xl   shadow-2xl text-center"
+              //   className="w-52 h-44 rounded-3xl   shadow-2xl text-center"
+              // >
+              //    <img src={pipe} className="w-52 h-44" />
+                className="w-48 h-52 rounded-3xl p-4  shadow-2xl text-center"
               >
-                 <img src={pipe} className="w-52 h-44" />
+                 <img src={pipe} className="h-44 rounded-3xl" />
                
               </div>
 
               <div
                 style={getStyle(CARD_DEFS[3], { top: -5, right: -5, zIndex: 9 })}
-                className="w-52 h-44 rounded-3xl shadow-2xl overflow-hidden  flex flex-col items-center justify-center"
+              //   className="w-52 h-44 rounded-3xl shadow-2xl overflow-hidden  flex flex-col items-center justify-center"
+              // >
+              //    <img src={sheet} className="w-52 h-44"/>
+                className="w-48 h-52 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br  flex flex-col items-center justify-center"
               >
-                 <img src={sheet} className="w-52 h-44"/>
+                 <img src={sheet} className="h-44 rounded-3xl"/>
               </div>
 
                 
               <div
                 style={getStyle(CARD_DEFS[4], { top: -10, left: 10, zIndex: 9 })}
-                className="w-52 h-44 rounded-3xl shadow-2xl overflow-hidden  flex flex-col items-center justify-center"
+              //   className="w-52 h-44 rounded-3xl shadow-2xl overflow-hidden  flex flex-col items-center justify-center"
+              // >
+              //    <img src={press} className="w-52 h-44"/>
+                className="w-52 h-52 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br  flex flex-col items-center justify-center"
               >
-                 <img src={press} className="w-52 h-44"/>
+                 <img src={press} className="h-44 w-44 rounded-3xl"/>
               </div>
 
               <div
                 style={getStyle(CARD_DEFS[5], { top: -10, right: 5, zIndex: 9 })}
-                className="w-52 h-44 rounded-3xl shadow-2xl overflow-hidden  flex flex-col items-center justify-center"
+              //   className="w-52 h-44 rounded-3xl shadow-2xl overflow-hidden  flex flex-col items-center justify-center"
+              // >
+              //    <img src={single} className="w-52 h-44" />
+                className="w-52 h-52 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br  flex flex-col items-center justify-center"
               >
-                 <img src={single} className="w-52 h-44" />
+                 <img src={single} className="h-full w-full rounded-3xl"/>
               </div>
 
             </div>
@@ -147,16 +178,6 @@ export default function FinanceSection() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

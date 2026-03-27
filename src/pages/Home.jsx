@@ -5,7 +5,9 @@ import HiddenVideo from '../components/core/HomePage/HiddenVideo'
 import FInanceSection from '../components/core/HomePage/FInanceSection'
 import HeroSection from '../components/core/HomePage/HeroSection'
 import AboutSection from '../components/core/HomePage/AboutSection'
-import Ourteam from '../components/core/HomePage/Ourteam'
+import ScopePromise from '../components/core/HomePage/ScopePromise'
+import ManagementStrategies from '../components/core/HomePage/ManagementStrategies'
+
 const Home = () => {
     
   return (    
@@ -14,12 +16,17 @@ const Home = () => {
 
      <HeroSection />
      <AboutSection />
+
+       <ScopePromise />
+       
+       <ManagementStrategies />
+
        <MapSection/>
       <FInanceSection />
     
       <HiddenVideo />
       <CardSection />
-      < Ourteam />
+    
  
   </div>
  
