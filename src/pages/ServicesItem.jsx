@@ -1,6 +1,10 @@
 import React from 'react'
 import img from '../assets/Images/about.jpg'
 
+import { useParams } from "react-router-dom";
+// import Products from "../assets/Images/products.jpg";
+import { useLocation } from "react-router-dom";
+
 const Services = [
     "Deep Groove Ball Bearings",
     "Taper Roller Bearings",
@@ -15,6 +19,14 @@ const Services = [
   ];
 
 const ServicesItem = () => {
+
+  const location = useLocation();
+  const { id } = useParams();
+
+  const services = location.state;
+  const title = decodeURIComponent(id);
+
+  console.log("dat----------a", services);
 
   return (
     <div> 
@@ -84,14 +96,7 @@ const ServicesItem = () => {
           mb-5 sm:mb-6 md:mb-7
         "
           >
-            The Bearings division has the capability to design, develop,
-            manufacture, test and validate (R&amp;D) bearings to cater to OEM's
-            of Two wheelers, Three wheelers, Four wheelers (CAR's), Commercial
-            vehicles, Tractors, Tillers, Rotovators, pumps, motors, conveyors
-            and other engineering applications etc., A widespread network of
-            authorized stockists, retailers and consignment agents are spread
-            all over the country to provide  Bearings to individual end
-            users and OEMs.
+           {services.para}
           </p>
 
           {/* ── "The product range includes –" ── */}
@@ -105,14 +110,13 @@ const ServicesItem = () => {
             The product range includes –
           </p>
 
-          {/* ── Bullet list ── */}
           <ul className="space-y-2 sm:space-y-2.5 pl-1">
-            {Services.map((item, i) => (
+            {services.details.map((item, i) => (
               <li key={i} className="flex items-start gap-3 sm:gap-3.5">
                 {/* Bullet dot exactly like screenshot */}
                 <span className="mt-[7px] sm:mt-[8px] flex-shrink-0 w-[6px] h-[6px] rounded-full bg-gray-600" />
                 <span className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                  {item}
+                  {item.data}
                 </span>
               </li>
             ))}
