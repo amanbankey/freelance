@@ -13,7 +13,6 @@ const CARD_DEFS = [
   { id: "cb",  fx:  340, fy: -250, fr:  22, fs: 0.65 }, // top-right
 
 
-
   { id: "cp",  fx: -310, fy:  270, fr: -16, fs: 0.65 }, // bottom-left
   { id: "cph", fx:  310, fy:  270, fr:  16, fs: 0.65 }, // bottom-right
 
@@ -96,47 +95,47 @@ export default function FinanceSection() {
 
               <div
                 style={getStyle(CARD_DEFS[0], { top: 0, left: 0, zIndex: 13 })}
-                className="w-48 h-44 rounded-3xl p-4 bg-[#2ed283] shadow-2xl"
+                className="w-52 h-44 rounded-3xl   shadow-2xl"
               >
-               <img src={printer} className="h-36"/>
+               <img src={printer} className="w-52 h-44"/>
               </div>
 
               <div
                 style={getStyle(CARD_DEFS[1], { top: 10, right: 0, zIndex: 11 })}
-                className="w-48 h-44 rounded-3xl p-4 bg-white border-[3px] border-[#5aacff] shadow-2xl"
+                className="w-52 h-44 rounded-3xl   shadow-2xl"
               >
-                <img src={fixture} className="h-36" />
+                <img src={fixture} className="w-52 h-44" />
               
               </div>
 
               <div
                 style={getStyle(CARD_DEFS[2], { top: 10, left: 30, zIndex: 15 })}
-                className="w-48 h-44 rounded-3xl p-4 bg-[#ffe6f4] shadow-2xl text-center"
+                className="w-52 h-44 rounded-3xl   shadow-2xl text-center"
               >
-                 <img src={pipe} />
+                 <img src={pipe} className="w-52 h-44" />
                
               </div>
 
               <div
                 style={getStyle(CARD_DEFS[3], { top: -5, right: -5, zIndex: 9 })}
-                className="w-48 h-44 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br from-amber-400 to-orange-500 flex flex-col items-center justify-center"
+                className="w-52 h-44 rounded-3xl shadow-2xl overflow-hidden  flex flex-col items-center justify-center"
               >
-                 <img src={sheet} />
+                 <img src={sheet} className="w-52 h-44"/>
               </div>
 
                 
               <div
                 style={getStyle(CARD_DEFS[4], { top: -10, left: 10, zIndex: 9 })}
-                className="w-52 h-44 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br from-amber-400 to-orange-500 flex flex-col items-center justify-center"
+                className="w-52 h-44 rounded-3xl shadow-2xl overflow-hidden  flex flex-col items-center justify-center"
               >
-                 <img src={press} />
+                 <img src={press} className="w-52 h-44"/>
               </div>
 
               <div
                 style={getStyle(CARD_DEFS[5], { top: -10, right: 5, zIndex: 9 })}
-                className="w-52 h-44 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br from-amber-400 to-orange-500 flex flex-col items-center justify-center"
+                className="w-52 h-44 rounded-3xl shadow-2xl overflow-hidden  flex flex-col items-center justify-center"
               >
-                 <img src={single} />
+                 <img src={single} className="w-52 h-44" />
               </div>
 
             </div>
@@ -148,3 +147,18 @@ export default function FinanceSection() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
