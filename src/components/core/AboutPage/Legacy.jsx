@@ -3,37 +3,22 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const slides = [
     {
-      label: "OUR LEGACY",
+      label: "OUR VISION",
       title: "ONE MAN'S DREAM",
-      name: "SHRI. O. P. JINDAL",
+      name: "Mr. Saroj Ranajn Parida CEO ",
       role: "FOUNDER AND VISIONARY, O. P. JINDAL GROUP",
-      description: "Turning one man's dream into India's leading business force.",
+      description: "To be a trusted partner delivering precision-engineered solutions for mobility, infrastructure and innovation — with a commitment to quality, reliability, and sustainable growth.",
       image: "https://picsum.photos/seed/portrait1/600/500",
     },
     {
-      label: "OUR VISION",
+      label: "OUR MISSION",
       title: "BUILDING A NATION",
-      name: "SHRI. O. P. JINDAL",
+      name: "Mr. P Rao   - Plant Head",
       role: "FOUNDER AND VISIONARY, O. P. JINDAL GROUP",
-      description: "Creating infrastructure that powers millions of lives across India.",
+      description: "To provide precision-engineered solutions in sheet metal, pipe bending, and tooling by upholding the highest standards of quality, fostering innovation, delivering on time and building lasting value for our customers and stakeholders.",
       image: "https://picsum.photos/seed/portrait2/600/500",
     },
-    {
-      label: "OUR MISSION",
-      title: "STEEL OF INDIA",
-      name: "SHRI. O. P. JINDAL",
-      role: "FOUNDER AND VISIONARY, O. P. JINDAL GROUP",
-      description: "Forging the backbone of India's industrial revolution with steel and determination.",
-      image: "https://picsum.photos/seed/portrait3/600/500",
-    },
-    {
-      label: "OUR VALUES",
-      title: "A LASTING LEGACY",
-      name: "SHRI. O. P. JINDAL",
-      role: "FOUNDER AND VISIONARY, O. P. JINDAL GROUP",
-      description: "Leaving behind a legacy of integrity, growth, and service to the nation.",
-      image: "https://picsum.photos/seed/portrait4/600/500",
-    },
+ 
   ];
 
 const Legacy = () => {
@@ -68,7 +53,7 @@ const Legacy = () => {
       {/* ── LEFT Arrow ── */}
       <button
         onClick={prevSlide}
-        className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 bg-gray-800 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-gray-100 transition"
+        className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 bg-gray-800 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-gray-700 transition"
       >
         <FiChevronLeft size={20} className="text-white" />
       </button>
@@ -102,7 +87,7 @@ const Legacy = () => {
             {slide.name}
           </p>
           <p className="text-gray-800 text-xs font-bold tracking-wide uppercase mb-6">
-            {slide.role}
+            {/* {slide.role} */}
           </p>
  
           {/* Description */}
@@ -110,10 +95,6 @@ const Legacy = () => {
             {slide.description}
           </p>
  
-          {/* Read More Button */}
-          <button className="bg-blue-400 hover:bg-blue-500 text-white text-xs font-bold tracking-widest uppercase px-8 py-3 transition-colors duration-200">
-            READ MORE
-          </button>
  
         </div>
  

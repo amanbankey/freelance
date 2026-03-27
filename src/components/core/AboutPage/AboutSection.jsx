@@ -1,5 +1,11 @@
 import React from 'react'
 
+import innovation from '../../../assets/Images/innovation.jpg'
+import execution from '../../../assets/Images/execution.jpg'
+
+import productExe from '../../../assets/Images/productExe.jpg'
+import strategy from '../../../assets/Images/strategy.jpg'
+
 const AboutSection = () => {
   return (
     <div>
@@ -15,38 +21,59 @@ const AboutSection = () => {
 
         <div className="flex justify-center text-center mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32">
           <p className="max-w-[780px] text-[#4a4a4a] font-light leading-[1.55] text-[22px]  ">
-          To be a trusted partner delivering precision-engineered solutions for mobility, infrastructure and innovation — with a commitment to quality, reliability, and sustainable growth.
-
+          BB Engineers is a Press Component , Assy. & Roiling  
+            Solution Provider Organization for Automotive and Non Automotive 
+            Industries. Location :- Chakan Pune
           </p>
         </div>
 
-        <div className="mt-20 sm:mt-24 md:mt-28 lg:mt-32 xl:mt-36 grid grid-cols-1 md:grid-cols-3">
+        <div className="mt-20 sm:mt-24 md:mt-28 lg:mt-32 xl:mt-36 grid grid-cols-1 md:grid-cols-4">
           <div className="flex flex-col items-center justify-center text-center px-4 py-8 md:py-0">
-            <h2 className="text-[#111111] font-light leading-none text-[40px] ">
-              35.7 MTPA
-            </h2>
+            {/* <h2 className="text-[#111111] font-light leading-none text-[40px] ">
+            </h2> */}
+
+            <div> 
+               <img src={innovation} className='w-40'/>
+            </div>
             <p className="mt-3 text-[#2e2e2e] text-[16px]   leading-[1.4]">
-              Total Steel Capacity in India and the USA
+              {/* Total Steel Capacity in India and the USA */}
             </p>
           </div>
 
           <div className="flex flex-col items-center justify-center text-center px-4 py-8 md:py-0 md:border-l md:border-r border-[#d8d8d8]">
-            <h2 className="text-[#111111] font-light leading-none text-[40px]">
+            {/* <h2 className="text-[#111111] font-light leading-none text-[40px]">
               13.2 GW
-            </h2>
+            </h2> */}
+             <div> 
+               <img src={execution} className='w-40' />
+            </div>
             <p className="mt-3 text-[#2e2e2e] text-[16px]  leading-[1.4]">
-              Locked-in Power Generation Portfolio
+              {/* Locked-in Power Generation Portfolio */}
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center justify-center text-center px-4 py-8 md:py-0 md:border-l md:border-r border-[#d8d8d8]">
+            {/* <h2 className="text-[#111111] font-light leading-none text-[40px] ">
+              177 MTPA
+            </h2> */}
+             <div> 
+               <img src={productExe} className='w-40'/>
+            </div>
+            <p className="mt-3 text-[#2e2e2e] text-[16px]   leading-[1.4]">
+              {/* Installed Cargo Handling Capacity */}
             </p>
           </div>
 
           <div className="flex flex-col items-center justify-center text-center px-4 py-8 md:py-0">
-            <h2 className="text-[#111111] font-light leading-none text-[40px] ">
-              177 MTPA
-            </h2>
+           
+             <div> 
+               <img src={strategy}className='w-40' />
+            </div>
             <p className="mt-3 text-[#2e2e2e] text-[16px]   leading-[1.4]">
-              Installed Cargo Handling Capacity
+              {/* Installed Cargo Handling Capacity */}
             </p>
           </div>
+
         </div>
       </div>
     </section>

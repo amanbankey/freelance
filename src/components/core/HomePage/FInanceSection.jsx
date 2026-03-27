@@ -8,7 +8,7 @@ import unified from '../../../assets/videos/unified.mp4'
 import press from '../../../assets/Images/press.png'
 import single from '../../../assets/Images/single.png'
 import construct from '../../../assets/Images/construct.jpg'
-
+import corousal from '../../../assets/Images/corousal.jpg'
 
 
 const CARD_DEFS = [
@@ -24,6 +24,15 @@ const CARD_DEFS = [
  
   { id: "fdf", fx:  700, fy: 0, fr: 0, fs: 0.65 },
 
+];
+
+const PRODUCTS = [
+  { img: printer, label: "3D Printers",    bg: "#2ed283" },
+  { img: construct, label: "Construction", bg: "#5aacff" },
+  { img: pipe,    label: "Pipe Systems",   bg: "#ffe6f4" },
+  { img: sheet,   label: "Sheet Metal",    bg: "#fbbf24" },
+  { img: press,   label: "Press Machines", bg: "#f97316" },
+  { img: single,  label: "Single Units",   bg: "#a78bfa" },
 ];
 
 function lerp(a, b, t) { return a + (b - a) * t; }
@@ -61,7 +70,7 @@ export default function FinanceSection() {
   const textOpacity = Math.max(0, 1 - t * 1.4);
 
   return (
-    <div className="bg-white min-h-screen font-sans">
+    <div className="bg-white min-h-screen font-sans bg" style={{backgroundImage: `url(${corousal})`}} >
 
          {/* <video
             ref={videoRef}
@@ -73,7 +82,9 @@ export default function FinanceSection() {
             playsInline
           />
    {/* 400vh */}
-      <div ref={sectionRef} style={{ height: "400vh" }} className="relative">
+
+
+      <div ref={sectionRef} style={{ height: "150vh" }} className="relative">
 
         <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
 
@@ -81,7 +92,7 @@ export default function FinanceSection() {
             className="absolute text-7xl md:text-8xl font-black text-blue-600 text-center leading-tight pointer-events-none select-none"
             style={{
               opacity: textOpacity,
-              transition: "opacity 0.4s ease",
+              transition: "opacity 0.7s ease",
               zIndex: 1,
             }}
           >
@@ -149,3 +160,7 @@ export default function FinanceSection() {
     </div>
   );
 }
+
+
+
+

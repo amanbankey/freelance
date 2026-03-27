@@ -6,11 +6,11 @@ const ParagraphSection = () => {
     <div>
            <section className="w-full bg-[#eef2f6] py-16 px-4 sm:px-6 md:px-10 lg:px-20">
       
-      <div className="max-w-5xl mx-auto text-center">
+      <div className="max-w-3xl mx-auto text-center">
 
         {/* Main Heading */}
         <h2 className="text-blue-500 font-light leading-relaxed 
-          text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+          text-xl sm:text-2xl md:text-3xl  ">
           
           Continuous improvement in our product and service portfolio,
           along with success in value creating initiatives for customers,

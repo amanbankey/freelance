@@ -20,7 +20,7 @@ const Home = () => {
        <ScopePromise />
        
        <ManagementStrategies />
-       
+
        <MapSection/>
       <FInanceSection />
     

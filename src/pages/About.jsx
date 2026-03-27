@@ -17,8 +17,8 @@ const About = () => {
        <Legacy />
        <Leadership />
        <AboutDifference />
-       <InvestorSection />
-       < Ourteam />
+       {/* <InvestorSection /> */}
+       {/* < Ourteam /> */}
     </div>
   )
 }

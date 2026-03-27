@@ -194,32 +194,45 @@ const Contact = () => {
       <section >
          <div className="bg-white px-4 py-8 flex justify-center">
       <div
-        className="relative w-full max-w-5xl rounded-2xl overflow-hidden px-8 py-10"
+        className="relative w-full max-w-5xl rounded-2xl overflow-hidden px-8 py-10 border-2 border-black"
         style={{ background: "linear-gradient(135deg, #0a1f44 60%, #0e3a5c 100%)" }}
       >
-        {/* Background decorative wave image - replace with your own */}
+      
         <img
           src="https://picsum.photos/seed/wave/900/200"
           alt="background"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
  
-        {/* Content */}
-        <div className="relative z-10">
-          {/* Small label */}
-          <p className="text-white text-xs font-bold tracking-widest uppercase mb-2 flex gap-x-2">
+       
+        <div className="relative z-10 flex w-full max-w-7xl justify-evenly ">
+      
+        <div className="flex  justify-evenly gap-9 "> 
+         <div className="flex flex-col w-80  text-center">
+           <span className="text-white text-sm   font-normal  ">
+             PL-1 PAG/G-63/5 MIDC Kurli, Chakan Industrial Area Ph-3,    
+          </span>
+          <span className="text-white text-sm   font-normal   mb-4">
+         Taluka Khed, Pune - 410501,
+          </span>
+         </div>
+         
+         <div className="text-white text-xs font-bold tracking-widest uppercase mb-2 flex gap-x-2 ">
             <div className="text-base gap-x-3"><IoLocationOutline className="text-xl"/> </div> <div> BB Engineer Center</div>  
-          </p>
+          </div>
+
+         <div  className="flex flex-col w-80  text-center"> 
+          <span className="text-white text-sm   font-normal">
+          PL-2 Gat No. 51, Near Hotel Moi Grand, Nighoje Moi Road,
+          </span>
+          <span className="text-white text-sm   font-normal mb-4">
+          At .Moi, PO Kurli Tal. Khed Dist Pune-410501,
+          </span>
+         </div>
+         </div>
+        
  
-          {/* Big Heading */}
-          <h2 className="text-white text-sm   font-normal   mb-4">
-          PL-1 PAG/G-63/5 MIDC Kurli, Chakan Industrial Area Ph-3, Taluka Khed, Pune - 410501,
-          </h2>
-          <h2 className="text-white text-sm      mb-4">
-          PL-2 Gat No. 51, Near Hotel Moi Grand, Nighoje Moi Road, At .Moi, PO Kurli Tal. Khed Dist Pune-410501,
-          </h2>
- 
-          <div>
+          {/* <div>
             <div className="flex items-center gap-x-2"> 
               <div >
                  <span>
@@ -229,19 +242,16 @@ const Contact = () => {
 
               <div className="text-white "> <span className="space-x-2">+91-8956575693 </span> <span>+91-9096682903 </span></div>
 
-
-            
             </div>
            
-          </div>
+          </div> */}
          
-          <div
+          {/* <div
            
             className="border-b border-white  w-full text-xs font-bold tracking-widest uppercase hover:underline"
           >
 
-           
-          </div>
+          </div> */}
         </div>
       </div>
     </div> 

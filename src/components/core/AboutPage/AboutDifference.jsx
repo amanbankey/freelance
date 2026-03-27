@@ -1,13 +1,18 @@
 import React from 'react'
 import { FiPlus } from "react-icons/fi";
  
+import vikram from '../../../assets/Images/vikram.jpg'
+import suresh from '../../../assets/Images/suresh.jpg'
+import rohan from '../../../assets/Images/rohan.jpg'
+import anil from '../../../assets/Images/anil.jpg'
+
 // https://www.jsw.in/wp-content/uploads/2025/05/sajjan-jindal-profile-scaled.webp
 
 const images = {
-    topLeft: "https://picsum.photos/seed/factory/200/200",
-    topCenter: "https://picsum.photos/seed/tower/300/300",
-    topRight: "https://picsum.photos/seed/city/150/150",
-    bottomLeft: "https://picsum.photos/seed/nature/150/150",
+    topLeft: vikram,
+    topCenter: suresh,
+    topRight: rohan,
+    bottomLeft: anil,
     bottomCenter: "https://picsum.photos/seed/workers/250/300",
     
     bottomRight: "https://picsum.photos/seed/mining/200/200",
@@ -46,9 +51,9 @@ const AboutDifference = () => {
             className="w-full h-full object-cover"
           />
           {/* Plus icon on top right of image */}
-          <div className="absolute top-2 right-2 bg-blue-400 text-white rounded-full w-6 h-6 flex items-center justify-center">
+          {/* <div className="absolute top-2 right-2 bg-blue-400 text-white rounded-full w-6 h-6 flex items-center justify-center">
             <FiPlus size={14} />
-          </div>
+          </div> */}
         </div>
 
         {/* Top Right Image - small */}
@@ -59,9 +64,9 @@ const AboutDifference = () => {
             className="w-full h-full object-cover"
           />
           {/* Plus icon */}
-          <div className="absolute top-2 right-2 bg-blue-400 text-white rounded-full w-6 h-6 flex items-center justify-center">
+          {/* <div className="absolute top-2 right-2 bg-blue-400 text-white rounded-full w-6 h-6 flex items-center justify-center">
             <FiPlus size={14} />
-          </div>
+          </div> */}
         </div>
 
       </div>
@@ -71,7 +76,7 @@ const AboutDifference = () => {
         className="text-center text-3xl sm:text-4xl md:text-5xl font-bold tracking-widest my-6"
         style={{ color: "#29B6E8", fontFamily: "sans-serif" }}
       >
-        MAKING A DIFFERENCE
+        Meet Our Team
       </h2>
 
       {/* ── ROW 2: Three images on bottom ── */}
@@ -94,9 +99,9 @@ const AboutDifference = () => {
             className="w-full h-full object-cover "
           />
           {/* Plus icon */}
-          <div className="absolute top-2 right-2 bg-blue-400 text-white rounded-full w-6 h-6 flex items-center justify-center">
+          {/* <div className="absolute top-2 right-2 bg-blue-400 text-white rounded-full w-6 h-6 flex items-center justify-center">
             <FiPlus size={14} />
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Right Image - medium */}
@@ -107,9 +112,9 @@ const AboutDifference = () => {
             className="w-full h-full object-cover"
           />
           {/* Plus icon */}
-          <div className="absolute top-2 right-2 bg-blue-400 text-white rounded-full w-6 h-6 flex items-center justify-center">
+          {/* <div className="absolute top-2 right-2 bg-blue-400 text-white rounded-full w-6 h-6 flex items-center justify-center">
             <FiPlus size={14} />
-          </div>
+          </div> */}
         </div>
 
       </div>

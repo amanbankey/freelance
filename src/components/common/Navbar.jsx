@@ -340,7 +340,14 @@
 import { useState, useRef, useCallback } from "react";
 import { NavLink } from "react-router-dom";
 import { HiMenuAlt3 } from "react-icons/hi";
-import img from '../../assets/Images/fixture.png'
+// import img from '../../assets/Images/fixture.png'
+import sheet from '../../assets/Images/sheet.jpg'
+import pipe from '../../assets/Images/pipe.jpg'
+import toolFixture from '../../assets/Images/toolFixture.jpg'
+import emboss from '../../assets/Images/embossSheet.jpg'
+
+import designDevelopment from '../../assets/Images/designDevelopment.jpg'
+import machineries from '../../assets/Images/mechineries.jpg'
 
 // ── Tesla Logo SVG ────────────────────────────────────────────────────────────
 const TeslaLogo = () => (
@@ -455,11 +462,18 @@ const NAV_DATA = {
   Products: {
     title: "Products",
     grid: [
-      { name: "Sheet Metal Components",    img: ''   ,           sub: ["Learn"],          el: <ChargingIllustration type="plug" />          },
-      { name: "Pipe Bending Components",   img: ''   ,         sub: ["Learn","Shop"],   el: <ChargingIllustration type="home" />          },
-      { name: "Tooling And Fixture",       img: '',         sub: ["Learn","Find"],   el: <ChargingIllustration type="supercharger" />  },
-      { name: "Welding And Joining", img: '', sub: ["Learn","Order"],  el: <ChargingIllustration type="wall" />          },
-      { name: "Special Purpose Machines SPA", img: '',    sub: ["Learn","Order"],  el: <ChargingIllustration type="supercharger" />  },
+      { name: "Sheet Metal Components",    img: sheet   ,           sub: ["Learn"],          el: <ChargingIllustration type="plug" /> , details: [{data: 'Power Press Machines '},{data: '2D Laser Cutting Machine '},{data: 'Aluminum Embossing '},{data: 'Netting Machine'},{data: 'Hydraulic Riveting Machine  '},]  , 
+      para: 'Car sheet metal forms the structural outer body of a vehicle, providing strength, durability, and aerodynamic shape. Made from high-quality steel or aluminum, it ensures safety while maintaining a lightweight design. Precision engineering allows smooth finishes, corrosion resistance, and impact protection, making it essential for both performance and long-term reliability of modern automobiles.', 
+        },
+      { name: "Pipe Bending Components",   img: pipe ,  sub: ["Learn","Shop"],   el: <ChargingIllustration type="home" /> , 
+         details: [{data: '3-Axis Pipe Bending Machine '},{data: 'Robotic Welding'},{data: 'Forklift  for pipe handling '},{data: 'TIG & MIG Welding Stations Fabrication Bench & Pipe Cutting Tools'}   ],
+       para: 'Pipe bending components are essential in creating precise and durable curved structures used in automotive, construction, and industrial applications. Manufactured with high-quality materials, they ensure strength, accuracy, and smooth finishes. Advanced bending techniques help maintain consistency and performance, making these components reliable for complex designs and long-lasting structural integrity.',   },
+       
+      { name: "Tooling And Fixture",       img: toolFixture,         sub: ["Learn","Find"],   el: <ChargingIllustration type="supercharger" />  ,  details: [{data: 'MIG & Spot Welding Fixtures'},{data: 'Robotic Welding Fixture Assembly'},{data: 'CAD/CAM Design Support'},{data: 'Die & Jig Fabrication Area'},{data: 'First-Time-Right Development Approach'}   ], 
+    para: 'Tooling and fixtures are critical in manufacturing processes, ensuring precision, consistency, and efficiency during production. They securely hold and guide components, reducing errors and improving quality. Designed with durability and accuracy in mind, these systems support complex operations, enhance productivity, and play a vital role in achieving reliable and cost-effective manufacturing outcomes.'  },
+      { name: "EMBOSS SHEET & PARTS", img: emboss, sub: ["Learn","Order"],  el: <ChargingIllustration type="wall" />  , details: [{data: 'Improved strength and rigidity'},{data: 'Better grip and anti-slip surface'},{data: 'Attractive textured appearance'},{data: 'High durability and corrosion resistance'},    ], 
+    para: 'Emboss sheet and parts are specially designed metal components featuring raised or patterned surfaces for enhanced strength, grip, and visual appeal. Manufactured with precision, they offer durability, corrosion resistance, and consistent quality. Widely used in automotive, industrial, and decorative applications, embossing improves functionality while adding a refined and professional finish.'      },
+      // { name: "Special Purpose Machines SPA", img: '',    sub: ["Learn","Order"],  el: <ChargingIllustration type="supercharger" />  },
     ],
     sidebar: ["Help Me Charge","Charging Calculator","Charging With NACS","Supercharger Voting","Host a Supercharger"],
     links: [{title: "Sheet Metal Components"}, {title: "Pipe Bending Components"} , {title: "Tooling And Fixture"}, {title: "Welding And Joining"} , {title: "Special Purpose Machines SPA"}]
@@ -467,10 +481,10 @@ const NAV_DATA = {
   Services: {
     title: "Services",
     grid: [
-      { name: "Design & Development",  sub: ["Learn"],       el: <svg viewBox="0 0 200 120" className="w-full h-full"><circle cx="100" cy="60" r="45" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="67" textAnchor="middle" fontSize="28">🚀</text></svg> },
-      { name: "Manufacturing",      sub: ["View Jobs"],   el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="40" y="40" width="120" height="60" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="78" textAnchor="middle" fontSize="28">💼</text></svg> },
-      { name: "Assemble and Integration",         sub: ["Read"],        el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="30" y="20" width="140" height="90" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="75" textAnchor="middle" fontSize="28">📰</text></svg> },
-      { name: "Quality Assurance",       sub: ["See Events"],  el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="30" y="15" width="140" height="100" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="76" textAnchor="middle" fontSize="28">📅</text></svg> },
+      { name: "Design & Development", img: designDevelopment, sub: ["Learn"],       el: <svg viewBox="0 0 200 120" className="w-full h-full"><circle cx="100" cy="60" r="45" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="67" textAnchor="middle" fontSize="28">🚀</text></svg> },
+      { name: "Machineries",   img: machineries,   sub: ["View Jobs"],   el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="40" y="40" width="120" height="60" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="78" textAnchor="middle" fontSize="28">💼</text></svg> },
+      // { name: "Assemble and Integration",         sub: ["Read"],        el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="30" y="20" width="140" height="90" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="75" textAnchor="middle" fontSize="28">📰</text></svg> },
+      // { name: "Quality Assurance",       sub: ["See Events"],  el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="30" y="15" width="140" height="100" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="76" textAnchor="middle" fontSize="28">📅</text></svg> },
     ],
     sidebar: ["Customer Stories","Blog","Investor Relations","Press","Contact"],
     links: [{title: ""}, {title: ""} , {title: ""} , {title: ""}]
@@ -482,7 +496,7 @@ const NAV_DATA = {
 export default function Navbar() {
   const [activeMenu, setActiveMenu]   = useState(null);
   const [searchOpen, setSearchOpen]   = useState(false);
-  const [searchVal,  setSearchVal]    = useState("");
+  // const [searchVal,  setSearchVal]    = useState("");
   const [menuVisible, setMenuVisible] = useState(false); // controls animation class
   const closeTimer = useRef(null);
   const openTimer  = useRef(null);
@@ -544,7 +558,6 @@ export default function Navbar() {
               <NavLink to='/about'  className=' font-medium text-gray-800 hover:text-black'> About </NavLink>
             </span>
             
-
             {Object.keys(NAV_DATA).map((key, i) => {
               const isActive = activeMenu === key;
               // console.log("d-------------", key,  )
@@ -561,29 +574,28 @@ export default function Navbar() {
                 >
                   {key} 
                   
-                  {/* <span
+                  <span
                     className={[
                       "absolute bottom-0 left-4 right-4 h-[2px] bg-black rounded-full transition-all duration-300 ease-out",
                       isActive && menuVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0",
                     ].join(" ")}
                     style={{ transformOrigin: "center" }}
-                  /> */}
+                  />
                 </button>
               );
             })}
-            <span className="  py-1 transition hover:bg-gray-100 px-2 rounded-lg"> 
+            <span className="  py-1 transition  px-2 rounded-lg"> 
               <NavLink to='/contact' className=' font-medium text-gray-800 hover:text-black'>
                  Contact 
                  </NavLink>
             </span>
-
           </div>
 
           {/* Right side */}
           <div className="flex items-center gap-1">
             {/* Search */}
             <div className="flex items-center ">
-              <div
+              {/* <div
                 className={[
                   "overflow-hidden transition-all duration-400 ease-in-out",
                   searchOpen ? "max-w-[200px] opacity-100" : "max-w-0 opacity-0",
@@ -597,22 +609,21 @@ export default function Navbar() {
                   placeholder="Search ..."
                   className="w-44 border-b placeholder-black  border-black outline-none text-[13px] px-1 py-0.5 bg-transparent text-gray-800 "
                 />
-              </div>
+              </div> */}
               <div className="gap-3 flex items-center"> 
-              <button
+              {/* <button
                 onClick={() => { setSearchOpen(s => !s); setActiveMenu(null); if (searchOpen) setSearchVal(""); }}
                 className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-150"
               >
-                {searchOpen
-                  ? <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-                  : <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path strokeLinecap="round" d="M21 21l-4.35-4.35"/></svg>
-                }
+              
+              </button> */}
+              
+                 <button className="uppercase border-2 border-black px-2 py-2 rounded-lg text-xs hover:bg-[#F9981C]">
+                  <NavLink to="/contact#contact-form" >
+                Request quote  
+                </NavLink>
               </button>
-              <NavLink to="/contact#contact-form" >
-                 <button className="uppercase border-2 border-black px-2 py-2 rounded-lg text-xs">
-                Request quote 
-              </button>
-              </NavLink>
+             
              
               </div>
             </div>
@@ -656,12 +667,14 @@ export default function Navbar() {
                         
                       <NavLink to={`/${data?.title?.toLowerCase().replace(/\s+/g, '-')}/${encodeURIComponent(item.name)}`} state={{
                                                                                                                                 name: item.name,
-                                                                                                                                img: item.img
+                                                                                                                                img: item.img,
+                                                                                                                                details: item.details, 
+                                                                                                                                para: item.para
                                                                                                                               }}
                               className='block text-gray-700  text-center  hover:bg-gray-100  py-2 rounded-md 
                              transition'>
                           {/* <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Grid-Current-Offers.jpg"/> */}
-                          <img src={img} />
+                          <img src={item.img} />
                       </NavLink>  
                      
                       </div>

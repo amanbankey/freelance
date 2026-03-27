@@ -45,21 +45,27 @@ const EveryDay = () => {
               #BETTER EVERYDAY
             </h1>
             <p className="max-w-2xl text-base sm:text-lg text-gray-700 leading-relaxed">
-            To provide precision-engineered solutions in sheet metal, pipe bending, and tooling by upholding the highest standards of quality, fostering innovation, delivering on time and building lasting value for our customers and stakeholders.
+            Our team delivers end-to-end expertise in stamping assembly fixture design, 
+manufacturing, and integration, streamlining your production processes and 
+minimizing vendor complexity
 
             </p>
+
+            <p className='max-w-2xl pt-10 text-base sm:text-lg text-gray-700 leading-relaxed'>
+               Two Plant with in-house capabilities of Press Shop, Laser Cutting Machine pipe 
+            bending robotic welding etc.</p>
           </div>
         </div>
  
         {/* Story Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3">
-          {stories.map((story, i) => (
+          {/* {stories.map((story, i) => (
             <div
               key={i}
               className={`${story.color}  p-6 flex flex-col justify-between`}
               style={{ minHeight: "200px" }}
             >
-              {/* Top label */}
+      
               <div>
                 <span
                   className="text-xs font-bold tracking-widest uppercase opacity-90"
@@ -69,32 +75,18 @@ const EveryDay = () => {
                 </span>
               </div>
  
-              {/* Bottom: title + arrow */}
               <div className="flex items-end justify-between gap-4 mt-8">
                 <p className="text-sm sm:text-base font-bold leading-snug">{story.title}</p>
                 <button className="flex-shrink-0 w-9 h-9 rounded-full border border-black flex items-center justify-center hover:bg-white/20 transition-colors">
-                  {/* <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className=""
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg> */}
+                
                   <MdKeyboardArrowRight className='w-4 h-4 '/>
                   
                 </button>
                
               </div> 
-              {/* <PiSmileyWinkThin  className='w-5 h-5'/> */}
+             
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     </div>
@@ -102,3 +94,5 @@ const EveryDay = () => {
 }
 
 export default EveryDay
+
+ {/* <PiSmileyWinkThin  className='w-5 h-5'/> */}

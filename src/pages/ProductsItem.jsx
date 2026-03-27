@@ -24,7 +24,7 @@ const ProductsItem = () => {
   const product = location.state;
   const title = decodeURIComponent(id);
 
-  console.log("data", product, title);
+  console.log("dat----------a", product.para);
 
   return (
     <div>
@@ -104,14 +104,7 @@ const ProductsItem = () => {
           mb-5 sm:mb-6 md:mb-7
         "
           >
-            The Bearings division has the capability to design, develop,
-            manufacture, test and validate (R&amp;D) bearings to cater to OEM's
-            of Two wheelers, Three wheelers, Four wheelers (CAR's), Commercial
-            vehicles, Tractors, Tillers, Rotovators, pumps, motors, conveyors
-            and other engineering applications etc., A widespread network of
-            authorized stockists, retailers and consignment agents are spread
-            all over the country to provide  Bearings to individual end
-            users and OEMs.
+            {product.para}
           </p>
 
           {/* ── "The product range includes –" ── */}
@@ -127,12 +120,12 @@ const ProductsItem = () => {
 
           {/* ── Bullet list ── */}
           <ul className="space-y-2 sm:space-y-2.5 pl-1">
-            {PRODUCTS.map((item, i) => (
+            {product.details.map((item, i) => (
               <li key={i} className="flex items-start gap-3 sm:gap-3.5">
                 {/* Bullet dot exactly like screenshot */}
                 <span className="mt-[7px] sm:mt-[8px] flex-shrink-0 w-[6px] h-[6px] rounded-full bg-gray-600" />
                 <span className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                  {item}
+                  {item.data}
                 </span>
               </li>
             ))}

@@ -1,6 +1,8 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Leadership = () => {
+  
   return (
     <div>
          <div className="bg-blue-50 min-h-screen flex items-center">
@@ -34,10 +36,15 @@ const Leadership = () => {
             <p className="text-gray-500 text-sm">CEO</p>
           </div>
  
+
           {/* Button */}
-          <button className="border-2 border-blue-400 text-blue-400 text-xs font-bold tracking-widest uppercase px-6 py-3 hover:bg-blue-400 hover:text-white transition-colors duration-200">
+
+          <NavLink to='/leadership'>
+             <button className="border-2 border-blue-400 text-blue-400 text-xs font-bold tracking-widest uppercase px-6 py-3 hover:bg-blue-400 hover:text-white transition-colors duration-200">
             Leadership Team
           </button>
+          </NavLink>
+         
  
         </div>
  

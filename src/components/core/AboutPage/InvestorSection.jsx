@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 
 import { FiChevronLeft, FiChevronRight, FiPlus } from "react-icons/fi";
- 
+
+
 // ✅ Add your award logos here - replace image src with your own
 const awards = [
   { id: 1, image: "https://picsum.photos/seed/aima/200/120", alt: "AIMA Award" },
@@ -31,32 +32,28 @@ const InvestorSection = () => {
 
   return (
     <div>
-         <section >
+     <section >
          <div className="bg-white px-4 py-8 flex justify-center">
       <div
         className="relative w-full max-w-5xl rounded-2xl overflow-hidden px-8 py-10"
         style={{ background: "linear-gradient(135deg, #0a1f44 60%, #0e3a5c 100%)" }}
       >
-        {/* Background decorative wave image - replace with your own */}
         <img
           src="https://picsum.photos/seed/wave/900/200"
           alt="background"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
  
-        {/* Content */}
+     
         <div className="relative z-10">
-          {/* Small label */}
           <p className="text-white text-xs font-bold tracking-widest uppercase mb-2">
             Find out how do we create value
           </p>
  
-          {/* Big Heading */}
           <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-wide mb-4">
             Creating Enduring Value for Shareholders
           </h2>
  
-          {/* Link */}
           <a
             href="#"
             className="text-blue-400 text-xs font-bold tracking-widest uppercase hover:underline"
@@ -72,17 +69,17 @@ const InvestorSection = () => {
     <div className="bg-gray-300 px-4 py-14">
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center gap-8">
  
-        {/* LEFT: Section Title */}
+       
         <div className="sm:w-48 flex-shrink-0 text-left">
           <h3 className="text-gray-600 text-xl sm:text-3xl font-light leading-snug">
             Awards and Recognition
           </h3>
         </div>
  
-        {/* CENTER: Arrow + Cards + Arrow */}
+     
         <div className="flex items-center gap-3 flex-1">
  
-          {/* Left Arrow */}
+         
           <button
             onClick={prev}
             disabled={startIndex === 0}
@@ -91,7 +88,6 @@ const InvestorSection = () => {
             <FiChevronLeft size={24} />
           </button>
  
-          {/* Award Cards */}
           <div className="flex gap-4 flex-1 justify-center">
             {visibleAwards.map((award) => (
               <div
@@ -99,14 +95,12 @@ const InvestorSection = () => {
                 className="bg-white rounded-2xl flex flex-col items-center justify-between p-4 w-32 sm:w-40 flex-shrink-0"
                 style={{ minHeight: "140px" }}
               >
-                {/* Logo Image */}
                 <img
                   src={award.image}
                   alt={award.alt}
                   className="w-full h-16 object-contain"
                 />
  
-                {/* Plus icon bottom right */}
                 <div className="self-end mt-2">
                   <div className="w-6 h-6 rounded-full bg-gray-300 flex items-center justify-center">
                     <FiPlus size={14} className="text-gray-600" />
@@ -116,7 +110,6 @@ const InvestorSection = () => {
             ))}
           </div>
  
-          {/* Right Arrow */}
           <button
             onClick={next}
             disabled={startIndex + VISIBLE >= awards.length}

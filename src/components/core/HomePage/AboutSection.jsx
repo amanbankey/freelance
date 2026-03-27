@@ -1,6 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react'
 
 import about from '../../../assets/videos/about.mp4'
+import { NavLink } from 'react-router-dom'
 
 const INTERVAL = 5000
 
@@ -106,9 +107,12 @@ const AboutSection = () => {
  
               {/* Button */}
               <div className="mb-16 md:mb-20 lg:mb-24">
-                <button className="text-white px-5 py-2 bg-[#1D75BC] rounded-lg">
+                <NavLink to='/about'> 
+                 <button className="text-white px-5 py-2 bg-[#1D75BC] rounded-lg">
                   {slide.button}
                 </button>
+                </NavLink>
+               
               </div>
  
              </div>
