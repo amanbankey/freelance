@@ -108,6 +108,9 @@ export default function FinanceSection() {
 
               <div
                 style={getStyle(CARD_DEFS[0], { top: 0, left: 0, zIndex: 13 })}
+//                 className="w-52 h-44 rounded-3xl   shadow-2xl"
+//               >
+//                <img src={printer} className="w-52 h-44"/>
                 className="w-48 h-52 rounded-3xl p-4 shadow-2xl"
               >
                <img src={printer} className="h-44 "/>
@@ -115,6 +118,9 @@ export default function FinanceSection() {
 
               <div
                 style={getStyle(CARD_DEFS[1], { top: 10, right: 0, zIndex: 11 })}
+              //   className="w-52 h-44 rounded-3xl   shadow-2xl"
+              // >
+              //   <img src={fixture} className="w-52 h-44" />
                 className="w-48 h-44 rounded-3xl   border-[3px] border-[#5aacff] shadow-2xl"
               >
                 <img src={construct} className="h-44 rounded-3xl" />
@@ -123,6 +129,9 @@ export default function FinanceSection() {
 
               <div
                 style={getStyle(CARD_DEFS[2], { top: 10, left: 30, zIndex: 15 })}
+              //   className="w-52 h-44 rounded-3xl   shadow-2xl text-center"
+              // >
+              //    <img src={pipe} className="w-52 h-44" />
                 className="w-48 h-52 rounded-3xl p-4  shadow-2xl text-center"
               >
                  <img src={pipe} className="h-44 rounded-3xl" />
@@ -131,6 +140,9 @@ export default function FinanceSection() {
 
               <div
                 style={getStyle(CARD_DEFS[3], { top: -5, right: -5, zIndex: 9 })}
+              //   className="w-52 h-44 rounded-3xl shadow-2xl overflow-hidden  flex flex-col items-center justify-center"
+              // >
+              //    <img src={sheet} className="w-52 h-44"/>
                 className="w-48 h-52 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br  flex flex-col items-center justify-center"
               >
                  <img src={sheet} className="h-44 rounded-3xl"/>
@@ -139,6 +151,9 @@ export default function FinanceSection() {
                 
               <div
                 style={getStyle(CARD_DEFS[4], { top: -10, left: 10, zIndex: 9 })}
+              //   className="w-52 h-44 rounded-3xl shadow-2xl overflow-hidden  flex flex-col items-center justify-center"
+              // >
+              //    <img src={press} className="w-52 h-44"/>
                 className="w-52 h-52 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br  flex flex-col items-center justify-center"
               >
                  <img src={press} className="h-44 w-44 rounded-3xl"/>
@@ -146,6 +161,9 @@ export default function FinanceSection() {
 
               <div
                 style={getStyle(CARD_DEFS[5], { top: -10, right: 5, zIndex: 9 })}
+              //   className="w-52 h-44 rounded-3xl shadow-2xl overflow-hidden  flex flex-col items-center justify-center"
+              // >
+              //    <img src={single} className="w-52 h-44" />
                 className="w-52 h-52 rounded-3xl shadow-2xl overflow-hidden bg-gradient-to-br  flex flex-col items-center justify-center"
               >
                  <img src={single} className="h-full w-full rounded-3xl"/>
@@ -160,6 +178,7 @@ export default function FinanceSection() {
     </div>
   );
 }
+
 
 
 

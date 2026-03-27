@@ -5,11 +5,11 @@ const Leadership = () => {
   
   return (
     <div>
-         <div className="bg-blue-50 min-h-screen flex items-center">
-      <div className="max-w-6xl mx-auto w-full px-6 py-16 flex flex-col-reverse md:flex-row items-center gap-10">
+         <div className="bg-blue-50 pt-16 flex items-center ">
+      <div className="max-w-6xl mx-auto w-full px-6  flex flex-col-reverse md:flex-row gap-10 ">
  
         {/* LEFT: Text Content */}
-        <div className="flex-1 text-left">
+        <div className="flex-1 text-left ">
  
           {/* Big Heading */}
           <h1 className="text-3xl sm:text-4xl  font-semibold text-gray-900 leading-tight mb-6 uppercase">
@@ -49,7 +49,7 @@ const Leadership = () => {
         </div>
  
         {/* RIGHT: Person Image */}
-        <div className="flex-1 flex justify-center md:justify-end">
+        <div className="flex-1 flex justify-center md:justify-end ">
           <img
             src={'https://www.jsw.in/wp-content/uploads/2025/05/sajjan-jindal-profile-scaled.webp'}
             alt="Sajjan Jindal"
