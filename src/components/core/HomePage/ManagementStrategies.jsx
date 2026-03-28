@@ -6,7 +6,7 @@ const ManagementStrategies = () => {
       
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
 
-        {/* Left Side */}
+        
         <div>
           <div className="flex items-center mb-4">
             <div className="w-1 h-8 bg-blue-600 mr-3"></div>

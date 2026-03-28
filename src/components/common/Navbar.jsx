@@ -333,6 +333,421 @@
 
 // export default Navbar;
 
+
+
+// import { useState, useRef, useCallback } from "react";
+// import { NavLink } from "react-router-dom";
+// import { HiMenuAlt3 } from "react-icons/hi";
+// // import img from '../../assets/Images/fixture.png'
+// import sheet from "../../assets/Images/sheet.jpg";
+// import pipe from "../../assets/Images/pipe.jpg";
+// import toolFixture from "../../assets/Images/toolFixture.jpg";
+// import emboss from "../../assets/Images/embossSheet.jpg";
+
+// import designDevelopment from "../../assets/Images/designDevelopment.jpg";
+// import designDevelopment2 from "../../assets/Images/designDevelopment2.jpg";
+// import designDevelopment3 from "../../assets/Images/designDevelopment3.jpg";
+
+// import machineries from "../../assets/Images/mechineries.jpg";
+// import machineries2 from "../../assets/Images/mechineries2.jpg";
+// import machineries3 from "../../assets/Images/mechineries3.jpg";
+
+// import embossSheet2 from "../../assets/Images/embossSheet2.jpg";
+// import embossSheet3 from "../../assets/Images/embossSheet3.jpg";
+// import embossSheet4 from "../../assets/Images/embossSheet4.jpg";
+
+// import pipeTube2 from "../../assets/Images/pipeTube2.jpg";
+// import pipeTube3 from "../../assets/Images/pipeTube3.jpg";
+
+// import seatAss1 from "../../assets/Images/seatAss1.jpg";
+// import seatAss2 from "../../assets/Images/seatAss2.jpg";
+// import seatAss3 from "../../assets/Images/seatAss3.jpg";
+
+// import toolFixture2 from "../../assets/Images/toolFixture2.jpg";
+// import toolFixture3 from "../../assets/Images/toolFixture3.jpg";
+// import toolFixture4 from "../../assets/Images/toolFixture4.jpg";
+
+
+// const NAV_DATA = {
+//   Products: {
+//     title: "Products",
+//     grid: [
+//       {
+//         name: "Sheet Metal Components",
+//         img: sheet,
+     
+//         details: [
+//           { data: "Power Press Machines " },
+//           { data: "2D Laser Cutting Machine " },
+//           { data: "Aluminum Embossing " },
+//           { data: "Netting Machine" },
+//           { data: "Hydraulic Riveting Machine  " },
+//         ],
+//         para: "Car sheet metal forms the structural outer body of a vehicle, providing strength, durability, and aerodynamic shape. Made from high-quality steel or aluminum, it ensures safety while maintaining a lightweight design. Precision engineering allows smooth finishes, corrosion resistance, and impact protection, making it essential for both performance and long-term reliability of modern automobiles.",
+//         images: [{img: sheet}, {img: seatAss1},{img: seatAss2}, {img: seatAss3},]
+//       },
+//       {
+//         name: "Pipe Bending Components",
+//         img: pipe,
+//         details: [
+//           { data: "3-Axis Pipe Bending Machine " },
+//           { data: "Robotic Welding" },
+//           { data: "Forklift  for pipe handling " },
+//           {
+//             data: "TIG & MIG Welding Stations Fabrication Bench & Pipe Cutting Tools",
+//           },
+//         ],
+//         para: "Pipe bending components are essential in creating precise and durable curved structures used in automotive, construction, and industrial applications. Manufactured with high-quality materials, they ensure strength, accuracy, and smooth finishes. Advanced bending techniques help maintain consistency and performance, making these components reliable for complex designs and long-lasting structural integrity.",
+//         images: [{img:  pipeTube2},{img: pipe }, {img:   pipeTube3},]
+//       },
+
+//       {
+//         name: "Tooling And Fixture",
+//         img: toolFixture,
+//         details: [
+//           { data: "MIG & Spot Welding Fixtures" },
+//           { data: "Robotic Welding Fixture Assembly" },
+//           { data: "CAD/CAM Design Support" },
+//           { data: "Die & Jig Fabrication Area" },
+//           { data: "First-Time-Right Development Approach" },
+//         ],
+//         para: "Tooling and fixtures are critical in manufacturing processes, ensuring precision, consistency, and efficiency during production. They securely hold and guide components, reducing errors and improving quality. Designed with durability and accuracy in mind, these systems support complex operations, enhance productivity, and play a vital role in achieving reliable and cost-effective manufacturing outcomes.",
+//         images: [{img: toolFixture}, {img: toolFixture2},{img: toolFixture3}, {img: toolFixture4},]
+//         },
+//       {
+//         name: "EMBOSS SHEET & PARTS",
+//         img: emboss,
+       
+//         details: [
+//           { data: "Improved strength and rigidity" },
+//           { data: "Better grip and anti-slip surface" },
+//           { data: "Attractive textured appearance" },
+//           { data: "High durability and corrosion resistance" },
+//         ],
+//          para: "Emboss sheet and parts are specially designed metal components featuring raised or patterned surfaces for enhanced strength, grip, and visual appeal. Manufactured with precision, they offer durability, corrosion resistance, and consistent quality. Widely used in automotive, industrial, and decorative applications, embossing improves functionality while adding a refined and professional finish.",
+//          images: [{img: emboss},{img: embossSheet2},{img: embossSheet3}, {img: embossSheet4},]
+//       },
+     
+//     ],
+//     sidebar: [
+//       "Help Me Charge",
+//       "Charging Calculator",
+//       "Charging With NACS",
+//       "Supercharger Voting",
+//       "Host a Supercharger",
+//     ],
+//     links: [
+//       { title: "Sheet Metal Components" },
+//       { title: "Pipe Bending Components" },
+//       { title: "Tooling And Fixture" },
+//       { title: "Welding And Joining" },
+//       { title: "Special Purpose Machines SPA" },
+//     ],
+//   },
+
+//   Services: {
+//     title: "Services",
+//     grid: [
+//       {
+//         name: "Design & Development",
+//         img: designDevelopment,
+      
+//         details: [
+//           { data: "Part Design with precision and accuracy" },
+//           { data: "Part Simulation for performance testing" },
+//           { data: "Development of other stamping parts" },
+//           { data: "Aluminium emboss parts manufacturing" },
+//           { data: "Focus on quality, efficiency, and innovation" },
+//         ],
+//         para: "Design and development play a vital role in creating high-quality industrial components with precision and innovation. From concept to final production, advanced tools and techniques ensure accuracy, efficiency, and performance. This process includes detailed part design, simulation, and development of specialized components, delivering reliable and cost-effective solutions for various industrial applications.",
+//         images: [{img:  designDevelopment},{img: designDevelopment2 }, {img:   designDevelopment3},]
+//       },
+//       {
+//         name: "Machineries",
+//         img: machineries,
+    
+//         details: [
+//           { data: "High production efficiency" },
+//           { data: "Uniform and precise mesh design" },
+//           { data: "Durable and long-lasting output" },
+//           { data: "Suitable for multiple industrial applications" },
+//         ],
+//         para: "Machines are advanced industrial systems used to produce high-quality nets for applications such as packaging, agriculture, and safety. Designed for precision and efficiency, they ensure uniform mesh structure and durability. With reliable performance and easy operation, these machines support large-scale production while maintaining consistent quality and strength.",
+//         images: [{img:  machineries},{img: machineries2 }, {img:   machineries3},]
+//       },
+    
+//     ],
+//     sidebar: [
+//       "Customer Stories",
+//       "Blog",
+//       "Investor Relations",
+//       "Press",
+//       "Contact",
+//     ],
+//     links: [{ title: "" }, { title: "" }, { title: "" }, { title: "" }],
+//   },
+// };
+
+// export default function Navbar() {
+//   const [activeMenu, setActiveMenu] = useState(null);
+//   const [searchOpen, setSearchOpen] = useState(false);
+//   // const [searchVal,  setSearchVal]    = useState("");
+//   const [menuVisible, setMenuVisible] = useState(false); // controls animation class
+//   const closeTimer = useRef(null);
+//   const openTimer = useRef(null);
+
+//   const openMenu = useCallback(
+//     (key) => {
+//       clearTimeout(closeTimer.current);
+//       if (activeMenu !== key) {
+//         // if switching menus: swap instantly content, keep open
+//         setMenuVisible(false);
+//         openTimer.current = setTimeout(
+//           () => {
+//             setActiveMenu(key);
+//             setMenuVisible(true);
+//           },
+//           activeMenu ? 80 : 0
+//         );
+//       } else {
+//         setMenuVisible(true);
+//       }
+//       setActiveMenu(key);
+//     },
+//     [activeMenu]
+//   );
+
+//   const closeMenu = useCallback(() => {
+//     closeTimer.current = setTimeout(() => {
+//       setMenuVisible(false);
+//       setTimeout(() => setActiveMenu(null), 350);
+//     }, 120);
+//   }, []);
+
+//   const cancelClose = useCallback(() => {
+//     clearTimeout(closeTimer.current);
+//   }, []);
+
+//   const data = activeMenu ? NAV_DATA[activeMenu] : null;
+//   console.log("data", data);
+
+//   return (
+//     <div className="">
+//       <div className=" fixed  top-4  left-0 w-full z-[1000]  ">
+//         <nav
+//           className=" max-w-7xl  z-50 bg-white/50 = backdrop-blur-lg   rounded-2xl mx-auto"
+//           onMouseLeave={closeMenu}
+//         >
+//           <div className="flex items-center justify-between px-6 h-[65px] max-w-screen-2xl mx-auto">
+//             <NavLink to="/" className="flex-shrink-0 text-black  duration-200">
+//               <img
+//                 src="https://bbengineers.co.in/image/new_logo.png"
+//                 alt="BB Engineers logo"
+//                 className="h-10 w-auto object-contain"
+//               />
+//             </NavLink>
+
+//             <div className=" flex items-center gap-3  ">
+//               <span className="  py-1 transition">
+//                 <NavLink
+//                   to="/"
+//                   className="font-medium text-gray-800text-[#2B2B2B] hover:text-[#E28A2D]  hover:rounded-2xl  "
+//                 >
+//                   Home
+//                 </NavLink>
+//               </span>
+//               <span className="  py-1 transition">
+//                 <NavLink
+//                   to="/about"
+//                   className=" font-medium text-[#2B2B2B] hover:text-[#E28A2D]"
+//                 >
+//                   {" "}
+//                   About{" "}
+//                 </NavLink>
+//               </span>
+
+//               {Object.keys(NAV_DATA).map((key, i) => {
+//                 const isActive = activeMenu === key;
+//                 // console.log("d-------------", key,  )
+//                 return (
+//                   <button
+//                     key={key}
+//                     onMouseEnter={() => {
+//                       openMenu(key);
+//                       setSearchOpen(false);
+//                     }}
+//                     onClick={() => openMenu(key)}
+//                     className={[
+//                       "relative  h-[52px]  font-medium text-center ",
+//                       "text-[#2B2B2B] hover:text-[#E28A2D]",
+//                       isActive ? "text-black " : "",
+//                     ].join(" ")}
+//                   >
+//                     {key}
+
+//                     {/* <span
+//                     className={[
+//                       "absolute bottom-0 left-4 right-4 h-[2px] bg-black rounded-full transition-all duration-300 ease-out",
+//                       isActive && menuVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0",
+//                     ].join(" ")}
+//                     style={{ transformOrigin: "center" }}
+//                   /> */}
+//                   </button>
+//                 );
+//               })}
+//               <span className="  py-1 transition  px-2 rounded-lg">
+//                 <NavLink
+//                   to="/contact"
+//                   className=" font-medium text-[#2B2B2B] hover:text-[#E28A2D]"
+//                 >
+//                   Contact
+//                 </NavLink>
+//               </span>
+//             </div>
+
+           
+//             <div className="flex items-center gap-1">
+           
+//               <div className="flex items-center ">
+            
+//                 <div className="gap-3 flex items-center">
+//                   <button className="uppercase border-2 border-black px-2 py-2 rounded-lg text-xs font-semibold hover:text-[#F9981C]">
+//                     <NavLink to="/contact#contact-form">Request quote</NavLink>
+//                   </button>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+
+//           <div
+//             onMouseEnter={cancelClose}
+//             onMouseLeave={closeMenu}
+//             className={[
+//               "absolute left-0 right-0 bg-white border-t border-gray-100 shadow-xl overflow-hidden z-40 ",
+//               "transition-all duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)]",
+//               activeMenu && menuVisible
+//                 ? "max-h-[520px] opacity-100 translate-y-0"
+//                 : "max-h-0 opacity-0 -translate-y-1 pointer-events-none",
+//             ].join(" ")}
+//           >
+//             {data && (
+//               <div className="w-full   ">
+//                 <div className=" px-10 mx-auto   ">
+//                 <div className="flex items-center px-10 py-5   w-full max-w-7xl">
+//                   {/* <div className=" flex items-center  px-5 py-8 border-2 border-green-500 mx-auto"> */}
+//                     <div
+//                       className={[
+//                         "grid gap-x-5 gap-y-2 ",
+//                         data.grid.length <= 4 ? "grid-cols-4" : "grid-cols-4",
+//                       ].join(" ")}
+//                     >
+//                       {data.grid.map((item, i) => (
+//                         <div
+//                           key={item.name}
+//                           className="group cursor-pointer  "
+//                           style={{
+//                             transition: `opacity 0.35s ease ${
+//                               i * 45
+//                             }ms, transform 0.35s ease ${i * 45}ms`,
+//                             opacity: menuVisible ? 1 : 0,
+//                             transform: menuVisible
+//                               ? "translateY(0)"
+//                               : "translateY(10px)",
+//                           }}
+//                         >
+//                           <div
+//                             className="w-full h-28 bg-gray-50 rounded-md overflow-hidden flex items-center justify-center  mb-2 transition-all
+//                        duration-250 group-hover:border-gray-300 group-hover:shadow-sm"
+//                           >
+//                             <NavLink
+//                               to={`/${data?.title
+//                                 ?.toLowerCase()
+//                                 .replace(/\s+/g, "-")}/${encodeURIComponent(
+//                                 item.name
+//                               )}`}
+//                               state={{
+//                                 name: item.name,
+//                                 img: item.img,
+//                                 details: item.details,
+//                                 para: item.para,
+//                                 images: item.images, 
+//                               }}
+//                               className="block text-gray-700  text-center  hover:bg-gray-100  py-2 rounded-md 
+//                              transition"
+//                             >
+//                               {/* <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Grid-Current-Offers.jpg"/> */}
+//                               <img src={item.img} />
+//                             </NavLink>
+//                           </div>
+//                           <p className="text-[13px] font-semibold text-gray-900 hover:text-[#F9981C] text-center leading-tight mb-1 transition-colors duration-150 group-hover:text-[#F9981C]">
+//                             {item.name}
+//                           </p>
+                        
+//                         </div>
+//                       ))}
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 <div
+//                   className="w-52 border-l border-gray-100 px-6 py-8 flex-shrink-0"
+//                   style={{
+//                     transition:
+//                       "opacity 0.4s ease 120ms, transform 0.4s ease 120ms",
+//                     opacity: menuVisible ? 1 : 0,
+//                     transform: menuVisible
+//                       ? "translateX(0)"
+//                       : "translateX(8px)",
+//                   }}
+//                 >
+//                   <ul className="space-y-[10px]">
+//                     {data.sidebar.map((s, i) => (
+//                       <li key={i}>
+//                         <a
+//                           href="#"
+//                           className="block text-[13px] text-gray-500 hover:text-gray-900 transition-all duration-150 hover:translate-x-0.5"
+//                         ></a>
+//                       </li>
+//                     ))}
+//                   </ul>
+//                 </div>
+//               </div>
+//             )}
+//           </div>
+//         </nav>
+
+//         <div
+//           onClick={() => {
+//             setMenuVisible(false);
+//             setTimeout(() => setActiveMenu(null), 350);
+//           }}
+//           className={[
+//             "fixed  top-[52px] bg-black/15 z-30 transition-opacity duration-350",
+//             activeMenu && menuVisible
+//               ? "opacity-100 pointer-events-auto"
+//               : "opacity-0 pointer-events-none",
+//           ].join(" ")}
+//         />
+
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+// import { useState, useRef, useCallback } from "react";
+// import { NavLink } from "react-router-dom";
+// import { HiMenuAlt3 } from "react-icons/hi";
+// // import img from '../../assets/Images/fixture.png'
+// import sheet from '../../assets/Images/sheet.jpg'
+// import pipe from '../../assets/Images/pipe.jpg'
+// import toolFixture from '../../assets/Images/toolFixture.jpg'
+// import emboss from '../../assets/Images/embossSheet.jpg'
+
+// import designDevelopment from '../../assets/Images/designDevelopment.jpg'
+// import machineries from '../../assets/Images/mechineries.jpg'
+
 import { useState, useRef, useCallback } from "react";
 import { NavLink } from "react-router-dom";
 import { HiMenuAlt3 } from "react-icons/hi";
@@ -343,288 +758,58 @@ import toolFixture from "../../assets/Images/toolFixture.jpg";
 import emboss from "../../assets/Images/embossSheet.jpg";
 
 import designDevelopment from "../../assets/Images/designDevelopment.jpg";
+import designDevelopment2 from "../../assets/Images/designDevelopment2.jpg";
+import designDevelopment3 from "../../assets/Images/designDevelopment3.jpg";
+
 import machineries from "../../assets/Images/mechineries.jpg";
+import machineries2 from "../../assets/Images/mechineries2.jpg";
+import machineries3 from "../../assets/Images/mechineries3.jpg";
 
-// ── Tesla Logo SVG ────────────────────────────────────────────────────────────
-const TeslaLogo = () => (
-  <svg className="h-5 w-auto" viewBox="0 0 342 35" fill="currentColor">
-    <path d="M0 .1a9.7 9.7 0 0 0 7 7h11l.5.1v27.6h6.8V7.2L26 7h11a9.8 9.8 0 0 0 7-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 0 0 7-7h-31.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v7h30.3l-31 27 .1 7h39.6a9.8 9.8 0 0 0 7-7H204l33-27.2zM109.6 7h21.4l.5.1v8.2l-.5.1h-14.2l-.2.5v7l.2.4h14.2l.5.2v8.3l-.5.1h-21.4l-.5.1v7l.5.1H141a9.7 9.7 0 0 0 7-7V.1l-38.4-.1v7zm87.5 0h21.4l.5.1v8.2l-.5.1h-14.2l-.2.5v7l.2.4h14.2l.5.2v8.3l-.5.1h-21.4l-.5.1v7l.5.1H228a9.7 9.7 0 0 0 7-7V.1l-38.4-.1v7zm-52.4-7a9.7 9.7 0 0 0-9.6 9.6v16a9.7 9.7 0 0 0 9.6 9.5h19a9.7 9.7 0 0 0 9.6-9.6v-16a9.7 9.7 0 0 0-9.7-9.5h-19zm16.3 6.8c1.6 0 2.8 1.2 2.8 2.9V26c0 1.6-1.2 2.9-2.8 2.9h-13.6c-1.6 0-2.9-1.3-2.9-2.9V9.7c0-1.7 1.3-2.9 2.9-2.9h13.6z" />
-  </svg>
-);
+import embossSheet2 from "../../assets/Images/embossSheet2.jpg";
+import embossSheet3 from "../../assets/Images/embossSheet3.jpg";
+import embossSheet4 from "../../assets/Images/embossSheet4.jpg";
 
-// ── Dummy SVG Illustrations ───────────────────────────────────────────────────
-const CarIllustration = ({ color = "#888" }) => (
-  <svg viewBox="0 0 200 100" className="w-full h-full">
-    <ellipse cx="100" cy="90" rx="85" ry="7" fill="#e0e0e0" opacity="0.6" />
-    <path
-      d="M25,68 C25,68 38,38 65,34 L100,30 L135,34 C162,38 175,68 175,68 Z"
-      fill={color}
-    />
-    <path d="M60,34 C65,20 85,16 100,16 C115,16 135,20 140,34" fill={color} />
-    <rect x="25" y="68" width="150" height="14" rx="4" fill={color} />
-    <path d="M62,33 C68,20 132,20 138,33" fill="rgba(200,230,255,0.6)" />
-    <circle cx="52" cy="82" r="9" fill="#222" />
-    <circle cx="52" cy="82" r="4.5" fill="#555" />
-    <circle cx="148" cy="82" r="9" fill="#222" />
-    <circle cx="148" cy="82" r="4.5" fill="#555" />
-    <rect
-      x="25"
-      y="65"
-      width="9"
-      height="5"
-      rx="1"
-      fill="#fffbe0"
-      opacity="0.9"
-    />
-    <rect
-      x="166"
-      y="65"
-      width="9"
-      height="5"
-      rx="1"
-      fill="#ff8080"
-      opacity="0.9"
-    />
-  </svg>
-);
+import pipeTube2 from "../../assets/Images/pipeTube2.jpg";
+import pipeTube3 from "../../assets/Images/pipeTube3.jpg";
 
-const CybertruckIllustration = () => (
-  <svg viewBox="0 0 200 100" className="w-full h-full">
-    <ellipse cx="100" cy="90" rx="85" ry="7" fill="#e0e0e0" opacity="0.5" />
-    <polygon points="22,70 55,36 130,36 175,70" fill="#3a3a3a" />
-    <rect x="22" y="70" width="153" height="13" rx="2" fill="#2a2a2a" />
-    <polygon points="55,36 68,18 125,18 130,36" fill="#333" />
-    <circle
-      cx="48"
-      cy="83"
-      r="9"
-      fill="#1a1a1a"
-      stroke="#555"
-      strokeWidth="1.5"
-    />
-    <circle cx="48" cy="83" r="4" fill="#444" />
-    <circle
-      cx="148"
-      cy="83"
-      r="9"
-      fill="#1a1a1a"
-      stroke="#555"
-      strokeWidth="1.5"
-    />
-    <circle cx="148" cy="83" r="4" fill="#444" />
-    <rect x="72" y="38" width="58" height="2.5" fill="rgba(180,220,255,0.7)" />
-    <rect
-      x="22"
-      y="63"
-      width="10"
-      height="4"
-      rx="1"
-      fill="#fffbe0"
-      opacity="0.8"
-    />
-  </svg>
-);
+import seatAss1 from "../../assets/Images/seatAss1.jpg";
+import seatAss2 from "../../assets/Images/seatAss2.jpg";
+import seatAss3 from "../../assets/Images/seatAss3.jpg";
 
-const EnergyIllustration = ({ type }) => {
-  if (type === "solar")
-    return (
-      <svg viewBox="0 0 200 120" className="w-full h-full">
-        <rect x="20" y="40" width="160" height="55" rx="4" fill="#1a3a5c" />
-        {[0, 1, 2, 3].map((i) => (
-          <line
-            key={i}
-            x1={45 + i * 38}
-            y1="40"
-            x2={45 + i * 38}
-            y2="95"
-            stroke="#2a5a8c"
-            strokeWidth="1.5"
-          />
-        ))}
-        {[0, 1].map((i) => (
-          <line
-            key={i}
-            x1="20"
-            y1={58 + i * 20}
-            x2="180"
-            y2={58 + i * 20}
-            stroke="#2a5a8c"
-            strokeWidth="1.5"
-          />
-        ))}
-        <line
-          x1="100"
-          y1="95"
-          x2="100"
-          y2="110"
-          stroke="#888"
-          strokeWidth="3"
-        />
-        <rect x="60" y="108" width="80" height="6" rx="3" fill="#555" />
-      </svg>
-    );
-  if (type === "powerwall")
-    return (
-      <svg viewBox="0 0 200 120" className="w-full h-full">
-        <rect
-          x="55"
-          y="15"
-          width="90"
-          height="100"
-          rx="8"
-          fill="#e8e8e8"
-          stroke="#ccc"
-          strokeWidth="1"
-        />
-        <rect x="65" y="25" width="70" height="80" rx="4" fill="#1a1a1a" />
-        <text
-          x="100"
-          y="72"
-          textAnchor="middle"
-          fontSize="11"
-          fill="#fff"
-          fontWeight="bold"
-        >
-          POWERWALL
-        </text>
-        <rect x="90" y="110" width="20" height="6" rx="2" fill="#aaa" />
-      </svg>
-    );
-  return (
-    <svg viewBox="0 0 200 120" className="w-full h-full">
-      <rect
-        x="30"
-        y="20"
-        width="140"
-        height="90"
-        rx="6"
-        fill="#f0f0f0"
-        stroke="#ddd"
-      />
-      <rect x="45" y="30" width="110" height="70" rx="4" fill="#1a3a5c" />
-      {[0, 1, 2].map((i) => (
-        <rect
-          key={i}
-          x={55 + i * 35}
-          y="40"
-          width="25"
-          height="50"
-          rx="2"
-          fill="#2a5a8c"
-        />
-      ))}
-    </svg>
-  );
-};
+import toolFixture2 from "../../assets/Images/toolFixture2.jpg";
+import toolFixture3 from "../../assets/Images/toolFixture3.jpg";
+import toolFixture4 from "../../assets/Images/toolFixture4.jpg";
 
-const ChargingIllustration = ({ type }) => {
-  if (type === "plug")
-    return (
-      <svg viewBox="0 0 200 120" className="w-full h-full">
-        <circle cx="100" cy="55" r="32" fill="#00a550" opacity="0.15" />
-        <circle cx="100" cy="55" r="24" fill="#00a550" opacity="0.3" />
-        <path d="M100,25 L108,55 L100,48 L92,55 Z" fill="#00a550" />
-        <ellipse cx="100" cy="60" rx="10" ry="14" fill="#333" />
-        <path
-          d="M80,70 Q70,90 90,100 Q110,110 120,90 Q130,70 100,80"
-          fill="none"
-          stroke="#555"
-          strokeWidth="3"
-          strokeLinecap="round"
-        />
-      </svg>
-    );
-  if (type === "supercharger")
-    return (
-      <svg viewBox="0 0 200 120" className="w-full h-full">
-        <rect
-          x="80"
-          y="10"
-          width="40"
-          height="90"
-          rx="6"
-          fill="#e0e0e0"
-          stroke="#ccc"
-          strokeWidth="1"
-        />
-        <rect x="85" y="15" width="30" height="50" rx="3" fill="#1a1a2e" />
-        <rect
-          x="88"
-          y="20"
-          width="24"
-          height="8"
-          rx="2"
-          fill="#00a550"
-          opacity="0.8"
-        />
-        <path
-          d="M100,75 L100,100"
-          stroke="#555"
-          strokeWidth="4"
-          strokeLinecap="round"
-        />
-        <path
-          d="M96,65 L104,75 L100,73 L100,85 L96,75 L100,77 Z"
-          fill="#e8a020"
-        />
-      </svg>
-    );
-  return (
-    <svg viewBox="0 0 200 120" className="w-full h-full">
-      <rect
-        x="70"
-        y="15"
-        width="60"
-        height="80"
-        rx="8"
-        fill="#e8e8e8"
-        stroke="#ccc"
-      />
-      <rect x="76" y="22" width="48" height="45" rx="4" fill="#1a1a2e" />
-      <path
-        d="M90,90 L90,105 Q100,112 110,105 L110,90"
-        fill="none"
-        stroke="#888"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-};
 
-const FSDIllustration = () => (
-  <svg viewBox="0 0 200 120" className="w-full h-full">
-    <rect width="200" height="120" fill="#f5f5f5" rx="4" />
-    <rect x="90" y="0" width="20" height="120" fill="#e0e0e0" />
-    <rect x="98" y="0" width="4" height="120" fill="white" />
-    <rect
-      x="65"
-      y="65"
-      width="38"
-      height="22"
-      rx="3"
-      fill="#4a90e2"
-      opacity="0.9"
-    />
-    <rect
-      x="95"
-      y="35"
-      width="28"
-      height="16"
-      rx="2"
-      fill="#7ec8e3"
-      opacity="0.85"
-    />
-    <path
-      d="M72,76 L110,25"
-      stroke="#4a90e2"
-      strokeWidth="1"
-      strokeDasharray="3,3"
-      opacity="0.5"
-    />
-    <circle cx="100" cy="100" r="3.5" fill="#4a90e2" opacity="0.7" />
-  </svg>
-);
+// const NAV_DATA = {
+
+//   Products: {
+//     title: "Products",
+//     grid: [
+//       { name: "Sheet Metal Components",    img: sheet   ,           sub: ["Learn"],          el: <ChargingIllustration type="plug" /> , details: [{data: 'Power Press Machines '},{data: '2D Laser Cutting Machine '},{data: 'Aluminum Embossing '},{data: 'Netting Machine'},{data: 'Hydraulic Riveting Machine  '},]       },
+//       { name: "Pipe Bending Components",   img: pipe   ,         sub: ["Learn","Shop"],   el: <ChargingIllustration type="home" /> ,  details: [{data: '3-Axis Pipe Bending Machine '},{data: 'Robotic Welding'},{data: 'Forklift  for pipe handling '},{data: 'TIG & MIG Welding Stations Fabrication Bench & Pipe Cutting Tools'}   ] }, 
+//       { name: "Tooling And Fixture",       img: toolFixture,         sub: ["Learn","Find"],   el: <ChargingIllustration type="supercharger" />  ,  details: [{data: 'MIG & Spot Welding Fixtures'},{data: 'Robotic Welding Fixture Assembly'},{data: 'CAD/CAM Design Support'},{data: 'Die & Jig Fabrication Area'},{data: 'First-Time-Right Development Approach'}   ]  },
+//       { name: "EMBOSS SHEET & PARTS", img: emboss, sub: ["Learn","Order"],  el: <ChargingIllustration type="wall" />  , details: [{data: 'MIG & Spot Welding Fixtures'},{data: 'Robotic Welding Fixture Assembly'},{data: 'CAD/CAM Design Support'},{data: 'Die & Jig Fabrication Area'},{data: 'First-Time-Right Development Approach'}   ]        },
+//       // { name: "Special Purpose Machines SPA", img: '',    sub: ["Learn","Order"],  el: <ChargingIllustration type="supercharger" />  },
+//     ],
+//     sidebar: ["Help Me Charge","Charging Calculator","Charging With NACS","Supercharger Voting","Host a Supercharger"],
+//     links: [{title: "Sheet Metal Components"}, {title: "Pipe Bending Components"} , {title: "Tooling And Fixture"}, {title: "Welding And Joining"} , {title: "Special Purpose Machines SPA"}]
+//   },
+//   Services: {
+//     title: "Services",
+//     grid: [
+//       { name: "Design & Development", img: designDevelopment, sub: ["Learn"],       el: <svg viewBox="0 0 200 120" className="w-full h-full"><circle cx="100" cy="60" r="45" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="67" textAnchor="middle" fontSize="28">🚀</text></svg> },
+//       { name: "Machineries",   img: machineries,   sub: ["View Jobs"],   el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="40" y="40" width="120" height="60" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="78" textAnchor="middle" fontSize="28">💼</text></svg> },
+//       // { name: "Assemble and Integration",         sub: ["Read"],        el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="30" y="20" width="140" height="90" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="75" textAnchor="middle" fontSize="28">📰</text></svg> },
+//       // { name: "Quality Assurance",       sub: ["See Events"],  el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="30" y="15" width="140" height="100" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="76" textAnchor="middle" fontSize="28">📅</text></svg> },
+//     ],
+//     sidebar: ["Customer Stories","Blog","Investor Relations","Press","Contact"],
+//     links: [{title: ""}, {title: ""} , {title: ""} , {title: ""}]
+//   },
+
+// };
+
+
 
 const NAV_DATA = {
   Products: {
@@ -633,7 +818,7 @@ const NAV_DATA = {
       {
         name: "Sheet Metal Components",
         img: sheet,
-        sub: ["Learn"],
+     
         details: [
           { data: "Power Press Machines " },
           { data: "2D Laser Cutting Machine " },
@@ -642,11 +827,11 @@ const NAV_DATA = {
           { data: "Hydraulic Riveting Machine  " },
         ],
         para: "Car sheet metal forms the structural outer body of a vehicle, providing strength, durability, and aerodynamic shape. Made from high-quality steel or aluminum, it ensures safety while maintaining a lightweight design. Precision engineering allows smooth finishes, corrosion resistance, and impact protection, making it essential for both performance and long-term reliability of modern automobiles.",
+        images: [{img: sheet}, {img: seatAss1},{img: seatAss2}, {img: seatAss3},]
       },
       {
         name: "Pipe Bending Components",
         img: pipe,
-        sub: ["Learn", "Shop"],
         details: [
           { data: "3-Axis Pipe Bending Machine " },
           { data: "Robotic Welding" },
@@ -656,12 +841,12 @@ const NAV_DATA = {
           },
         ],
         para: "Pipe bending components are essential in creating precise and durable curved structures used in automotive, construction, and industrial applications. Manufactured with high-quality materials, they ensure strength, accuracy, and smooth finishes. Advanced bending techniques help maintain consistency and performance, making these components reliable for complex designs and long-lasting structural integrity.",
+        images: [{img:  pipeTube2},{img: pipe }, {img:   pipeTube3},]
       },
 
       {
         name: "Tooling And Fixture",
         img: toolFixture,
-        sub: ["Learn", "Find"],
         details: [
           { data: "MIG & Spot Welding Fixtures" },
           { data: "Robotic Welding Fixture Assembly" },
@@ -670,20 +855,22 @@ const NAV_DATA = {
           { data: "First-Time-Right Development Approach" },
         ],
         para: "Tooling and fixtures are critical in manufacturing processes, ensuring precision, consistency, and efficiency during production. They securely hold and guide components, reducing errors and improving quality. Designed with durability and accuracy in mind, these systems support complex operations, enhance productivity, and play a vital role in achieving reliable and cost-effective manufacturing outcomes.",
-      },
+        images: [{img: toolFixture}, {img: toolFixture2},{img: toolFixture3}, {img: toolFixture4},]
+        },
       {
         name: "EMBOSS SHEET & PARTS",
         img: emboss,
-        sub: ["Learn", "Order"],
+       
         details: [
           { data: "Improved strength and rigidity" },
           { data: "Better grip and anti-slip surface" },
           { data: "Attractive textured appearance" },
           { data: "High durability and corrosion resistance" },
         ],
-        para: "Emboss sheet and parts are specially designed metal components featuring raised or patterned surfaces for enhanced strength, grip, and visual appeal. Manufactured with precision, they offer durability, corrosion resistance, and consistent quality. Widely used in automotive, industrial, and decorative applications, embossing improves functionality while adding a refined and professional finish.",
+         para: "Emboss sheet and parts are specially designed metal components featuring raised or patterned surfaces for enhanced strength, grip, and visual appeal. Manufactured with precision, they offer durability, corrosion resistance, and consistent quality. Widely used in automotive, industrial, and decorative applications, embossing improves functionality while adding a refined and professional finish.",
+         images: [{img: emboss},{img: embossSheet2},{img: embossSheet3}, {img: embossSheet4},]
       },
-      // { name: "Special Purpose Machines SPA", img: '',    sub: ["Learn","Order"],  el: <ChargingIllustration type="supercharger" />  },
+     
     ],
     sidebar: [
       "Help Me Charge",
@@ -707,7 +894,7 @@ const NAV_DATA = {
       {
         name: "Design & Development",
         img: designDevelopment,
-        sub: ["Learn"],
+      
         details: [
           { data: "Part Design with precision and accuracy" },
           { data: "Part Simulation for performance testing" },
@@ -716,11 +903,12 @@ const NAV_DATA = {
           { data: "Focus on quality, efficiency, and innovation" },
         ],
         para: "Design and development play a vital role in creating high-quality industrial components with precision and innovation. From concept to final production, advanced tools and techniques ensure accuracy, efficiency, and performance. This process includes detailed part design, simulation, and development of specialized components, delivering reliable and cost-effective solutions for various industrial applications.",
+        images: [{img:  designDevelopment},{img: designDevelopment2 }, {img:   designDevelopment3},]
       },
       {
         name: "Machineries",
         img: machineries,
-        sub: ["View Jobs"],
+    
         details: [
           { data: "High production efficiency" },
           { data: "Uniform and precise mesh design" },
@@ -728,9 +916,9 @@ const NAV_DATA = {
           { data: "Suitable for multiple industrial applications" },
         ],
         para: "Machines are advanced industrial systems used to produce high-quality nets for applications such as packaging, agriculture, and safety. Designed for precision and efficiency, they ensure uniform mesh structure and durability. With reliable performance and easy operation, these machines support large-scale production while maintaining consistent quality and strength.",
+        images: [{img:  machineries},{img: machineries2 }, {img:   machineries3},]
       },
-      // { name: "Assemble and Integration",         sub: ["Read"],        el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="30" y="20" width="140" height="90" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="75" textAnchor="middle" fontSize="28">📰</text></svg> },
-      // { name: "Quality Assurance",       sub: ["See Events"],  el: <svg viewBox="0 0 200 120" className="w-full h-full"><rect x="30" y="15" width="140" height="100" rx="6" fill="#f0f0f0" stroke="#ddd" /><text x="100" y="76" textAnchor="middle" fontSize="28">📅</text></svg> },
+    
     ],
     sidebar: [
       "Customer Stories",
@@ -743,34 +931,29 @@ const NAV_DATA = {
   },
 };
 
+
 export default function Navbar() {
-  const [activeMenu, setActiveMenu] = useState(null);
-  const [searchOpen, setSearchOpen] = useState(false);
+  const [activeMenu, setActiveMenu]   = useState(null);
+  const [searchOpen, setSearchOpen]   = useState(false);
   // const [searchVal,  setSearchVal]    = useState("");
   const [menuVisible, setMenuVisible] = useState(false); // controls animation class
   const closeTimer = useRef(null);
-  const openTimer = useRef(null);
+  const openTimer  = useRef(null);
 
-  const openMenu = useCallback(
-    (key) => {
-      clearTimeout(closeTimer.current);
-      if (activeMenu !== key) {
-        // if switching menus: swap instantly content, keep open
-        setMenuVisible(false);
-        openTimer.current = setTimeout(
-          () => {
-            setActiveMenu(key);
-            setMenuVisible(true);
-          },
-          activeMenu ? 80 : 0
-        );
-      } else {
+  const openMenu = useCallback((key) => {
+    clearTimeout(closeTimer.current);
+    if (activeMenu !== key) {
+      // if switching menus: swap instantly content, keep open
+      setMenuVisible(false);
+      openTimer.current = setTimeout(() => {
+        setActiveMenu(key);
         setMenuVisible(true);
-      }
-      setActiveMenu(key);
-    },
-    [activeMenu]
-  );
+      }, activeMenu ? 80 : 0);
+    } else {
+      setMenuVisible(true);
+    }
+    setActiveMenu(key);
+  }, [activeMenu]);
 
   const closeMenu = useCallback(() => {
     closeTimer.current = setTimeout(() => {
@@ -784,87 +967,74 @@ export default function Navbar() {
   }, []);
 
   const data = activeMenu ? NAV_DATA[activeMenu] : null;
-  console.log("data", data);
-
+  console.log("data", data,  )
+  
   return (
-    <div className="">
-      <div className=" fixed  top-4  left-0 w-full z-[1000]  ">
-        <nav
-          className=" max-w-7xl  z-50 bg-white/50 = backdrop-blur-lg   rounded-2xl mx-auto"
-          onMouseLeave={closeMenu}
-        >
-          <div className="flex items-center justify-between px-6 h-[65px] max-w-screen-2xl mx-auto">
-            <NavLink to="/" className="flex-shrink-0 text-black  duration-200">
-              <img
+
+    <div className=""> 
+    <div className=" fixed  top-4  left-0 w-full z-[1000]    "> 
+    
+      <nav
+       className="max-w-7xl mx-auto bg-white shadow-md rounded-2xl border border-gray-100 backdrop-blur-sm"
+        onMouseLeave={closeMenu}
+      >
+        <div className="flex items-center justify-between px-10 h-[75px] max-w-screen-2xl mx-auto">
+
+          <NavLink to='/' className="flex-shrink-0 text-black  duration-200">
+          <img
                 src="https://bbengineers.co.in/image/new_logo.png"
                 alt="BB Engineers logo"
                 className="h-10 w-auto object-contain"
               />
-            </NavLink>
-
-            <div className=" flex items-center gap-3  ">
-              <span className="  py-1 transition">
-                <NavLink
-                  to="/"
-                  className="font-medium text-gray-800text-[#2B2B2B] hover:text-[#E28A2D]  hover:rounded-2xl  "
-                >
+          </NavLink>
+          
+          <div className="flex items-center gap-6 text-[16px] font-medium tracking-wide">
+             <span className="  py-1 transition">
+                <NavLink to='/' className="font-medium text-gray-800  hover:rounded-2xl hover:text-black">
                   Home
                 </NavLink>
               </span>
-              <span className="  py-1 transition">
-                <NavLink
-                  to="/about"
-                  className=" font-medium text-[#2B2B2B] hover:text-[#E28A2D]"
+            <span className="  py-1 transition"> 
+              <NavLink to='/about'  className=' font-medium text-gray-800 hover:text-black'> About </NavLink>
+            </span>
+            
+            {Object.keys(NAV_DATA).map((key, i) => {
+              const isActive = activeMenu === key;
+              // console.log("d-------------", key,  )
+              return (
+                <button
+                  key={key}
+                  onMouseEnter={() => { openMenu(key); setSearchOpen(false); }}
+                  onClick={() => openMenu(key)}
+                  className={[ 
+                    "relative h-[52px] text-gray-700 hover:text-black transition duration-200",
+                    isActive ? "text-black " : "",
+                  ].join(" ")}
                 >
-                  {" "}
-                  About{" "}
-                </NavLink>
-              </span>
-
-              {Object.keys(NAV_DATA).map((key, i) => {
-                const isActive = activeMenu === key;
-                // console.log("d-------------", key,  )
-                return (
-                  <button
-                    key={key}
-                    onMouseEnter={() => {
-                      openMenu(key);
-                      setSearchOpen(false);
-                    }}
-                    onClick={() => openMenu(key)}
+                  {key} 
+                  
+                  <span
                     className={[
-                      "relative  h-[52px]  font-medium text-center ",
-                      "text-[#2B2B2B] hover:text-[#E28A2D]",
-                      isActive ? "text-black " : "",
+                      "absolute bottom-0 left-4 right-4 h-[2px]  rounded-full bg- transition-all duration-300",
+isActive && menuVisible ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0",
                     ].join(" ")}
-                  >
-                    {key}
+                    style={{ transformOrigin: "left" }}
+                  />
+                </button>
+              );
+            })}
+            <span className="  py-1 transition  px-2 rounded-lg"> 
+              <NavLink to='/contact' className="text-gray-700 hover:text-black transition duration-200">
+                 Contact 
+                 </NavLink>
+            </span>
+          </div>
 
-                    {/* <span
-                    className={[
-                      "absolute bottom-0 left-4 right-4 h-[2px] bg-black rounded-full transition-all duration-300 ease-out",
-                      isActive && menuVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0",
-                    ].join(" ")}
-                    style={{ transformOrigin: "center" }}
-                  /> */}
-                  </button>
-                );
-              })}
-              <span className="  py-1 transition  px-2 rounded-lg">
-                <NavLink
-                  to="/contact"
-                  className=" font-medium text-[#2B2B2B] hover:text-[#E28A2D]"
-                >
-                  Contact
-                </NavLink>
-              </span>
-            </div>
-
-            {/* Right side */}
-            <div className="flex items-center gap-1">
-              {/* Search */}
-              <div className="flex items-center ">
-                {/* <div
+          {/* Right side */}
+          <div className="flex items-center gap-1">
+            {/* Search */}
+            <div className="flex items-center  ">
+              {/* <div
                 className={[
                   "overflow-hidden transition-all duration-400 ease-in-out",
                   searchOpen ? "max-w-[200px] opacity-100" : "max-w-0 opacity-0",
@@ -879,149 +1049,131 @@ export default function Navbar() {
                   className="w-44 border-b placeholder-black  border-black outline-none text-[13px] px-1 py-0.5 bg-transparent text-gray-800 "
                 />
               </div> */}
-                <div className="gap-3 flex items-center">
-                  {/* <button
+              <div className="gap-3 flex items-center"> 
+              {/* <button
                 onClick={() => { setSearchOpen(s => !s); setActiveMenu(null); if (searchOpen) setSearchVal(""); }}
                 className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-150"
               >
               
               </button> */}
-
-                  <button className="uppercase border-2 border-black px-2 py-2 rounded-lg text-xs hover:bg-[#F9981C]">
-                    <NavLink to="/contact#contact-form">Request quote</NavLink>
-                  </button>
-                </div>
+              
+                 <button className="uppercase border border-[#EB9A38] text-[#EB9A38] hover:bg-[#EB9A38] hover:text-white transition-all duration-300 px-2 py-2 rounded-lg text-xs">
+                  <NavLink to="/contact#contact-form" >
+                Request quote  
+                </NavLink>
+              </button>
+             
+             
               </div>
             </div>
           </div>
+        </div>
 
-          <div
-            onMouseEnter={cancelClose}
-            onMouseLeave={closeMenu}
-            className={[
-              "absolute left-0 right-0 bg-white border-t border-gray-100 shadow-xl overflow-hidden z-40 ",
-              "transition-all duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)]",
-              activeMenu && menuVisible
-                ? "max-h-[520px] opacity-100 translate-y-0"
-                : "max-h-0 opacity-0 -translate-y-1 pointer-events-none",
-            ].join(" ")}
-          >
-            {data && (
-              <div className="w-full mx-auto flex justify-center items-center text-center border-2 border-green-500 ">
-                {/* Grid */}
+        <div
+          onMouseEnter={cancelClose}
+          onMouseLeave={closeMenu}
+          className={[
+            "absolute left-0 right-0 bg-white border-t border-gray-400 shadow-2xl rounded-t-2xl rounded-b-2xl overflow-hidden z-40 ",
+            "transition-all duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] ",
+            activeMenu && menuVisible
+              ? "max-h-[220px] opacity-100 translate-y-0"
+              : "max-h-0 opacity-0 -translate-y-1 pointer-events-none",
+          ].join(" ")}
+        >
+          {data && (
+            <div className=" w-full mx-auto   ">
 
-                <div className="border-2 border-red-500 px-10 mx-auto ">
-                <div className="flex items-center px-5 py-8 border-2 border-red-500  w-full max-w-7xl">
-                  {/* <div className=" flex items-center  px-5 py-8 border-2 border-green-500 mx-auto"> */}
-                    <div
-                      className={[
-                        "grid gap-x-2 gap-y-6 ",
-                        data.grid.length <= 4 ? "grid-cols-4" : "grid-cols-4",
-                      ].join(" ")}
-                    >
-                      {data.grid.map((item, i) => (
-                        <div
-                          key={item.name}
-                          className="group cursor-pointer border-2 border-black"
-                          style={{
-                            transition: `opacity 0.35s ease ${
-                              i * 45
-                            }ms, transform 0.35s ease ${i * 45}ms`,
-                            opacity: menuVisible ? 1 : 0,
-                            transform: menuVisible
-                              ? "translateY(0)"
-                              : "translateY(10px)",
-                          }}
-                        >
-                          <div
-                            className="w-full h-28 bg-gray-50 rounded-md overflow-hidden flex items-center justify-center  mb-2 transition-all
-                       duration-250 group-hover:border-gray-300 group-hover:shadow-sm"
-                          >
-                            <NavLink
-                              to={`/${data?.title
-                                ?.toLowerCase()
-                                .replace(/\s+/g, "-")}/${encodeURIComponent(
-                                item.name
-                              )}`}
-                              state={{
-                                name: item.name,
-                                img: item.img,
-                                details: item.details,
-                                para: item.para,
-                              }}
-                              className="block text-gray-700  text-center  hover:bg-gray-100  py-2 rounded-md 
-                             transition"
-                            >
-                              {/* <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Grid-Current-Offers.jpg"/> */}
-                              <img src={item.img} />
-                            </NavLink>
-                          </div>
-                          <p className="text-[13px] font-semibold text-gray-900 text-center leading-tight mb-1 transition-colors duration-150 group-hover:text-black">
-                            {item.name}
-                          </p>
-                          <div className="flex items-center justify-center gap-3">
-                            {item.sub.map((lnk, j) => (
-                              <a
-                                key={j}
-                                href="#"
-                                className="text-[11px] text-gray-500 underline underline-offset-2 hover:text-black transition-colors duration-150"
-                              ></a>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
+              {/* Grid */}
+              <div className="flex px-5 py-8  mx-auto">
                 <div
-                  className="w-52 border-l border-gray-100 px-6 py-8 flex-shrink-0"
-                  style={{
-                    transition:
-                      "opacity 0.4s ease 120ms, transform 0.4s ease 120ms",
-                    opacity: menuVisible ? 1 : 0,
-                    transform: menuVisible
-                      ? "translateX(0)"
-                      : "translateX(8px)",
-                  }}
+                  className={[
+                    "grid gap-x-2 gap-y-6 ",
+                    data.grid.length <= 4 ? "grid-cols-4" : "grid-cols-4",
+                  ].join(" ")}
                 >
-                  <ul className="space-y-[10px]">
-                    {data.sidebar.map((s, i) => (
-                      <li key={i}>
-                        <a
-                          href="#"
-                          className="block text-[13px] text-gray-500 hover:text-gray-900 transition-all duration-150 hover:translate-x-0.5"
-                        ></a>
-                      </li>
-                    ))}
-                  </ul>
+                  
+                  {data.grid.map((item, i) => (
+                    <div
+                      key={item.name}
+                      className="group cursor-pointer"
+                      style={{
+                        transition: `opacity 0.35s ease ${i * 45}ms, transform 0.35s ease ${i * 45}ms`,
+                        opacity: menuVisible ? 1 : 0,
+                        transform: menuVisible ? "translateY(0)" : "translateY(10px)",
+                      }}
+                    >
+                      <div className="w-full h-28 bg-gray-50 rounded-md overflow-hidden flex items-center justify-center  mb-2 transition-all duration-250 group-hover:shadow-md duration-300">
+                        
+                      <NavLink to={`/${data?.title?.toLowerCase().replace(/\s+/g, '-')}/${encodeURIComponent(item.name)}`} state={{
+                                                                                                                                name: item.name,
+                                                                                                                                img: item.img,
+                                                                                                                                details: item.details,
+                                                                                                                                images: item.images,
+                                                                                                                                para: item.para,
+                                                                                                                              }}
+                              className='block text-gray-700  text-center  hover:bg-gray-100  py-2 rounded-md 
+                             transition'>
+                          {/* <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Grid-Current-Offers.jpg"/> */}
+                          <img 
+                            src={item.img} 
+                            className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                          />
+                      </NavLink>  
+                     
+                      </div>
+                      <p className="text-[13px] font-medium text-gray-800 group-hover:text-black transition text-center leading-tight mb-1  duration-150 ">
+                       {item.name}
+                      
+                      </p>
+                    
+                    </div>
+                  ))}
+                  
                 </div>
               </div>
-            )}
-          </div>
-        </nav>
 
-        {/* Dim backdrop */}
-        <div
-          onClick={() => {
-            setMenuVisible(false);
-            setTimeout(() => setActiveMenu(null), 350);
-          }}
-          className={[
-            "fixed  top-[52px] bg-black/15 z-30 transition-opacity duration-350",
-            activeMenu && menuVisible
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none",
-          ].join(" ")}
-        />
+              <div
+                className="w-52 border-l border-gray-100 px-6 py-8 flex-shrink-0"
+                style={{
+                  transition: "opacity 0.4s ease 120ms, transform 0.4s ease 120ms",
+                  opacity: menuVisible ? 1 : 0,
+                  transform: menuVisible ? "translateX(0)" : "translateX(8px)",
+                }}
+              >
+                <ul className="space-y-[10px]">
+                  {data.sidebar.map((s, i) => (
+                    <li key={i}>
+                      <a
+                        href="#"
+                        className="block text-[13px] text-gray-500 hover:text-gray-900 transition-all duration-150 hover:translate-x-0.5"
+                      >
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
+        </div>
+      </nav>
 
-        {/* Demo page content */}
-        {/* <div className="flex flex-col items-center justify-center min-h-[40vh] bg-gray-50"> */}
+      {/* Dim backdrop */}
+      <div
+        onClick={() => { setMenuVisible(false); setTimeout(() => setActiveMenu(null), 350); }}
+        className={[
+          "fixed  top-[52px] bg-black/15 z-30 transition-opacity duration-350",
+          activeMenu && menuVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
+        ].join(" ")}
+      />
+
+      {/* Demo page content */}
+      {/* <div className="flex flex-col items-center justify-center min-h-[40vh] bg-gray-50"> */}
         {/* <p className="text-sm text-gray-400 mb-3 tracking-widest uppercase">Tesla Navbar Clone</p> */}
         {/* <h1 className="text-5xl font-bold text-gray-900 tracking-tight mb-4">Hover the nav above</h1> */}
-
-        {/* </div> */}
-      </div>
+      
+      {/* </div> */}
     </div>
+
+    </div> 
   );
 }

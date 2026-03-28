@@ -36,7 +36,7 @@ const ProductsItem = () => {
             <img src='https://unsplash.com/photos/the-interior-of-the-metalworking-shop-modern-industrial-enterprise-26l0XGqe2xk' alt='phto'/>
          </div> */}
 
-      <section className="relative w-full h-[70vh] mx-auto flex items-center ">
+      <section className="relative w-full h-[70vh] mx-auto flex items-center   ">
         <img
           src={img}
           alt="Safety"
@@ -76,9 +76,9 @@ const ProductsItem = () => {
         </div>
       </section>
 
-      <section className="w-full bg-white">
-        <div
-          className="
+      <section className="w-full bg-white   ">
+        <div 
+          className="  
         max-w-5xl mx-auto
         px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20
         py-8 sm:py-10 md:py-12 lg:py-16
@@ -131,7 +131,47 @@ const ProductsItem = () => {
             ))}
           </ul>
         </div>
-   
+
+        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-6 sm:py-8 md:py-10  ">
+          
+
+        <div className="mb-4 sm:mb-6">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">
+              Product Images
+            </h3>
+            <p className="text-sm text-gray-600 mt-1">
+              Explore our manufacturing tools and product visuals
+            </p>
+          </div>
+          <div
+            className="grid 
+            grid-cols-2 
+            sm:grid-cols-2 
+            md:grid-cols-3 
+            lg:grid-cols-4 
+            gap-3 sm:gap-4 md:gap-5"
+          >
+            {product.images.map((img, i) => (
+              <div
+                key={i}
+                className="group overflow-hidden rounded-xl bg-gray-100"
+              >
+                <img
+                  src={img.img}
+                  alt="factory tool"
+                  className="
+                    w-full 
+                    h-32 sm:h-40 md:h-48 lg:h-52 
+                    object-cover 
+                    transition-transform duration-300 
+                    group-hover:scale-105
+                  "
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
       </section>
     </div>
   );

@@ -73,7 +73,7 @@ const HeroSection = () => {
     <div className='relative  z-10 top-0  bg-transparent '>
          
       <div className=' '>
-      <section className="transparent relative z-50 left-0 ">
+      <section className="transparent relative z-10 left-0 ">
        
         <div className="relative  max-w-screen  ">
         <div className='sticky top-10 h-screen overflow-hidden  '>
@@ -120,11 +120,11 @@ const HeroSection = () => {
               </div>
  
               {/* Button */}
-              <div className="mb-16 md:mb-20 lg:mb-24">
+              {/* <div className="mb-16 md:mb-20 lg:mb-24">
                 <button className="text-white px-5 py-2 bg-[#1D75BC] rounded-lg">
                   {slide.button}
                 </button>
-              </div>
+              </div> */}
   
             </div>
             </div>

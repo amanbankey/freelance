@@ -1,9 +1,19 @@
-import React from 'react'
+import React,  { useEffect, useState } from 'react'
 import img from '../../../assets/Images/about.jpg'
 
 const HeroSection = () => {
+  const [started, setStarted] = useState(false)
+ 
+  useEffect(() => {
+    // first frame pe scale(0.85) dikhao, phir turant grow karo
+    const raf = requestAnimationFrame(() => {
+      requestAnimationFrame(() => setStarted(true))
+    })
+    return () => cancelAnimationFrame(raf)
+  }, [])
+
   return (
-    <div className='relative  z-10 top-0  bg-transparent  '>
+    <div className='relative  z-10 top-0    '>
          
     {/* <section className="transparent relative z-50 left-0">
      
@@ -75,7 +85,7 @@ const HeroSection = () => {
     </section> */}
 
 
-    <section className="relative w-full h-[70vh] mx-auto flex items-center ">
+    {/* <section className="relative w-full h-[70vh] mx-auto flex items-center ">
          <img
            src={img} 
            alt="Safety"
@@ -92,14 +102,14 @@ const HeroSection = () => {
       </div>
     
       <div className="max-w-7xl mx-auto px-0 py-1  flex flex-col md:flex-row items-center gap-8 ">
-        {/* Left Column - Heading */}
+      
         <div className="lg:w-5/12 text-left">
           <h2 className={`text-base  font-bold leading-tight  `}>
           About us
           </h2>
         </div>
 
-        {/* Right Column - Paragraph */}
+      
         <div className="lg:w-1/2">
           <p className="text-sm tracking-widest text-gray-600 font-medium ">
          
@@ -113,13 +123,146 @@ const HeroSection = () => {
          </div>
     </div>
  
-       {/* <div className=' z-10 border-red-300 border-4   '> */}
-        
-        {/* </div> */}
         </div>
         
        
-       </section>
+       </section> */}
+
+
+{/* <section className="relative w-full h-[70vh] mx-auto flex items-center overflow-hidden">
+
+ <div
+   className="absolute  w-full h-full will-change-transform bg-white rounded-xl"
+   style={{
+     transform: started ? 'scale(1)'    : 'scale(0.88)',
+
+     transition: started
+       ? 'transform 1600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 1200ms ease-out'
+       : 'none',
+   }}
+ >
+   <img
+     src={img}
+     alt="About Us"
+     className="w-full h-full object-cover "
+   />
+ </div>
+
+
+ <div className="absolute  bg-black/45" />
+
+ <div
+   className="flex z-50 text-white flex-col w-full"
+   style={{
+     opacity:   started ? 1 : 0,
+     transform: started ? 'translateY(0)' : 'translateY(24px)',
+     transition: 'opacity 900ms ease-out 400ms, transform 900ms ease-out 400ms',
+   }}
+ >
+   <div className="md:w-9/12 relative py-24 mx-auto w-full px-6 md:px-0">
+
+
+     <div className="flex items-center mb-4">
+       <span className="text-sm tracking-widest font-semibold uppercase" />
+     </div>
+
+
+     <div className="max-w-7xl mx-auto px-0 py-1 flex flex-col md:flex-row items-center gap-8">
+       <div className="lg:w-5/12 text-left">
+         <h2 className="text-base font-bold leading-tight">
+           About us
+         </h2>
+       </div>
+       <div className="lg:w-1/2">
+         <p className="text-sm tracking-widest text-gray-300 font-medium" />
+       </div>
+     </div>
+
+
+     <div className="text-left text-3xl sm:text-4xl md:text-5xl text-white flex z-10 w-full md:w-8/12 mt-4">
+       <p className="leading-snug">
+         Innovative. Sustainable. Future Ready.
+       </p>
+     </div>
+
+   </div>
+ </div>
+
+</section> */}
+
+
+      <section className="relative w-full h-[70vh] mx-auto flex items-center overflow-hidden">
+
+      <div
+        className="absolute w-full h-full will-change-transform bg-white"
+        style={{
+          transform:    started ? 'scale(1)'    : 'scale(0.88)',
+          borderRadius: started ? '0px'         : '20px',
+          overflow:     'hidden',
+          transition: started
+            ? 'transform 1600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), border-radius 1600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+            : 'none',
+        }}
+      >
+        <img
+          src={img}
+          alt="About Us"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+
+      <div
+        className="absolute bg-black/45"
+        style={{
+          
+          borderRadius: started ? '0px' : '20px',
+          overflow:     'hidden',
+          transition: started
+            ? 'border-radius 1600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+            : 'none',
+        }}
+      />
+
+      <div
+        className="flex z-50 text-white flex-col w-full"
+        style={{
+          opacity:   started ? 1 : 0,
+          transform: started ? 'translateY(0)' : 'translateY(24px)',
+          transition: 'opacity 900ms ease-out 400ms, transform 900ms ease-out 400ms',
+        }}
+      >
+        <div className="md:w-9/12 relative py-24 mx-auto w-full px-6 md:px-0">
+
+          {/* label */}
+          <div className="flex items-center mb-4">
+            <span className="text-sm tracking-widest font-semibold uppercase" />
+          </div>
+
+          {/* About us row */}
+          <div className="max-w-7xl mx-auto px-0 py-1 flex flex-col md:flex-row items-center gap-8">
+            <div className="lg:w-5/12 text-left">
+              <h2 className="text-base font-bold leading-tight">
+                About us
+              </h2>
+            </div>
+            <div className="lg:w-1/2">
+              <p className="text-sm tracking-widest text-gray-300 font-medium" />
+            </div>
+          </div>
+
+          {/* Main headline */}
+          <div className="text-left text-3xl sm:text-4xl md:text-5xl text-white flex z-10 w-full md:w-8/12 mt-4">
+            <p className="leading-snug">
+              Innovative. Sustainable. Future Ready.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      </section>
+
 
   </div>
   )

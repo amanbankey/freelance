@@ -19,7 +19,7 @@ const Home = () => {
 
        <ScopePromise />
        
-       <ManagementStrategies />
+       {/* <ManagementStrategies /> */}
 
        <MapSection/>
       <FInanceSection />
