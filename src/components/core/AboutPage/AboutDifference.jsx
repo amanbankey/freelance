@@ -6,7 +6,6 @@
 // import rohan from '../../../assets/Images/rohan.jpg'
 // import anil from '../../../assets/Images/anil.jpg'
 
- 
 
 // const images = {
 //     topLeft: vikram,

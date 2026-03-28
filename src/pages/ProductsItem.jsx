@@ -1,4 +1,5 @@
-import React from "react";
+import React ,{useEffect, useState} from "react";
+
 import { useParams } from "react-router-dom";
 import Products from "../assets/Images/products.jpg";
 import { useLocation } from "react-router-dom";
@@ -26,6 +27,17 @@ const ProductsItem = () => {
 
   console.log("dat----------a", product.para);
 
+  const [started, setStarted] = useState(false)
+   
+    useEffect(() => {
+      // first frame pe scale(0.85) dikhao, phir turant grow karo
+      const raf = requestAnimationFrame(() => {
+        requestAnimationFrame(() => setStarted(true))
+      })
+      return () => cancelAnimationFrame(raf)
+    }, [])
+  
+
   return (
     <div>
       {/* <div className='inset-0'>
@@ -36,45 +48,79 @@ const ProductsItem = () => {
             <img src='https://unsplash.com/photos/the-interior-of-the-metalworking-shop-modern-industrial-enterprise-26l0XGqe2xk' alt='phto'/>
          </div> */}
 
-      <section className="relative w-full h-[70vh] mx-auto flex items-center   ">
-        <img
-          src={img}
-          alt="Safety"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-
-        <div className="flex z-50 text-white flex-col w-full ">
-          <div className="md:w-9/12 relative  py-24 mx-auto  ">
-            <div className="flex items-center mb-4">
-              <span className="text-sm tracking-widest font-semibold  uppercase"></span>
-            </div>
-
-            <div className="max-w-7xl mx-auto px-0 py-1  flex flex-col md:flex-row items-center gap-8 ">
-              {/* Left Column - Heading */}
-              <div className="lg:w-5/12 text-left">
-                <h2 className={`text-base  font-bold leading-tight  `}>
-                  Products
-                </h2>
-              </div>
-
-              {/* Right Column - Paragraph */}
-              <div className="lg:w-1/2">
-                <p className="text-sm tracking-widest text-gray-600 font-medium "></p>
-              </div>
-            </div>
-            <div className="text-left text-5xl  text-white  flex  z-10  w-8/12 ">
-              <p>
-                Top quality bearings for top quality performance in the
-                automotive industry.
-              </p>
-            </div>
-          </div>
-
-          {/* <div className=' z-10 border-red-300 border-4   '> */}
-
-          {/* </div> */}
-        </div>
-      </section>
+       
+             <section className="relative w-full h-[70vh] mx-auto flex items-center overflow-hidden">
+       
+             <div
+               className="absolute w-full h-full will-change-transform bg-white"
+               style={{
+                 transform:    started ? 'scale(1)'    : 'scale(0.88)',
+                 borderRadius: started ? '0px'         : '20px',
+                 overflow:     'hidden',
+                 transition: started
+                   ? 'transform 1600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), border-radius 1600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                   : 'none',
+               }}
+             >
+               <img
+                 src={img}
+                 alt="About Us"
+                 className="w-full h-full object-cover"
+               />
+             </div>
+       
+       
+             <div
+               className="absolute bg-black/45"
+               style={{
+                 
+                 borderRadius: started ? '0px' : '20px',
+                 overflow:     'hidden',
+                 transition: started
+                   ? 'border-radius 1600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                   : 'none',
+               }}
+             />
+       
+             <div
+               className="flex z-50 text-white flex-col w-full"
+               style={{
+                 opacity:   started ? 1 : 0,
+                 transform: started ? 'translateY(0)' : 'translateY(24px)',
+                 transition: 'opacity 900ms ease-out 400ms, transform 900ms ease-out 400ms',
+               }}
+             >
+               <div className="md:w-9/12 relative py-24 mx-auto w-full px-6 md:px-0">
+       
+                 {/* label */}
+                 <div className="flex items-center mb-4">
+                   <span className="text-sm tracking-widest font-semibold uppercase" />
+                 </div>
+       
+                 {/* About us row */}
+                 <div className="max-w-7xl mx-auto px-0 py-1 flex flex-col md:flex-row items-center gap-8">
+                   <div className="lg:w-5/12 text-left">
+                     <h2 className="text-base font-bold leading-tight">
+                       About us
+                     </h2>
+                   </div>
+                   <div className="lg:w-1/2">
+                     <p className="text-sm tracking-widest text-gray-300 font-medium" />
+                   </div>
+                 </div>
+       
+                 {/* Main headline */}
+                 <div className="text-left text-3xl sm:text-4xl md:text-5xl text-white flex z-10 w-full md:w-8/12 mt-4">
+                   <p className="leading-snug">
+                     Innovative. Sustainable. Future Ready.
+                   </p>
+                 </div>
+       
+               </div>
+             </div>
+       
+             </section>
+             
 
       <section className="w-full bg-white   ">
         <div 
@@ -84,7 +130,7 @@ const ProductsItem = () => {
         py-8 sm:py-10 md:py-12 lg:py-16
       "
         >
-          {/* ── Heading ── */}
+       
           <h2
             className="
           text-lg sm:text-xl md:text-2xl
@@ -132,7 +178,7 @@ const ProductsItem = () => {
           </ul>
         </div>
 
-        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-6 sm:py-8 md:py-10  ">
+        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-6 sm:py-8 md:py-10 mb-20 ">
           
 
         <div className="mb-4 sm:mb-6">

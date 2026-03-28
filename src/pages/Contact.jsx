@@ -17,6 +17,16 @@ const Contact = () => {
     message: "",
     notRobot: false,
   });
+const [started, setStarted] = useState(false)
+ 
+  useEffect(() => {
+   
+    const raf = requestAnimationFrame(() => {
+      requestAnimationFrame(() => setStarted(true))
+    })
+    return () => cancelAnimationFrame(raf)
+  }, [])
+
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -39,7 +49,7 @@ const Contact = () => {
   return (
     <div>
 
-      <section className="relative w-full h-[70vh] mx-auto flex items-center ">
+      {/* <section className="relative w-full h-[70vh] mx-auto flex items-center ">
         <img
           src={img}
           alt="Safety"
@@ -53,14 +63,14 @@ const Contact = () => {
             </div>
 
             <div className="max-w-7xl mx-auto px-0 py-1  flex flex-col md:flex-row items-center gap-8 ">
-              {/* Left Column - Heading */}
+            
               <div className="lg:w-5/12 text-left">
                 <h2 className={`text-base  font-bold leading-tight  `}>
                  Contact us
                 </h2>
               </div>
 
-              {/* Right Column - Paragraph */}
+            
               <div className="lg:w-1/2">
                 <p className="text-sm tracking-widest text-gray-600 font-medium "></p>
               </div>
@@ -70,24 +80,94 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* <div className=' z-10 border-red-300 border-4   '> */}
-
-          {/* </div> */}
+    
         </div>
-      </section>
+      </section> */}
+
+          <section className="relative w-full h-[70vh] mx-auto flex items-center overflow-hidden">
+        
+              <div
+                className="absolute w-full h-full will-change-transform bg-white"
+                style={{
+                  transform:    started ? 'scale(1)'    : 'scale(0.88)',
+                  borderRadius: started ? '0px'         : '20px',
+                  overflow:     'hidden',
+                  transition: started
+                    ? 'transform 1600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), border-radius 1600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                    : 'none',
+                }}
+              >
+                <img
+                  src={img}
+                  alt="About Us"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+        
+        
+              <div
+                className="absolute bg-black/45"
+                style={{
+                  
+                  borderRadius: started ? '0px' : '20px',
+                  overflow:     'hidden',
+                  transition: started
+                    ? 'border-radius 1600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                    : 'none',
+                }}
+              />
+        
+              <div
+                className="flex z-50 text-white flex-col w-full"
+                style={{
+                  opacity:   started ? 1 : 0,
+                  transform: started ? 'translateY(0)' : 'translateY(24px)',
+                  transition: 'opacity 900ms ease-out 400ms, transform 900ms ease-out 400ms',
+                }}
+              >
+                <div className="md:w-9/12 relative py-24 mx-auto w-full px-6 md:px-0">
+        
+                  {/* label */}
+                  <div className="flex items-center mb-4">
+                    <span className="text-sm tracking-widest font-semibold uppercase" />
+                  </div>
+        
+                  {/* About us row */}
+                  <div className="max-w-7xl mx-auto px-0 py-1 flex flex-col md:flex-row items-center gap-8">
+                    <div className="lg:w-5/12 text-left">
+                      <h2 className="text-base font-bold leading-tight">
+                        About us
+                      </h2>
+                    </div>
+                    <div className="lg:w-1/2">
+                      <p className="text-sm tracking-widest text-gray-300 font-medium" />
+                    </div>
+                  </div>
+        
+                  {/* Main headline */}
+                  <div className="text-left text-3xl sm:text-4xl md:text-5xl text-white flex z-10 w-full md:w-8/12 mt-4">
+                    <p className="leading-snug">
+                      Innovative. Sustainable. Future Ready.
+                    </p>
+                  </div>
+        
+                </div>
+              </div>
+        
+              </section>
 
 
       <section id="contact-form">
         <div className="bg-white min-h-screen px-4 py-12 flex flex-col items-center">
-          {/* Top Quote Text */}
+      
           <p className="text-gray-700 text-sm sm:text-base text-center max-w-xl mb-8 leading-relaxed">
             "Your questions matter to us. Fill out the form below, and our team
             will respond promptly to start the conversation and assist you!"
           </p>
 
-          {/* Form Card */}
+    
           <div className="w-full max-w-2xl bg-gray-100 rounded-xl p-4 sm:p-6" >
-            {/* Row 1: First Name + Last Name */}
+        
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
               <input
                 type="text"
@@ -107,7 +187,7 @@ const Contact = () => {
               />
             </div>
 
-            {/* Row 2: Email + Mobile */}
+      
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
               <input
                 type="email"
@@ -127,7 +207,7 @@ const Contact = () => {
               />
             </div>
 
-            {/* Row 3: Business Dropdown */}
+        
             <div className="mb-3">
               <select
                 name="business"
@@ -146,7 +226,7 @@ const Contact = () => {
               </select>
             </div>
 
-            {/* Row 4: Message Textarea */}
+     
             <div className="mb-4">
               <textarea
                 name="message"
@@ -158,7 +238,7 @@ const Contact = () => {
               />
             </div>
 
-            {/* reCAPTCHA Fake UI */}
+         
             <div className="mb-6">
               <div className="bg-gray-200 border border-gray-300 rounded flex items-center justify-between px-4 py-3 w-64">
                 <div className="flex items-center gap-3">
@@ -180,7 +260,7 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Submit Button */}
+      
             <button
               onClick={handleSubmit}
               className="bg-blue-400 hover:bg-blue-500 text-white text-xs font-bold tracking-widest uppercase px-10 py-3 rounded transition-colors duration-200"
@@ -191,7 +271,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section >
+      <section  className="mb-20">
          <div className="bg-white px-4 py-8 flex justify-center">
       <div
         className="relative w-full max-w-5xl rounded-2xl overflow-hidden px-8 py-10 border-2 border-black"
