@@ -241,7 +241,7 @@ const AboutSection = () => {
 <div className="w-full relative">
 
 {/* VIDEO SECTION */}
-<div className="w-full h-[280px] sm:h-[380px] md:h-[500px] lg:h-[600px] overflow-hidden relative">
+<div className="w-full h-[280px] sm:h-[380px] md:h-[500px] lg:h-full overflow-hidden relative">
   <video
     className="w-full h-full object-cover  "
     src={about}
@@ -275,7 +275,7 @@ const AboutSection = () => {
           <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
             <div className="flex flex-col gap-2 sm:gap-3">
               <span className="bg-yellow-300 px-2 sm:px-3 py-1 rounded text-xs sm:text-sm font-semibold w-fit">
-                Our Promise
+                Our Scope
               </span>
               <p className="text-xs sm:text-sm leading-relaxed text-gray-700">
                 Our scope includes delivering complete end-to-end engineering solutions including stamping, welding, laser cutting, and tooling.
@@ -288,7 +288,6 @@ const AboutSection = () => {
             <div className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-600 text-white flex items-center justify-center rounded-full">
               <FiArrowUpRight />
             </div>
-            <p className="text-xs sm:text-sm">Learn more</p>
           </div>
         </div>
 
@@ -297,7 +296,7 @@ const AboutSection = () => {
           <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
             <div className="flex flex-col gap-2 sm:gap-3">
               <span className="bg-white px-2 sm:px-3 py-1 rounded text-xs sm:text-sm font-semibold w-fit">
-                Web Development Service
+              Our Promise
               </span>
               <p className="text-xs sm:text-sm leading-relaxed text-gray-800">
                 We promise quality, reliability, and on-time delivery with strong commitment to customer satisfaction.
@@ -310,7 +309,6 @@ const AboutSection = () => {
             <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white text-blue-600 flex items-center justify-center rounded-full">
               <FiArrowUpRight />
             </div>
-            <p className="text-xs sm:text-sm">Learn more</p>
           </div>
         </div>
 
@@ -332,7 +330,6 @@ const AboutSection = () => {
             <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white text-blue-600 flex items-center justify-center rounded-full">
               <FiArrowUpRight />
             </div>
-            <p className="text-xs sm:text-sm">Learn more</p>
           </div>
         </div>
 
@@ -354,7 +351,6 @@ const AboutSection = () => {
             <div className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-600 text-white flex items-center justify-center rounded-full">
               <FiArrowUpRight />
             </div>
-            <p className="text-xs sm:text-sm">Learn more</p>
           </div>
         </div>
 

@@ -1116,7 +1116,7 @@ isActive && menuVisible ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0",
                           {/* <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Grid-Current-Offers.jpg"/> */}
                           <img 
                             src={item.img} 
-                            className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                            className="w-40 h-full object-cover group-hover:scale-105 transition duration-300"
                           />
                       </NavLink>  
                      

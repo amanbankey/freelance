@@ -97,8 +97,8 @@ const Footer = () => {
     <div className="relative bg-[#f5f7fa]">
 
       {/* CTA */}
-      <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-full max-w-5xl px-4">
-        <div className="bg-[#0f172a] text-white rounded-xl shadow-lg p-6 md:p-10">
+      <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-full max-w-5xl  ">
+        <div className="bg-[#0f172a] text-white rounded-xl shadow-lg p-6 md:p-10 ">
           <Newsletter />
         </div>
       </div>
@@ -111,7 +111,7 @@ const Footer = () => {
           {/* COLUMN 1 */}
           <div>
             <h3 className="text-blue-900 text-lg font-semibold mb-4 uppercase">
-              Our Services 
+              Quick Links 
             </h3>
             <ul className="space-y-3">
               <li> 
@@ -132,29 +132,24 @@ const Footer = () => {
           {/* COLUMN 2 */}
           <div className="mt-8 sm:mt-0">
             <ul className="space-y-3">
-              <li>JSW Defence</li>
-              <li>JSW MG Motor India</li>
-              <li>JSW Industrial Parks</li>
-              <li>JSW One</li>
-              <li>JSW Techno Projects</li>
-              <li>JSW Projects Limited</li>
-              <li>Creixent Special Steels</li>
-              <li>Sapphire Airlines</li>
+              <h2 className="text-lg text-blue-900 "> Products </h2>
+            <ul className="space-y-3 text-blue-900 font-semibold">
+              <li>Sheet meatal components </li>
+              <li>Pipe Bending Components </li>
+              <li>Tools and Fixture </li>
+              <li>Emboss Sheet & Parts</li>
+             
+            </ul>
             </ul>
           </div>
 
           {/* COLUMN 3 */}
           <div>
             <ul className="space-y-3 text-blue-900 font-semibold">
-              <li>INVESTORS</li>
-              <li>ABOUT US</li>
-              <li>SPORTS</li>
-              <li>FOUNDATION</li>
-              <li>SITEMAP</li>
-              <li>SUSTAINABILITY</li>
-              <li>CAREERS</li>
-              <li>NEWSROOM</li>
+                <h2 className="text-lg text-blue-900 ">Address </h2>
+
             </ul>
+              <span>Plant -1 Address B B Engineers, Survey No. G63/7, MIDC Kurli ,Chakan Industrial Estate , Taluka, Khed, Pune - 410501, (MH)</span>
           </div>
 
           {/* COLUMN 4 */}
@@ -164,7 +159,7 @@ const Footer = () => {
             </p>
 
             <p className="mb-6 text-gray-500">
-              Copyright © 2025 All rights reserved
+              Copyright © 2026 All rights reserved
             </p>
 
             <h4 className="mb-3 text-gray-700 font-medium">

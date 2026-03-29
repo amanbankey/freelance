@@ -274,7 +274,7 @@ const [started, setStarted] = useState(false)
       <section  className="mb-20">
          <div className="bg-white px-4 py-8 flex justify-center">
       <div
-        className="relative w-full max-w-5xl rounded-2xl overflow-hidden px-8 py-10 border-2 border-black"
+        className="relative w-full max-w-5xl rounded-2xl overflow-hidden px-8 py-10 "
         style={{ background: "linear-gradient(135deg, #0a1f44 60%, #0e3a5c 100%)" }}
       >
       
@@ -298,7 +298,7 @@ const [started, setStarted] = useState(false)
          </div>
          
          <div className="text-white text-xs font-bold tracking-widest uppercase mb-2 flex gap-x-2 ">
-            <div className="text-base gap-x-3"><IoLocationOutline className="text-xl"/> </div> <div> BB Engineer Center</div>  
+            <div className="text-base gap-x-3 flex items-center"><IoLocationOutline className="text-xl "/> </div> <div className="text-lg flex items-center"> BB Engineer Center</div>  
           </div>
 
          <div  className="flex flex-col w-80  text-center"> 

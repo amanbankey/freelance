@@ -76,8 +76,8 @@ const HeroSection = () => {
       <section className="transparent relative z-10 left-0 ">
        
         <div className="relative  max-w-screen  ">
-        <div className='sticky top-10 h-screen overflow-hidden  '>
-         
+        <div className='sticky top-0 h-screen  z-10  '>
+          
           <video
             ref={videoRef}
             className="absolute top-0 left-0 w-full object-cover"

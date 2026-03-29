@@ -228,21 +228,16 @@ export default function PremiumRotateCenter() {
         </p>
       </div>
 
-      {/* CENTER CONTAINER */}
-      <div className="relative w-[420px]  h-[420px]" style={{ perspective: "1200px" }}>
+      <div className="relative w-[420px]  h-[420px] flex items-center justify-center" style={{ perspective: "1200px" }}>
 
-        {/* CENTER STATIC CARD */}
-        {/* <div className="absolute w-32 h-32 bg-white rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.15)] flex items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-          <span className="font-semibold text-gray-700">BBE</span>
-        </div> */}
 
-        {/* ROTATING RING */}
+
         <div
   ref={ringRef}
-  className="absolute top-20 left-0 w-full h-full"
+  className="absolute top-20 left-0 w-full h-full flex items-center justify-center"
   style={{
     transformStyle: "preserve-3d",
-    
+      transformOrigin: "center center"
   }}
 >
   {images.map((img, i) => {
