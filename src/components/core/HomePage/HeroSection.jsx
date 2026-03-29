@@ -70,6 +70,7 @@ const HeroSection = () => {
     const slide = SLIDES[current]
 
   return (
+
     <div className='relative  z-10 top-0  bg-transparent '>
          
       <div className=' '>
@@ -88,10 +89,8 @@ const HeroSection = () => {
             playsInline
           />
  
-          {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-b    max-w-7xl mx-auto " />
  
-          {/* Foreground content — fades in/out */}
           <div
             className={[
               'relative z-10 flex flex-col justify-center items-center min-h-screen w-full   mx-auto',
@@ -132,14 +131,12 @@ const HeroSection = () => {
              </div>
           </div>
  
-          {/* Bottom section — untouched */}
           <div className="absolute bottom-8 md:bottom-12 lg:bottom-16 left-4 md:left-8 lg:left-16 right-4 md:right-8 lg:right-16">
             <div className="flex flex-wrap justify-between items-center">
               <div className="flex flex-wrap gap-6 md:gap-8 lg:gap-12 mb-4 md:mb-0" />
             </div>
           </div>
  
-          {/* Slide indicator dots */}
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
             {SLIDES.map((_, i) => (
               <button

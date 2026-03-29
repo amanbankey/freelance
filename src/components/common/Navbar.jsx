@@ -858,7 +858,7 @@ const NAV_DATA = {
         images: [{img: toolFixture}, {img: toolFixture2},{img: toolFixture3}, {img: toolFixture4},]
         },
       {
-        name: "EMBOSS SHEET & PARTS",
+        name: "Emboss Sheet & Parts",
         img: emboss,
        
         details: [
@@ -1076,7 +1076,7 @@ isActive && menuVisible ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0",
             "absolute left-0 right-0 bg-white border-t border-gray-400 shadow-2xl rounded-t-2xl rounded-b-2xl overflow-hidden z-40 ",
             "transition-all duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] ",
             activeMenu && menuVisible
-              ? "max-h-[220px] opacity-100 translate-y-0"
+              ? "max-h-[300px] opacity-100 translate-y-0"
               : "max-h-0 opacity-0 -translate-y-1 pointer-events-none",
           ].join(" ")}
         >
@@ -1084,25 +1084,25 @@ isActive && menuVisible ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0",
             <div className=" w-full mx-auto   ">
 
               {/* Grid */}
-              <div className="flex px-5 py-8  mx-auto">
+              <div className="flex px-5  h-72 mx-auto  items-center justify-center ">
                 <div
-                  className={[
-                    "grid gap-x-2 gap-y-6 ",
-                    data.grid.length <= 4 ? "grid-cols-4" : "grid-cols-4",
+                  className={["flex justify-center items-center  gap-x-28  gap-y-28"
+                    // "grid gap-x-2 gap-y-6 ",
+                    // data.grid.length <= 4 ? "grid-cols-4" : "grid-cols-4",
                   ].join(" ")}
                 >
                   
                   {data.grid.map((item, i) => (
                     <div
                       key={item.name}
-                      className="group cursor-pointer"
+                      className="group cursor-pointer  flex flex-col justify-end items-center"
                       style={{
                         transition: `opacity 0.35s ease ${i * 45}ms, transform 0.35s ease ${i * 45}ms`,
                         opacity: menuVisible ? 1 : 0,
                         transform: menuVisible ? "translateY(0)" : "translateY(10px)",
                       }}
                     >
-                      <div className="w-full h-28 bg-gray-50 rounded-md overflow-hidden flex items-center justify-center  mb-2 transition-all duration-250 group-hover:shadow-md duration-300">
+                      <div className="  w-full h-28 bg-gray-50 rounded-md overflow-hidden flex items-center justify-center  mb-2 transition-all duration-250 group-hover:shadow-md duration-300">
                         
                       <NavLink to={`/${data?.title?.toLowerCase().replace(/\s+/g, '-')}/${encodeURIComponent(item.name)}`} state={{
                                                                                                                                 name: item.name,
@@ -1121,7 +1121,7 @@ isActive && menuVisible ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0",
                       </NavLink>  
                      
                       </div>
-                      <p className="text-[13px] font-medium text-gray-800 group-hover:text-black transition text-center leading-tight mb-1  duration-150 ">
+                      <p className="text-36 font-medium text-gray-800 group-hover:text-black transition text-center leading-tight mb-1 py-5  duration-150 ">
                        {item.name}
                       
                       </p>
