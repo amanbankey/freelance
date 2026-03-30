@@ -10,7 +10,7 @@ import Ourteam from '../components/core/HomePage/Ourteam'
 
 const About = () => {
   return (
-    <div>
+    <div className='overflow-hidden'>
       <HeroSection/>
        <AboutSection />
        <EveryDay />

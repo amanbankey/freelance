@@ -178,7 +178,7 @@ const ProductsItem = () => {
           </ul>
         </div>
 
-        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-6 sm:py-8 md:py-10 mb-20 ">
+        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-6 sm:py-8 md:py-10 mb-28 ">
           
 
         <div className="mb-4 sm:mb-6">

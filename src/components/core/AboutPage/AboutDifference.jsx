@@ -154,7 +154,9 @@ const AboutDifference = () => {
   }, [])
 
   return (
-    <div ref={ref} className="bg-white h-full w-full flex flex-col items-center justify-center px-4 py-16">
+    <div ref={ref} className="bg-white h-full w-full flex flex-col items-center justify-center 
+    border-4 border-red-300
+    px-4 py-32 ">
 
       <p className="text-center text-gray-500 text-sm sm:text-xl max-w-2xl mb-10 leading-relaxed">
         At BB Engineers, we believe in creating long-term value and believe what's good for the

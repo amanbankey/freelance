@@ -937,6 +937,8 @@ export default function Navbar() {
   const [searchOpen, setSearchOpen]   = useState(false);
   // const [searchVal,  setSearchVal]    = useState("");
   const [menuVisible, setMenuVisible] = useState(false); // controls animation class
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const closeTimer = useRef(null);
   const openTimer  = useRef(null);
 
@@ -971,209 +973,402 @@ export default function Navbar() {
   
   return (
 
-    <div className=""> 
-    <div className=" fixed  top-4  left-0 w-full z-[1000]    "> 
+    // <div className=""> 
+    // <div className=" fixed  top-4  left-0 w-full z-[1000]    "> 
     
-      <nav
-       className="max-w-7xl mx-auto bg-white shadow-md rounded-2xl border border-gray-100 backdrop-blur-sm"
-        onMouseLeave={closeMenu}
-      >
-        <div className="flex items-center justify-between px-10 h-[75px] max-w-screen-2xl mx-auto">
+    //   <nav
+    //    className="max-w-7xl mx-auto bg-white shadow-md rounded-2xl border border-gray-100 backdrop-blur-sm"
+    //     onMouseLeave={closeMenu}
+    //   >
+    //     <div className="flex items-center justify-between px-10 h-[75px] max-w-screen-2xl mx-auto">
 
-          <NavLink to='/' className="flex-shrink-0 text-black  duration-200">
-          <img
-                src="https://bbengineers.co.in/image/new_logo.png"
-                alt="BB Engineers logo"
-                className="h-10 w-auto object-contain"
-              />
-          </NavLink>
+    //       <NavLink to='/' className="flex-shrink-0 text-black  duration-200">
+    //       <img
+    //             src="https://bbengineers.co.in/image/new_logo.png"
+    //             alt="BB Engineers logo"
+    //             className="h-10 w-auto object-contain"
+    //           />
+    //       </NavLink>
           
-          <div className="flex items-center gap-6 text-[16px] font-medium tracking-wide">
-             <span className="  py-1 transition">
-                <NavLink to='/' className="font-medium text-gray-800  hover:rounded-2xl hover:text-black">
-                  Home
-                </NavLink>
-              </span>
-            <span className="  py-1 transition"> 
-              <NavLink to='/about'  className=' font-medium text-gray-800 hover:text-black'> About </NavLink>
-            </span>
+    //       <div className="flex items-center gap-6 text-[16px] font-medium tracking-wide">
+    //          <span className="  py-1 transition">
+    //             <NavLink to='/' className="font-medium text-gray-800  hover:rounded-2xl hover:text-black">
+    //               Home
+    //             </NavLink>
+    //           </span>
+    //         <span className="  py-1 transition"> 
+    //           <NavLink to='/about'  className=' font-medium text-gray-800 hover:text-black'> About </NavLink>
+    //         </span>
             
-            {Object.keys(NAV_DATA).map((key, i) => {
-              const isActive = activeMenu === key;
-              // console.log("d-------------", key,  )
-              return (
-                <button
-                  key={key}
-                  onMouseEnter={() => { openMenu(key); setSearchOpen(false); }}
-                  onClick={() => openMenu(key)}
-                  className={[ 
-                    "relative h-[52px] text-gray-700 hover:text-black transition duration-200",
-                    isActive ? "text-black " : "",
-                  ].join(" ")}
-                >
-                  {key} 
+    //         {Object.keys(NAV_DATA).map((key, i) => {
+    //           const isActive = activeMenu === key;
+    //           return (
+    //             <button
+    //               key={key}
+    //               onMouseEnter={() => { openMenu(key); setSearchOpen(false); }}
+    //               onClick={() => openMenu(key)}
+    //               className={[ 
+    //                 "relative h-[52px] text-gray-700 hover:text-black transition duration-200",
+    //                 isActive ? "text-black " : "",
+    //               ].join(" ")}
+    //             >
+    //               {key} 
                   
-                  <span
-                    className={[
-                      "absolute bottom-0 left-4 right-4 h-[2px]  rounded-full bg- transition-all duration-300",
-isActive && menuVisible ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0",
-                    ].join(" ")}
-                    style={{ transformOrigin: "left" }}
-                  />
-                </button>
-              );
-            })}
-            <span className="  py-1 transition  px-2 rounded-lg"> 
-              <NavLink to='/contact' className="text-gray-700 hover:text-black transition duration-200">
-                 Contact 
-                 </NavLink>
-            </span>
-          </div>
+    //               <span
+    //                 className={[
+    //                   "absolute bottom-0 left-4 right-4 h-[2px]  rounded-full bg- transition-all duration-300",
+    //                   isActive && menuVisible ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0",
+    //                 ].join(" ")}
+    //                 style={{ transformOrigin: "left" }}
+    //               />
+    //             </button>
+    //           );
+    //         })}
+    //         <span className="  py-1 transition  px-2 rounded-lg"> 
+    //           <NavLink to='/contact' className="text-gray-700 hover:text-black transition duration-200">
+    //              Contact 
+    //              </NavLink>
+    //         </span>
+    //       </div>
 
-          {/* Right side */}
-          <div className="flex items-center gap-1">
-            {/* Search */}
-            <div className="flex items-center  ">
-              {/* <div
+    //       <div className="flex items-center gap-1">
+    //         {/* Search */}
+    //         <div className="flex items-center  ">
+    //           {/* <div
+    //             className={[
+    //               "overflow-hidden transition-all duration-400 ease-in-out",
+    //               searchOpen ? "max-w-[200px] opacity-100" : "max-w-0 opacity-0",
+    //             ].join(" ")}
+    //           >
+    //             <input
+    //               autoFocus={searchOpen}
+    //               type="text"
+    //               value={searchVal}
+    //               onChange={e => setSearchVal(e.target.value)}
+    //               placeholder="Search ..."
+    //               className="w-44 border-b placeholder-black  border-black outline-none text-[13px] px-1 py-0.5 bg-transparent text-gray-800 "
+    //             />
+    //           </div> */}
+    //           <div className="gap-3 flex items-center"> 
+    //           {/* <button
+    //             onClick={() => { setSearchOpen(s => !s); setActiveMenu(null); if (searchOpen) setSearchVal(""); }}
+    //             className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-150"
+    //           >
+              
+    //           </button> */}
+              
+    //              <button className="uppercase border border-[#EB9A38] text-[#EB9A38] hover:bg-[#EB9A38] hover:text-white transition-all duration-300 px-2 py-2 rounded-lg text-xs">
+    //               <NavLink to="/contact#contact-form" >
+    //             Request quote  
+    //             </NavLink>
+    //           </button>
+             
+             
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+
+    //     <div
+    //       onMouseEnter={cancelClose}
+    //       onMouseLeave={closeMenu}
+    //       className={[
+    //         "absolute left-0 right-0 bg-white border-t border-gray-400 shadow-2xl rounded-t-2xl rounded-b-2xl overflow-hidden z-40 ",
+    //         "transition-all duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] ",
+    //         activeMenu && menuVisible
+    //           ? "max-h-[300px] opacity-100 translate-y-0"
+    //           : "max-h-0 opacity-0 -translate-y-1 pointer-events-none",
+    //       ].join(" ")}
+    //     >
+    //       {data && (
+    //         <div className=" w-full mx-auto   ">
+
+    //           <div className="flex px-5  h-72 mx-auto  items-center justify-center ">
+    //             <div
+    //               className={["flex justify-center items-center  gap-x-28  gap-y-28"
+    //                 // "grid gap-x-2 gap-y-6 ",
+    //                 // data.grid.length <= 4 ? "grid-cols-4" : "grid-cols-4",
+    //               ].join(" ")}
+    //             >
+                  
+    //               {data.grid.map((item, i) => (
+    //                 <div
+    //                   key={item.name}
+    //                   className="group cursor-pointer  flex flex-col justify-end items-center"
+    //                   style={{
+    //                     transition: `opacity 0.35s ease ${i * 45}ms, transform 0.35s ease ${i * 45}ms`,
+    //                     opacity: menuVisible ? 1 : 0,
+    //                     transform: menuVisible ? "translateY(0)" : "translateY(10px)",
+    //                   }}
+    //                 >
+    //                   <div className="  w-full h-28 bg-gray-50 rounded-md overflow-hidden flex items-center justify-center  mb-2 transition-all duration-250 group-hover:shadow-md duration-300">
+                        
+    //                   <NavLink to={`/${data?.title?.toLowerCase().replace(/\s+/g, '-')}/${encodeURIComponent(item.name)}`} state={{
+    //                                                                                                                             name: item.name,
+    //                                                                                                                             img: item.img,
+    //                                                                                                                             details: item.details,
+    //                                                                                                                             images: item.images,
+    //                                                                                                                             para: item.para,
+    //                                                                                                                           }}
+    //                           className='block text-gray-700  text-center  hover:bg-gray-100  py-2 rounded-md 
+    //                          transition'>
+    //                       {/* <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Grid-Current-Offers.jpg"/> */}
+    //                       <img 
+    //                         src={item.img} 
+    //                         className="w-40 h-full object-cover group-hover:scale-105 transition duration-300"
+    //                       />
+    //                   </NavLink>  
+                     
+    //                   </div>
+    //                   <p className="text-36 font-medium text-gray-800 group-hover:text-black transition text-center leading-tight mb-1 py-5  duration-150 ">
+    //                    {item.name}
+                      
+    //                   </p>
+                    
+    //                 </div>
+    //               ))}
+                  
+    //             </div>
+    //           </div>
+
+    //           <div
+    //             className="w-52 border-l border-gray-100 px-6 py-8 flex-shrink-0"
+    //             style={{
+    //               transition: "opacity 0.4s ease 120ms, transform 0.4s ease 120ms",
+    //               opacity: menuVisible ? 1 : 0,
+    //               transform: menuVisible ? "translateX(0)" : "translateX(8px)",
+    //             }}
+    //           >
+    //             <ul className="space-y-[10px]">
+    //               {data.sidebar.map((s, i) => (
+    //                 <li key={i}>
+    //                   <a
+    //                     href="#"
+    //                     className="block text-[13px] text-gray-500 hover:text-gray-900 transition-all duration-150 hover:translate-x-0.5"
+    //                   >
+    //                   </a>
+    //                 </li>
+    //               ))}
+    //             </ul>
+    //           </div>
+    //         </div>
+    //       )}
+    //     </div>
+    //   </nav>
+
+    //   {/* Dim backdrop */}
+    //   <div
+    //     onClick={() => { setMenuVisible(false); setTimeout(() => setActiveMenu(null), 350); }}
+    //     className={[
+    //       "fixed  top-[52px] bg-black/15 z-30 transition-opacity duration-350",
+    //       activeMenu && menuVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
+    //     ].join(" ")}
+    //   />
+
+    //   {/* Demo page content */}
+    //   {/* <div className="flex flex-col items-center justify-center min-h-[40vh] bg-gray-50"> */}
+    //     {/* <p className="text-sm text-gray-400 mb-3 tracking-widest uppercase">Tesla Navbar Clone</p> */}
+    //     {/* <h1 className="text-5xl font-bold text-gray-900 tracking-tight mb-4">Hover the nav above</h1> */}
+      
+    //   {/* </div> */}
+    // </div>
+
+    // </div> 
+
+
+
+
+    
+    <div className="">
+  <div className="fixed top-4 left-0 w-full z-[1000]">
+
+    <nav
+      className="max-w-7xl mx-auto bg-white shadow-md rounded-2xl border border-gray-100 backdrop-blur-sm"
+      onMouseLeave={closeMenu}
+    >
+      <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-10 h-[65px] sm:h-[70px] lg:h-[75px] max-w-screen-2xl mx-auto">
+
+        {/* Logo */}
+        <NavLink to='/' className="flex-shrink-0 text-black duration-200">
+          <img
+            src="https://bbengineers.co.in/image/new_logo.png"
+            alt="BB Engineers logo"
+            className="h-7 sm:h-8 md:h-9 lg:h-10 w-auto object-contain"
+          />
+        </NavLink>
+
+        {/* Desktop Nav Links — hidden on mobile/tablet */}
+        <div className="hidden lg:flex items-center gap-6 text-[16px] font-medium tracking-wide">
+          <span className="py-1 transition">
+            <NavLink to='/' className="font-medium text-gray-800 hover:rounded-2xl hover:text-black">
+              Home
+            </NavLink>
+          </span>
+          <span className="py-1 transition">
+            <NavLink to='/about' className='font-medium text-gray-800 hover:text-black'>About</NavLink>
+          </span>
+
+          {Object.keys(NAV_DATA).map((key) => {
+            const isActive = activeMenu === key;
+            return (
+              <button
+                key={key}
+                onMouseEnter={() => { openMenu(key); setSearchOpen(false); }}
+                onClick={() => openMenu(key)}
                 className={[
-                  "overflow-hidden transition-all duration-400 ease-in-out",
-                  searchOpen ? "max-w-[200px] opacity-100" : "max-w-0 opacity-0",
+                  "relative h-[52px] text-gray-700 hover:text-black transition duration-200",
+                  isActive ? "text-black" : "",
                 ].join(" ")}
               >
-                <input
-                  autoFocus={searchOpen}
-                  type="text"
-                  value={searchVal}
-                  onChange={e => setSearchVal(e.target.value)}
-                  placeholder="Search ..."
-                  className="w-44 border-b placeholder-black  border-black outline-none text-[13px] px-1 py-0.5 bg-transparent text-gray-800 "
+                {key}
+                <span
+                  className={[
+                    "absolute bottom-0 left-4 right-4 h-[2px] rounded-full bg- transition-all duration-300",
+                    isActive && menuVisible ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0",
+                  ].join(" ")}
+                  style={{ transformOrigin: "left" }}
                 />
-              </div> */}
-              <div className="gap-3 flex items-center"> 
-              {/* <button
-                onClick={() => { setSearchOpen(s => !s); setActiveMenu(null); if (searchOpen) setSearchVal(""); }}
-                className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-150"
-              >
-              
-              </button> */}
-              
-                 <button className="uppercase border border-[#EB9A38] text-[#EB9A38] hover:bg-[#EB9A38] hover:text-white transition-all duration-300 px-2 py-2 rounded-lg text-xs">
-                  <NavLink to="/contact#contact-form" >
-                Request quote  
-                </NavLink>
               </button>
-             
-             
+            );
+          })}
+
+          <span className="py-1 transition px-2 rounded-lg">
+            <NavLink to='/contact' className="text-gray-700 hover:text-black transition duration-200">
+              Contact
+            </NavLink>
+          </span>
+        </div>
+
+        {/* Right Side — Quote button + Mobile Hamburger */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Request Quote Button */}
+          <button className="uppercase border border-[#EB9A38] text-[#EB9A38] hover:bg-[#EB9A38] hover:text-white transition-all duration-300 px-2 py-1.5 sm:py-2 rounded-lg text-[10px] sm:text-xs">
+            <NavLink to="/contact#contact-form">
+              Request quote
+            </NavLink>
+          </button>
+
+          {/* Hamburger — visible only on mobile/tablet */}
+          <button
+            className="lg:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5"
+            onClick={() => setMobileMenuOpen(prev => !prev)}
+          >
+            <span className="w-5 h-0.5 bg-gray-700 rounded transition-all duration-300" />
+            <span className="w-5 h-0.5 bg-gray-700 rounded transition-all duration-300" />
+            <span className="w-5 h-0.5 bg-gray-700 rounded transition-all duration-300" />
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu — visible on mobile/tablet only */}
+      <div className={[
+        "lg:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white rounded-b-2xl",
+        mobileMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+      ].join(" ")}>
+        <div className="flex flex-col px-6 py-4 gap-4 text-[15px] font-medium border-t border-gray-100">
+          <NavLink to='/' onClick={() => setMobileMenuOpen(false)} className="text-gray-800 hover:text-black transition">Home</NavLink>
+          <NavLink to='/about' onClick={() => setMobileMenuOpen(false)} className="text-gray-800 hover:text-black transition">About</NavLink>
+
+          {Object.keys(NAV_DATA).map((key) => (
+            <button
+              key={key}
+              onClick={() => { openMenu(key); }}
+              className="text-left text-gray-700 hover:text-black transition duration-200"
+            >
+              {key}
+            </button>
+          ))}
+
+          <NavLink to='/contact' onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-black transition">Contact</NavLink>
+        </div>
+      </div>
+
+      {/* Dropdown Mega Menu — Desktop only */}
+      <div
+        onMouseEnter={cancelClose}
+        onMouseLeave={closeMenu}
+        className={[
+          "absolute left-0 right-0 bg-white border-t border-gray-400 shadow-2xl rounded-t-2xl rounded-b-2xl overflow-hidden z-40",
+          "transition-all duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)]",
+          activeMenu && menuVisible
+            ? "max-h-[300px] opacity-100 translate-y-0"
+            : "max-h-0 opacity-0 -translate-y-1 pointer-events-none",
+        ].join(" ")}
+      >
+        {data && (
+          <div className="w-full mx-auto">
+            <div className="flex px-5 h-72 mx-auto items-center justify-center overflow-x-auto">
+              <div className="flex justify-center items-center gap-x-10 md:gap-x-16 lg:gap-x-28 gap-y-28">
+                {data.grid.map((item, i) => (
+                  <div
+                    key={item.name}
+                    className="group cursor-pointer flex flex-col justify-end items-center"
+                    style={{
+                      transition: `opacity 0.35s ease ${i * 45}ms, transform 0.35s ease ${i * 45}ms`,
+                      opacity: menuVisible ? 1 : 0,
+                      transform: menuVisible ? "translateY(0)" : "translateY(10px)",
+                    }}
+                  >
+                    <div className="w-full h-28 bg-gray-50 rounded-md overflow-hidden flex items-center justify-center mb-2 transition-all duration-250 group-hover:shadow-md duration-300">
+                      <NavLink
+                        to={`/${data?.title?.toLowerCase().replace(/\s+/g, '-')}/${encodeURIComponent(item.name)}`}
+                        state={{
+                          name: item.name,
+                          img: item.img,
+                          details: item.details,
+                          images: item.images,
+                          para: item.para,
+                        }}
+                        className='block text-gray-700 text-center hover:bg-gray-100 py-2 rounded-md transition'
+                      >
+                        <img
+                          src={item.img}
+                          className="w-28 sm:w-32 lg:w-40 h-full object-cover group-hover:scale-105 transition duration-300"
+                        />
+                      </NavLink>
+                    </div>
+                    <p className="text-sm font-medium text-gray-800 group-hover:text-black transition text-center leading-tight mb-1 py-5 duration-150">
+                      {item.name}
+                    </p>
+                  </div>
+                ))}
               </div>
+            </div>
+
+            <div
+              className="w-52 border-l border-gray-100 px-6 py-8 flex-shrink-0"
+              style={{
+                transition: "opacity 0.4s ease 120ms, transform 0.4s ease 120ms",
+                opacity: menuVisible ? 1 : 0,
+                transform: menuVisible ? "translateX(0)" : "translateX(8px)",
+              }}
+            >
+              <ul className="space-y-[10px]">
+                {data.sidebar.map((s, i) => (
+                  <li key={i}>
+                    <a href="#" className="block text-[13px] text-gray-500 hover:text-gray-900 transition-all duration-150 hover:translate-x-0.5"></a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-        </div>
+        )}
+      </div>
+    </nav>
 
-        <div
-          onMouseEnter={cancelClose}
-          onMouseLeave={closeMenu}
-          className={[
-            "absolute left-0 right-0 bg-white border-t border-gray-400 shadow-2xl rounded-t-2xl rounded-b-2xl overflow-hidden z-40 ",
-            "transition-all duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] ",
-            activeMenu && menuVisible
-              ? "max-h-[300px] opacity-100 translate-y-0"
-              : "max-h-0 opacity-0 -translate-y-1 pointer-events-none",
-          ].join(" ")}
-        >
-          {data && (
-            <div className=" w-full mx-auto   ">
+    {/* Dim backdrop */}
+    <div
+      onClick={() => { setMenuVisible(false); setTimeout(() => setActiveMenu(null), 350); }}
+      className={[
+        "fixed top-[52px] bg-black/15 z-30 transition-opacity duration-350",
+        activeMenu && menuVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
+      ].join(" ")}
+    />
 
-              {/* Grid */}
-              <div className="flex px-5  h-72 mx-auto  items-center justify-center ">
-                <div
-                  className={["flex justify-center items-center  gap-x-28  gap-y-28"
-                    // "grid gap-x-2 gap-y-6 ",
-                    // data.grid.length <= 4 ? "grid-cols-4" : "grid-cols-4",
-                  ].join(" ")}
-                >
-                  
-                  {data.grid.map((item, i) => (
-                    <div
-                      key={item.name}
-                      className="group cursor-pointer  flex flex-col justify-end items-center"
-                      style={{
-                        transition: `opacity 0.35s ease ${i * 45}ms, transform 0.35s ease ${i * 45}ms`,
-                        opacity: menuVisible ? 1 : 0,
-                        transform: menuVisible ? "translateY(0)" : "translateY(10px)",
-                      }}
-                    >
-                      <div className="  w-full h-28 bg-gray-50 rounded-md overflow-hidden flex items-center justify-center  mb-2 transition-all duration-250 group-hover:shadow-md duration-300">
-                        
-                      <NavLink to={`/${data?.title?.toLowerCase().replace(/\s+/g, '-')}/${encodeURIComponent(item.name)}`} state={{
-                                                                                                                                name: item.name,
-                                                                                                                                img: item.img,
-                                                                                                                                details: item.details,
-                                                                                                                                images: item.images,
-                                                                                                                                para: item.para,
-                                                                                                                              }}
-                              className='block text-gray-700  text-center  hover:bg-gray-100  py-2 rounded-md 
-                             transition'>
-                          {/* <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Grid-Current-Offers.jpg"/> */}
-                          <img 
-                            src={item.img} 
-                            className="w-40 h-full object-cover group-hover:scale-105 transition duration-300"
-                          />
-                      </NavLink>  
-                     
-                      </div>
-                      <p className="text-36 font-medium text-gray-800 group-hover:text-black transition text-center leading-tight mb-1 py-5  duration-150 ">
-                       {item.name}
-                      
-                      </p>
-                    
-                    </div>
-                  ))}
-                  
-                </div>
-              </div>
+  </div>
+</div>
 
-              <div
-                className="w-52 border-l border-gray-100 px-6 py-8 flex-shrink-0"
-                style={{
-                  transition: "opacity 0.4s ease 120ms, transform 0.4s ease 120ms",
-                  opacity: menuVisible ? 1 : 0,
-                  transform: menuVisible ? "translateX(0)" : "translateX(8px)",
-                }}
-              >
-                <ul className="space-y-[10px]">
-                  {data.sidebar.map((s, i) => (
-                    <li key={i}>
-                      <a
-                        href="#"
-                        className="block text-[13px] text-gray-500 hover:text-gray-900 transition-all duration-150 hover:translate-x-0.5"
-                      >
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          )}
-        </div>
-      </nav>
 
-      {/* Dim backdrop */}
-      <div
-        onClick={() => { setMenuVisible(false); setTimeout(() => setActiveMenu(null), 350); }}
-        className={[
-          "fixed  top-[52px] bg-black/15 z-30 transition-opacity duration-350",
-          activeMenu && menuVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
-        ].join(" ")}
-      />
 
-      {/* Demo page content */}
-      {/* <div className="flex flex-col items-center justify-center min-h-[40vh] bg-gray-50"> */}
-        {/* <p className="text-sm text-gray-400 mb-3 tracking-widest uppercase">Tesla Navbar Clone</p> */}
-        {/* <h1 className="text-5xl font-bold text-gray-900 tracking-tight mb-4">Hover the nav above</h1> */}
-      
-      {/* </div> */}
-    </div>
-
-    </div> 
   );
 }
